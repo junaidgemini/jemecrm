@@ -1,0 +1,84 @@
+<?php
+$module_name = 'jd_consideration';
+$viewdefs [$module_name] = 
+array (
+  'EditView' => 
+  array (
+    'templateMeta' => 
+    array (
+      'maxColumns' => '2',
+      'widths' => 
+      array (
+        0 => 
+        array (
+          'label' => '10',
+          'field' => '30',
+        ),
+        1 => 
+        array (
+          'label' => '10',
+          'field' => '30',
+        ),
+      ),
+      'useTabs' => false,
+      'tabDefs' => 
+      array (
+        'DEFAULT' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+      ),
+      'syncDetailEditViews' => true,
+    ),
+    'panels' => 
+    array (
+      'default' => 
+      array (
+        0 => 
+        array (
+          0 => 'name',
+          1 => 
+          array (
+            'name' => 'customer_full_name',
+            'label' => 'LBL_CUSTOMER_FULL_NAME',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'mobile',
+            'label' => 'LBL_MOBILE',
+          ),
+          1 => 
+          array (
+            'name' => 'email',
+            'label' => 'LBL_EMAIL',
+          ),
+        ),
+        2 => 
+        array (
+          0 => '',
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => '',
+          1 => '',
+        ),
+        4 => 
+        array (
+          0 => '',
+          1 => '',
+        ),
+        5 => 
+        array (
+          0 => 'description',
+        ),
+      ),
+    ),
+  ),
+);
+;
+?>

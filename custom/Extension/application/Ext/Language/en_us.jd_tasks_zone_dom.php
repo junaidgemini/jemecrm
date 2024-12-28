@@ -1,0 +1,22 @@
+<?php
+$app_list_strings['jd_tasks_zone_dom'] = array(
+    '' => '',
+    'South West' => 'South West',
+    'SOUTH EAST' => 'SOUTH EAST',
+    'RIVERS ZONE' => 'RIVERS ZONE',
+    'OYO' => 'OYO',
+    'NORTH WEST' => 'NORTH WEST',
+    'NORTH EAST' => 'NORTH EAST',
+    'MIDDLE BELT' => 'MIDDLE BELT',
+    'LAGOS WEST' => 'LAGOS WEST',
+    'LAGOS MAINLAND' => 'LAGOS MAINLAND',
+    'LAGOS CENTRAL' => 'LAGOS CENTRAL',
+    'DELTA ZONE' => 'DELTA ZONE',
+    'EDO ZONE' => 'EDO ZONE',
+    'ENUGU ZONE' => 'ENUGU ZONE',
+    'FCT ZONE' => 'FCT ZONE',
+    'CALABAR ZONE' => 'CALABAR ZONE',
+    'Head Office' => 'Head Office',
+    'Ondo' => 'Ondo',
+    'Education Finance' => 'Education Finance',
+);

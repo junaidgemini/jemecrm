@@ -1,5 +1,5 @@
 <?php
-// created: 2024-12-20 06:47:12
+// created: 2024-12-27 23:58:46
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -72,4 +72,7 @@ $mod_strings = array (
   'LBL_HISTORY_SUBPANEL_TITLE' => 'Notes',
   'LBL_DATE_DUE' => 'Date Due',
   'LBL_RELATED_TO' => 'Related to:',
+  'LBL_JD_ZONE' => 'Zone',
+  'LBL_JD_BRANCH_STATE' => 'Branch State',
+  'LBL_JD_BRANCH' => 'Branch',
 );
