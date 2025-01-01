@@ -1,5 +1,5 @@
 <?php
-// created: 2024-12-31 19:25:11
+// created: 2025-01-01 13:27:42
 $mod_strings = array (
   'LBL_SHAREDWEEK' => 'Shared Week',
   'LBL_SHAREDMONTH' => 'Shared Month',

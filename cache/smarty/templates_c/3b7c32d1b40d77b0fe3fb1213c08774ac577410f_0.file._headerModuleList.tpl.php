@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.3, created on 2024-12-31 19:25:11
+/* Smarty version 4.5.3, created on 2025-01-01 13:27:42
   from '/var/www/webroot/local.jemecrm.com/themes/SuiteP/tpls/_headerModuleList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.3',
-  'unifunc' => 'content_677445179cbdd4_71081199',
+  'unifunc' => 'content_677542ceb39635_97680953',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_677445179cbdd4_71081199 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677542ceb39635_97680953 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.sugar_link.php','function'=>'smarty_function_sugar_link',),1=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.sugar_translate.php','function'=>'smarty_function_sugar_translate',),2=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/modifier.replace.php','function'=>'smarty_modifier_replace',),3=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.suite_check_access.php','function'=>'smarty_function_suite_check_access',),4=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.counter.php','function'=>'smarty_function_counter',),5=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.search_controller.php','function'=>'smarty_function_search_controller',),));
 ?>
 <!--Start Responsive Top Navigation Menu -->

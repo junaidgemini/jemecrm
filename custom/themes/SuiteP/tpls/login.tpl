@@ -51,7 +51,8 @@
 
 	<div class="p_login_top">
 		
-		<a title="SuiteCRM" href="https://www.suitecrm.com">SuiteCRM</a>
+		{* <a title="SuiteCRM" href="https://www.suitecrm.com">SuiteCRM</a> *}
+        <img src="custom/themes/default/images/company_logo.png" >
 		
 	</div>
     

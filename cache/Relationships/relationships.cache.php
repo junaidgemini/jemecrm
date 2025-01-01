@@ -8068,6 +8068,17 @@
       ),
     ),
   ),
+  'tracker_monitor_id' => 
+  array (
+    'name' => 'tracker_monitor_id',
+    'lhs_module' => 'TrackerPerfs',
+    'lhs_table' => 'tracker_perf',
+    'lhs_key' => 'monitor_id',
+    'rhs_module' => 'Trackers',
+    'rhs_table' => 'tracker',
+    'rhs_key' => 'monitor_id',
+    'relationship_type' => 'one-to-one',
+  ),
   'leads_modified_user' => 
   array (
     'name' => 'leads_modified_user',
@@ -10680,17 +10691,6 @@
     'rhs_table' => 'notes',
     'rhs_key' => 'parent_id',
     'relationship_type' => 'one-to-many',
-  ),
-  'tracker_monitor_id' => 
-  array (
-    'name' => 'tracker_monitor_id',
-    'lhs_module' => 'TrackerPerfs',
-    'lhs_table' => 'tracker_perf',
-    'lhs_key' => 'monitor_id',
-    'rhs_module' => 'Trackers',
-    'rhs_table' => 'tracker',
-    'rhs_key' => 'monitor_id',
-    'relationship_type' => 'one-to-one',
   ),
   'alerts_modified_user' => 
   array (
