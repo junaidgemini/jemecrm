@@ -9,7 +9,6 @@ $mod_strings['LBL_DEMOGRAPHY'] = 'Location Demography';
 $mod_strings['LBL_DATE_OF_VISIT'] = 'Date Of Visit';
 $mod_strings['LBL_BRANCH_EMAIL'] = 'Branch Email';
 $mod_strings['LBL_SPECIFY_OTHER'] = 'Specify Other';
-$mod_strings['LBL_DESCRIPTION'] = 'Action Taken';
 $mod_strings['LBL_ANY_ADITIONAL_FEEDBACK'] = 'Any Additional Feedback';
 $mod_strings['LBL_JD_STATUS'] = 'Status';
 $mod_strings['LBL_PURPOSE_OF_VISIT'] = 'Purpose of Visit';

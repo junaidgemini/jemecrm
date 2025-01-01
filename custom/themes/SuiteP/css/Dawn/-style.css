@@ -1,0 +1,147 @@
+/* Navbar */
+.navbar {
+    background-color: #c8da50;
+    color: #ffffff;
+}
+
+.navbar a {
+    color: #ffffff;
+}
+
+.navbar a:hover {
+    color: #f0f0f0;
+}
+
+/* Navbar Title Row */
+.navbar-title {
+    background-color: #c8da70;
+    color: #ffffff;
+}
+
+/* Table Headers */
+.table thead th {
+    background-color: #c8da60;
+    color: #ffffff;
+}
+
+/* Dashlets */
+.dashlet-header {
+    background-color: #c8da60;
+    color: #ffffff;
+}
+
+.dashlet-title {
+    color: #ffffff;
+}
+
+.dashlet-title:hover {
+    color: #f0f0f0;
+}
+
+/* Table Title Rows */
+.list-view-title {
+    background-color: #c8da70;
+    color: #ffffff;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #c8da50;
+    border-color: #a9b744;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #b9cb4a;
+    border-color: #97a83b;
+}
+
+/* General Text */
+body {
+    color: #333333;
+}
+
+a {
+    color: #336633;
+}
+
+a:hover {
+    color: #4c994c;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #e8f0c8;
+    color: #333333;
+}
+
+/* Hover Effects for Rows */
+.table-hover tbody tr:hover {
+    background-color: #f5f9e0;
+}
+
+/* Dashlet Body */
+.dashlet {
+    background-color: #f8fce0;
+    border-color: #c8da60;
+}
+
+/* Pagination */
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #c8da50;
+    color: #ffffff;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+    background-color: #b9cb4a;
+}
+
+/* Inputs and Forms */
+input,
+textarea,
+select {
+    border-color: #c8da50;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #b9cb4a;
+    box-shadow: 0 0 5px rgba(185, 203, 74, 0.5);
+}
+
+/* Modals */
+.modal-header {
+    background-color: #c8da70;
+    color: #ffffff;
+}
+
+.modal-footer .btn {
+    background-color: #c8da50;
+    color: #ffffff;
+}
+
+/* Alerts */
+.alert {
+    background-color: #f8fce0;
+    border-color: #c8da60;
+    color: #333333;
+}
+
+/* Panels */
+.panel-heading {
+    background-color: #c8da60;
+    color: #ffffff;
+}
+
+/* Miscellaneous */
+.badge {
+    background-color: #c8da50;
+    color: #ffffff;
+}
+
+.progress-bar {
+    background-color: #c8da50;
+}
