@@ -8068,17 +8068,6 @@
       ),
     ),
   ),
-  'tracker_monitor_id' => 
-  array (
-    'name' => 'tracker_monitor_id',
-    'lhs_module' => 'TrackerPerfs',
-    'lhs_table' => 'tracker_perf',
-    'lhs_key' => 'monitor_id',
-    'rhs_module' => 'Trackers',
-    'rhs_table' => 'tracker',
-    'rhs_key' => 'monitor_id',
-    'relationship_type' => 'one-to-one',
-  ),
   'leads_modified_user' => 
   array (
     'name' => 'leads_modified_user',
@@ -10691,6 +10680,17 @@
     'rhs_table' => 'notes',
     'rhs_key' => 'parent_id',
     'relationship_type' => 'one-to-many',
+  ),
+  'tracker_monitor_id' => 
+  array (
+    'name' => 'tracker_monitor_id',
+    'lhs_module' => 'TrackerPerfs',
+    'lhs_table' => 'tracker_perf',
+    'lhs_key' => 'monitor_id',
+    'rhs_module' => 'Trackers',
+    'rhs_table' => 'tracker',
+    'rhs_key' => 'monitor_id',
+    'relationship_type' => 'one-to-one',
   ),
   'alerts_modified_user' => 
   array (
@@ -14974,28 +14974,6 @@
       ),
     ),
   ),
-  'jd_user_replacement_secondary_users_rel' => 
-  array (
-    'name' => 'jd_user_replacement_secondary_users_rel',
-    'lhs_module' => 'Users',
-    'lhs_table' => 'users',
-    'lhs_key' => 'id',
-    'rhs_module' => 'jd_user_replacement',
-    'rhs_table' => 'jd_user_replacement',
-    'rhs_key' => 'jd_acting_user_id',
-    'relationship_type' => 'one-to-many',
-  ),
-  'jd_user_replacement_users_rel' => 
-  array (
-    'name' => 'jd_user_replacement_users_rel',
-    'lhs_module' => 'Users',
-    'lhs_table' => 'users',
-    'lhs_key' => 'id',
-    'rhs_module' => 'jd_user_replacement',
-    'rhs_table' => 'jd_user_replacement',
-    'rhs_key' => 'jd_primary_user_id',
-    'relationship_type' => 'one-to-many',
-  ),
   'jd_consideration_modified_user' => 
   array (
     'name' => 'jd_consideration_modified_user',
@@ -16074,6 +16052,109 @@
     'join_key_rhs' => 'record_id',
     'relationship_role_column' => 'module',
     'relationship_role_column_value' => 'jd_aggregator_agents',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'char',
+        'len' => '36',
+        'required' => true,
+        'default' => '',
+      ),
+      1 => 
+      array (
+        'name' => 'securitygroup_id',
+        'type' => 'char',
+        'len' => '36',
+      ),
+      2 => 
+      array (
+        'name' => 'record_id',
+        'type' => 'char',
+        'len' => '36',
+      ),
+      3 => 
+      array (
+        'name' => 'module',
+        'type' => 'varchar',
+        'len' => '100',
+      ),
+      4 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      5 => 
+      array (
+        'name' => 'modified_user_id',
+        'type' => 'char',
+        'len' => '36',
+      ),
+      6 => 
+      array (
+        'name' => 'created_by',
+        'type' => 'char',
+        'len' => '36',
+      ),
+      7 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'required' => true,
+        'default' => '0',
+      ),
+    ),
+  ),
+  'jd_banking_target_modified_user' => 
+  array (
+    'name' => 'jd_banking_target_modified_user',
+    'lhs_module' => 'Users',
+    'lhs_table' => 'users',
+    'lhs_key' => 'id',
+    'rhs_module' => 'jd_banking_target',
+    'rhs_table' => 'jd_banking_target',
+    'rhs_key' => 'modified_user_id',
+    'relationship_type' => 'one-to-many',
+  ),
+  'jd_banking_target_created_by' => 
+  array (
+    'name' => 'jd_banking_target_created_by',
+    'lhs_module' => 'Users',
+    'lhs_table' => 'users',
+    'lhs_key' => 'id',
+    'rhs_module' => 'jd_banking_target',
+    'rhs_table' => 'jd_banking_target',
+    'rhs_key' => 'created_by',
+    'relationship_type' => 'one-to-many',
+  ),
+  'jd_banking_target_assigned_user' => 
+  array (
+    'name' => 'jd_banking_target_assigned_user',
+    'lhs_module' => 'Users',
+    'lhs_table' => 'users',
+    'lhs_key' => 'id',
+    'rhs_module' => 'jd_banking_target',
+    'rhs_table' => 'jd_banking_target',
+    'rhs_key' => 'assigned_user_id',
+    'relationship_type' => 'one-to-many',
+  ),
+  'securitygroups_jd_banking_target' => 
+  array (
+    'name' => 'securitygroups_jd_banking_target',
+    'lhs_module' => 'SecurityGroups',
+    'lhs_table' => 'securitygroups',
+    'lhs_key' => 'id',
+    'rhs_module' => 'jd_banking_target',
+    'rhs_table' => 'jd_banking_target',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'securitygroups_records',
+    'join_key_lhs' => 'securitygroup_id',
+    'join_key_rhs' => 'record_id',
+    'relationship_role_column' => 'module',
+    'relationship_role_column_value' => 'jd_banking_target',
     'fields' => 
     array (
       0 => 

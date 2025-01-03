@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.3, created on 2025-01-01 13:10:15
+/* Smarty version 4.5.3, created on 2025-01-03 15:23:37
   from '/var/www/webroot/local.jemecrm.com/themes/SuiteP/tpls/_head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.3',
-  'unifunc' => 'content_67753eb71bfde1_30532183',
+  'unifunc' => 'content_677800f9100214_95686978',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67753eb71bfde1_30532183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677800f9100214_95686978 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.sugar_getimagepath.php','function'=>'smarty_function_sugar_getimagepath',),1=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.sugar_getjspath.php','function'=>'smarty_function_sugar_getjspath',),));
 ?>
 <!DOCTYPE html>

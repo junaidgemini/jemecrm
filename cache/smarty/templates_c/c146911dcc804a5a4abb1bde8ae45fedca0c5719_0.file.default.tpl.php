@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.3, created on 2025-01-01 13:27:45
+/* Smarty version 4.5.3, created on 2025-01-03 15:23:36
   from '/var/www/webroot/local.jemecrm.com/modules/Alerts/templates/default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.3',
-  'unifunc' => 'content_677542d1cb8476_94662520',
+  'unifunc' => 'content_677800f899b820_38007171',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_677542d1cb8476_94662520 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677800f899b820_38007171 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/function.sugar_translate.php','function'=>'smarty_function_sugar_translate',),1=>array('file'=>'/var/www/webroot/local.jemecrm.com/include/Smarty/plugins/modifier.replace.php','function'=>'smarty_modifier_replace',),));
 echo $_smarty_tpl->tpl_vars['Flash']->value;?>
 
