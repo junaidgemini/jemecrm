@@ -1,5 +1,5 @@
 <?php
-// created: 2025-01-04 06:27:33
+// created: 2025-01-04 14:05:31
 $mod_strings = array (
   'ERR_NO_2FACTOR_EMAIL_TMPL' => 'Two-factor email template is not set, please change settings on password management page.',
   'ERR_NO_2FACTOR_EMAIL_TMPL_CODE' => 'Two-factor email template should contain a $code at least.',
@@ -637,4 +637,7 @@ If you are not setting up Inbound Email, please clear all fields in that section
   'LNK_LIST_OUTBOUND_EMAIL_ACCOUNTS' => 'Outbound Email Accounts',
   'LNK_LIST_INBOUND_EMAIL_ACCOUNTS' => 'Inbound Email Accounts',
   'LNK_EXTERNAL_OAUTH_CONNECTIONS' => 'External OAuth Connections',
+  'LBL_JD_ZONE' => 'Zone',
+  'LBL_JD_BRANCH_STATE' => 'Branch State',
+  'LBL_JD_BRANCH' => 'Branch',
 );

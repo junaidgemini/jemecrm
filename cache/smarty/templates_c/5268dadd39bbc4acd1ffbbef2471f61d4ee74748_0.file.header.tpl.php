@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.3, created on 2025-01-04 06:27:34
+/* Smarty version 4.5.3, created on 2025-01-04 14:05:52
   from '/var/www/webroot/local.jemecrm.com/custom/themes/SuiteP/tpls/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.3',
-  'unifunc' => 'content_6778d4d6caf998_63199222',
+  'unifunc' => 'content_677940405fb1a1_13526511',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:themes/SuiteP/tpls/_headerModuleList.tpl' => 1,
   ),
 ),false)) {
-function content_6778d4d6caf998_63199222 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677940405fb1a1_13526511 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:themes/SuiteP/tpls/_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body onMouseOut="closeMenus();">

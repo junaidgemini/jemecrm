@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.3, created on 2025-01-04 06:27:37
+/* Smarty version 4.5.3, created on 2025-01-04 14:06:52
   from '/var/www/webroot/local.jemecrm.com/include/get_form_header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.3',
-  'unifunc' => 'content_6778d4d93ab620_45491530',
+  'unifunc' => 'content_6779407cf300c0_90509815',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6778d4d93ab620_45491530 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6779407cf300c0_90509815 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('is_min_max', strpos($_smarty_tpl->tpl_vars['other_text']->value,"_search.gif"));
 if ($_smarty_tpl->tpl_vars['is_min_max']->value !== false) {?>
     <?php $_smarty_tpl->_assignInScope('form_title', ((string)$_smarty_tpl->tpl_vars['other_text']->value)." ".((string)$_smarty_tpl->tpl_vars['form_title']->value));
