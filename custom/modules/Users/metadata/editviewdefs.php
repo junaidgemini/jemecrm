@@ -150,8 +150,8 @@ array (
           ),
           1 => 
           array (
-            'name' => 'jd_replacement_c_name',
-            'label' => 'LBL_JD_REPLACEMENT_C_NAME',
+            'name' => 'jd_roles_c',
+            'label' => 'LBL_JD_ROLES_C',
           ),
         ),
         7 => 
