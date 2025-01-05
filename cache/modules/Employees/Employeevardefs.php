@@ -855,12 +855,12 @@
       'merge_filter' => 'disabled',
       'dependency' => 'equal($jd_branch_state,"selected_state")',
     ),
-    'jd_zone' => 
+    'jd_branch_state' => 
     array (
-      'name' => 'jd_zone',
-      'vname' => 'LBL_JD_ZONE',
+      'name' => 'jd_branch_state',
+      'vname' => 'LBL_JD_BRANCH_STATE',
       'type' => 'enum',
-      'options' => 'jd_tasks_zone_dom',
+      'options' => 'jd_branch_state_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -873,12 +873,12 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'jd_branch_state' => 
+    'jd_zone' => 
     array (
-      'name' => 'jd_branch_state',
-      'vname' => 'LBL_JD_BRANCH_STATE',
+      'name' => 'jd_zone',
+      'vname' => 'LBL_JD_ZONE',
       'type' => 'enum',
-      'options' => 'jd_branch_state_dom',
+      'options' => 'jd_tasks_zone_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',

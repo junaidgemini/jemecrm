@@ -1,10 +1,6 @@
 <?php
-// created: 2024-12-20 06:47:01
+// created: 2025-01-01 09:50:45
 $sugar_config = array (
-  'addAjaxBannedModules' => 
-  array (
-    0 => 'SecurityGroups',
-  ),
   'admin_access_control' => false,
   'admin_export_only' => false,
   'allowed_preview' => 
@@ -38,40 +34,6 @@ $sugar_config = array (
       'options' => '-ss',
     ),
   ),
-  'aod' => 
-  array (
-    'enable_aod' => true,
-  ),
-  'aop' => 
-  array (
-    'distribution_method' => 'roundRobin',
-    'case_closure_email_template_id' => 'e9738a5c-ed26-94cc-1ce8-676512340eae',
-    'joomla_account_creation_email_template_id' => 'ecef6884-0f0d-095c-9102-6765124f1c55',
-    'case_creation_email_template_id' => 'f134196e-99c0-a4a9-2ecf-67651210860a',
-    'contact_email_template_id' => '392402e1-5797-22e8-4e9f-676512dd3e43',
-    'user_email_template_id' => '6a6b0e56-bcbd-b3af-581c-67651224223f',
-  ),
-  'aos' => 
-  array (
-    'version' => '5.3.3',
-    'contracts' => 
-    array (
-      'renewalReminderPeriod' => '14',
-    ),
-    'lineItems' => 
-    array (
-      'totalTax' => false,
-      'enableGroups' => true,
-    ),
-    'invoices' => 
-    array (
-      'initialNumber' => '1',
-    ),
-    'quotes' => 
-    array (
-      'initialNumber' => '1',
-    ),
-  ),
   'cache_dir' => 'cache/',
   'calculate_response_time' => true,
   'calendar' => 
@@ -97,10 +59,6 @@ $sugar_config = array (
     'max_cron_jobs' => 10,
     'max_cron_runtime' => 30,
     'min_cron_interval' => 30,
-    'allowed_cron_users' => 
-    array (
-      0 => 'www',
-    ),
   ),
   'dashlet_auto_refresh_min' => 30,
   'dashlet_display_row_options' => 
@@ -125,11 +83,11 @@ $sugar_config = array (
   'datef' => 'm/d/Y',
   'dbconfig' => 
   array (
-    'db_host_name' => 'mysql-5.7',
+    'db_host_name' => 'localhost',
     'db_host_instance' => 'SQLEXPRESS',
-    'db_user_name' => 'root',
-    'db_password' => 'oothee3ieMoequ2Daapheinoonoojohh',
-    'db_name' => 'jemecrm',
+    'db_user_name' => 'lapocrm',
+    'db_password' => 'CRM!789LAPOsuite',
+    'db_name' => 'jd_jemecrm',
     'db_type' => 'mysql',
     'db_port' => '',
     'db_manager' => 'MysqliManager',
@@ -185,18 +143,17 @@ $sugar_config = array (
   'disable_convert_lead' => false,
   'disable_export' => false,
   'disable_persistent_connections' => false,
+  'disabled_themes' => '',
   'display_email_template_variable_chooser' => false,
   'display_inbound_email_buttons' => false,
   'dump_slow_queries' => false,
   'email_address_separator' => ',',
-  'email_confirm_opt_in_email_template_id' => '3e48c241-ac7d-0df4-1912-67651259e140',
   'email_default_client' => 'sugar',
   'email_default_delete_attachments' => true,
   'email_default_editor' => 'html',
   'email_enable_auto_send_opt_in' => false,
   'email_enable_confirm_opt_in' => 'not-opt-in',
   'email_warning_notifications' => true,
-  'enable_action_menu' => true,
   'enable_line_editing_detail' => true,
   'enable_line_editing_list' => true,
   'export_delimiter' => ',',
@@ -241,9 +198,8 @@ $sugar_config = array (
   'google_auth_json' => '',
   'hide_subpanels' => true,
   'history_max_viewed' => 50,
-  'host_name' => 'local.jemecrm.com',
+  'host_name' => 'jemecrm.com',
   'id_validation_pattern' => '/^[a-zA-Z0-9_-]*$/i',
-  'imap_test' => false,
   'import_max_execution_time' => 3600,
   'import_max_records_per_file' => 100,
   'import_max_records_total_limit' => '',
@@ -254,7 +210,7 @@ $sugar_config = array (
     'max_retries' => 5,
     'timeout' => 86400,
   ),
-  'js_custom_version' => 1,
+  'js_custom_version' => '',
   'js_lang_version' => 1,
   'languages' => 
   array (
@@ -297,13 +253,13 @@ $sugar_config = array (
     'l s f' => 'l s f',
     'l f s' => 'l f s',
   ),
-  'oauth2_encryption_key' => 'v5cNCRhLzfCRxCtfUlO6KdVBfA03K1liP0aAE7WtoL8=',
+  'oauth2_encryption_key' => '+BvJqd7UpAm/soNLF09xAdi5UGbkM3Xd0+refQL6xN8=',
   'passwordsetting' => 
   array (
     'SystemGeneratedPasswordON' => '',
-    'generatepasswordtmpl' => 'a49d38c4-6bf0-b7e5-5fce-676512f42a4c',
-    'lostpasswordtmpl' => 'a7a10377-6c23-dd5a-dd6d-6765126b9bb8',
-    'factoremailtmpl' => 'aa758b7f-729c-112d-abd6-676512eda23d',
+    'generatepasswordtmpl' => '',
+    'lostpasswordtmpl' => '',
+    'factoremailtmpl' => '',
     'forgotpasswordON' => false,
     'linkexpiration' => '1',
     'linkexpirationtime' => '30',
@@ -330,43 +286,12 @@ $sugar_config = array (
       3 => 'Administration',
       4 => 'Sync',
     ),
-    'default_limit' => 20000,
+    'default_limit' => 1000,
   ),
   'rss_cache_time' => '10800',
   'save_query' => 'all',
-  'search' => 
-  array (
-    'controller' => 'UnifiedSearch',
-    'defaultEngine' => 'BasicSearchEngine',
-    'pagination' => 
-    array (
-      'min' => 10,
-      'max' => 50,
-      'step' => 10,
-    ),
-    'ElasticSearch' => 
-    array (
-      'enabled' => false,
-      'host' => 'localhost',
-      'user' => '',
-      'pass' => '',
-      'index' => '3eeaaa3e85a80f28a40fc18ccb41a7be',
-      'search_wildcard_char' => '%',
-      'search_wildcard_infront' => true,
-    ),
-  ),
   'search_wildcard_char' => '%',
   'search_wildcard_infront' => false,
-  'securitysuite_additive' => true,
-  'securitysuite_filter_user_list' => false,
-  'securitysuite_inherit_assigned' => true,
-  'securitysuite_inherit_creator' => true,
-  'securitysuite_inherit_parent' => true,
-  'securitysuite_popup_select' => false,
-  'securitysuite_strict_rights' => false,
-  'securitysuite_user_popup' => true,
-  'securitysuite_user_role_precedence' => true,
-  'securitysuite_version' => '6.5.17',
   'session_dir' => '',
   'session_gc' => 
   array (
@@ -376,18 +301,13 @@ $sugar_config = array (
   ),
   'showDetailData' => true,
   'showThemePicker' => true,
-  'site_url' => 'http://local.jemecrm.com',
+  'site_url' => 'https://jemecrm.com/jemecrm',
   'slow_query_time_msec' => '100',
   'stackTrace' => false,
   'stack_trace_errors' => false,
   'strict_id_validation' => false,
-  'sugar_version' => '6.5.25',
-  'sugarbeet' => false,
-  'suitecrm_version' => '7.14.6',
-  'system_email_templates' => 
-  array (
-    'confirm_opt_in_template_id' => '3e48c241-ac7d-0df4-1912-67651259e140',
-  ),
+  'sugar_version' => '7.14.6',
+  'sugarbeet' => 0,
   'time_formats' => 
   array (
     'H:i' => '23:00',
@@ -408,7 +328,7 @@ $sugar_config = array (
   'trusted_hosts' => 
   array (
   ),
-  'unique_key' => '3eeaaa3e85a80f28a40fc18ccb41a7be',
+  'unique_key' => '3ae6a2c4341af12cf59ad8957e4b746c',
   'upload_badext' => 
   array (
     0 => 'php',

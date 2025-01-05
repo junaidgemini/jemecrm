@@ -229,6 +229,20 @@
       'audited' => true,
       'reportable' => true,
     ),
+    'agents_onboarded' => 
+    array (
+      'name' => 'agents_onboarded',
+      'vname' => 'LBL_AGENTS_ONBOARDED',
+      'type' => 'varchar',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
+    ),
     'report_type' => 
     array (
       'name' => 'report_type',
@@ -256,20 +270,6 @@
       'required' => true,
       'comment' => 'A custom decimal field',
       'importable' => 'true',
-      'audited' => true,
-      'reportable' => true,
-    ),
-    'agents_onboarded' => 
-    array (
-      'name' => 'agents_onboarded',
-      'vname' => 'LBL_AGENTS_ONBOARDED',
-      'type' => 'varchar',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
       'audited' => true,
       'reportable' => true,
     ),

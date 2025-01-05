@@ -216,10 +216,10 @@
       'source' => 'non-db',
       'vname' => 'LBL_SECURITYGROUPS',
     ),
-    'nin' => 
+    'address' => 
     array (
-      'name' => 'nin',
-      'vname' => 'LBL_NIN',
+      'name' => 'address',
+      'vname' => 'LBL_ADDRESS',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
@@ -230,10 +230,10 @@
       'audited' => true,
       'reportable' => true,
     ),
-    'address' => 
+    'bvn' => 
     array (
-      'name' => 'address',
-      'vname' => 'LBL_ADDRESS',
+      'name' => 'bvn',
+      'vname' => 'LBL_BVN',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
@@ -254,10 +254,10 @@
       'reportable' => true,
       'required' => true,
     ),
-    'bvn' => 
+    'email' => 
     array (
-      'name' => 'bvn',
-      'vname' => 'LBL_BVN',
+      'name' => 'email',
+      'vname' => 'LBL_EMAIL',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
@@ -268,10 +268,10 @@
       'audited' => true,
       'reportable' => true,
     ),
-    'email' => 
+    'nin' => 
     array (
-      'name' => 'email',
-      'vname' => 'LBL_EMAIL',
+      'name' => 'nin',
+      'vname' => 'LBL_NIN',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',

@@ -216,12 +216,11 @@
       'source' => 'non-db',
       'vname' => 'LBL_SECURITYGROUPS',
     ),
-    'recieve_promotion' => 
+    'attraction' => 
     array (
-      'name' => 'recieve_promotion',
-      'vname' => 'LBL_RECIEVE_PROMOTION',
-      'type' => 'enum',
-      'options' => 'recieve_promotion_dom',
+      'name' => 'attraction',
+      'vname' => 'LBL_ATTRACTION',
+      'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -230,14 +229,11 @@
       'duplicate_merge_dom_value' => '0',
       'audited' => true,
       'reportable' => true,
-      'required' => true,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
     ),
-    'jd_other' => 
+    'comments' => 
     array (
-      'name' => 'jd_other',
-      'vname' => 'LBL_JD_OTHER',
+      'name' => 'comments',
+      'vname' => 'LBL_COMMENTS',
       'type' => 'text',
       'massupdate' => 0,
       'comments' => '',
@@ -248,28 +244,10 @@
       'audited' => true,
       'reportable' => true,
     ),
-    'lapo_engagement_info' => 
+    'customer_full_name' => 
     array (
-      'name' => 'lapo_engagement_info',
-      'vname' => 'LBL_LAPO_ENGAGEMENT_INFO',
-      'type' => 'enum',
-      'options' => 'lapo_engagement_info_dom',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => true,
-      'reportable' => true,
-      'required' => true,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
-    ),
-    'specify_other' => 
-    array (
-      'name' => 'specify_other',
-      'vname' => 'LBL_SPECIFY_OTHER',
+      'name' => 'customer_full_name',
+      'vname' => 'LBL_CUSTOMER_FULL_NAME',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
@@ -297,11 +275,11 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'attraction' => 
+    'jd_other' => 
     array (
-      'name' => 'attraction',
-      'vname' => 'LBL_ATTRACTION',
-      'type' => 'varchar',
+      'name' => 'jd_other',
+      'vname' => 'LBL_JD_OTHER',
+      'type' => 'text',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -329,12 +307,30 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'occupation' => 
+    'lapo_engagement_info' => 
     array (
-      'name' => 'occupation',
-      'vname' => 'LBL_OCCUPATION',
+      'name' => 'lapo_engagement_info',
+      'vname' => 'LBL_LAPO_ENGAGEMENT_INFO',
       'type' => 'enum',
-      'options' => 'occupation_dom',
+      'options' => 'lapo_engagement_info_dom',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
+      'required' => true,
+      'unified_search' => false,
+      'merge_filter' => 'disabled',
+    ),
+    'lapo_hearing' => 
+    array (
+      'name' => 'lapo_hearing',
+      'vname' => 'LBL_LAPO_HEARING',
+      'type' => 'enum',
+      'options' => 'lapo_hearing_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -365,20 +361,6 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'customer_full_name' => 
-    array (
-      'name' => 'customer_full_name',
-      'vname' => 'LBL_CUSTOMER_FULL_NAME',
-      'type' => 'varchar',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => true,
-      'reportable' => true,
-    ),
     'mobile' => 
     array (
       'name' => 'mobile',
@@ -395,26 +377,12 @@
       'reportable' => true,
       'required' => true,
     ),
-    'comments' => 
+    'occupation' => 
     array (
-      'name' => 'comments',
-      'vname' => 'LBL_COMMENTS',
-      'type' => 'text',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => true,
-      'reportable' => true,
-    ),
-    'lapo_hearing' => 
-    array (
-      'name' => 'lapo_hearing',
-      'vname' => 'LBL_LAPO_HEARING',
+      'name' => 'occupation',
+      'vname' => 'LBL_OCCUPATION',
       'type' => 'enum',
-      'options' => 'lapo_hearing_dom',
+      'options' => 'occupation_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -426,6 +394,38 @@
       'required' => true,
       'unified_search' => false,
       'merge_filter' => 'disabled',
+    ),
+    'recieve_promotion' => 
+    array (
+      'name' => 'recieve_promotion',
+      'vname' => 'LBL_RECIEVE_PROMOTION',
+      'type' => 'enum',
+      'options' => 'recieve_promotion_dom',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
+      'required' => true,
+      'unified_search' => false,
+      'merge_filter' => 'disabled',
+    ),
+    'specify_other' => 
+    array (
+      'name' => 'specify_other',
+      'vname' => 'LBL_SPECIFY_OTHER',
+      'type' => 'varchar',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
     ),
   ),
   'relationships' => 

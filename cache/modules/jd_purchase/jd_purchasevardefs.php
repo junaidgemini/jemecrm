@@ -216,11 +216,11 @@
       'source' => 'non-db',
       'vname' => 'LBL_SECURITYGROUPS',
     ),
-    'jd_other' => 
+    'email' => 
     array (
-      'name' => 'jd_other',
-      'vname' => 'LBL_JD_OTHER',
-      'type' => 'text',
+      'name' => 'email',
+      'vname' => 'LBL_EMAIL',
+      'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -230,30 +230,12 @@
       'audited' => true,
       'reportable' => true,
     ),
-    'recieve_communications' => 
+    'experience' => 
     array (
-      'name' => 'recieve_communications',
-      'vname' => 'LBL_RECIEVE_COMMUNICATIONS',
+      'name' => 'experience',
+      'vname' => 'LBL_EXPERIENCE',
       'type' => 'enum',
-      'options' => 'agree_for_communications_dom',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => true,
-      'reportable' => true,
-      'required' => true,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
-    ),
-    'products' => 
-    array (
-      'name' => 'products',
-      'vname' => 'LBL_PRODUCTS',
-      'type' => 'enum',
-      'options' => 'products_dom',
+      'options' => 'experience_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -266,10 +248,10 @@
       'merge_filter' => 'disabled',
       'studio' => 'visible',
     ),
-    'specify_other' => 
+    'customer_full_name' => 
     array (
-      'name' => 'specify_other',
-      'vname' => 'LBL_SPECIFY_OTHER',
+      'name' => 'customer_full_name',
+      'vname' => 'LBL_CUSTOMER_FULL_NAME',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
@@ -297,12 +279,11 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'jd_zone' => 
+    'jd_other' => 
     array (
-      'name' => 'jd_zone',
-      'vname' => 'LBL_JD_ZONE',
-      'type' => 'enum',
-      'options' => 'jd_tasks_zone_dom',
+      'name' => 'jd_other',
+      'vname' => 'LBL_JD_OTHER',
+      'type' => 'text',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -311,16 +292,13 @@
       'duplicate_merge_dom_value' => '0',
       'audited' => true,
       'reportable' => true,
-      'required' => true,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
     ),
-    'occupation' => 
+    'jd_zone' => 
     array (
-      'name' => 'occupation',
-      'vname' => 'LBL_OCCUPATION',
+      'name' => 'jd_zone',
+      'vname' => 'LBL_JD_ZONE',
       'type' => 'enum',
-      'options' => 'occupation_dom',
+      'options' => 'jd_tasks_zone_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -351,11 +329,12 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'customer_full_name' => 
+    'mobile' => 
     array (
-      'name' => 'customer_full_name',
-      'vname' => 'LBL_CUSTOMER_FULL_NAME',
-      'type' => 'varchar',
+      'name' => 'mobile',
+      'vname' => 'LBL_MOBILE',
+      'type' => 'phone',
+      'dbType' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -364,6 +343,43 @@
       'duplicate_merge_dom_value' => '0',
       'audited' => true,
       'reportable' => true,
+      'required' => true,
+    ),
+    'occupation' => 
+    array (
+      'name' => 'occupation',
+      'vname' => 'LBL_OCCUPATION',
+      'type' => 'enum',
+      'options' => 'occupation_dom',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
+      'required' => true,
+      'unified_search' => false,
+      'merge_filter' => 'disabled',
+    ),
+    'products' => 
+    array (
+      'name' => 'products',
+      'vname' => 'LBL_PRODUCTS',
+      'type' => 'enum',
+      'options' => 'products_dom',
+      'massupdate' => 0,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => true,
+      'reportable' => true,
+      'unified_search' => false,
+      'merge_filter' => 'disabled',
+      'studio' => 'visible',
     ),
     'query_response' => 
     array (
@@ -383,12 +399,12 @@
       'unified_search' => false,
       'merge_filter' => 'disabled',
     ),
-    'mobile' => 
+    'recieve_communications' => 
     array (
-      'name' => 'mobile',
-      'vname' => 'LBL_MOBILE',
-      'type' => 'phone',
-      'dbType' => 'varchar',
+      'name' => 'recieve_communications',
+      'vname' => 'LBL_RECIEVE_COMMUNICATIONS',
+      'type' => 'enum',
+      'options' => 'agree_for_communications_dom',
       'massupdate' => 0,
       'comments' => '',
       'help' => '',
@@ -398,29 +414,13 @@
       'audited' => true,
       'reportable' => true,
       'required' => true,
-    ),
-    'experience' => 
-    array (
-      'name' => 'experience',
-      'vname' => 'LBL_EXPERIENCE',
-      'type' => 'enum',
-      'options' => 'experience_dom',
-      'massupdate' => 0,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => true,
-      'reportable' => true,
       'unified_search' => false,
       'merge_filter' => 'disabled',
-      'studio' => 'visible',
     ),
-    'email' => 
+    'specify_other' => 
     array (
-      'name' => 'email',
-      'vname' => 'LBL_EMAIL',
+      'name' => 'specify_other',
+      'vname' => 'LBL_SPECIFY_OTHER',
       'type' => 'varchar',
       'massupdate' => 0,
       'comments' => '',
