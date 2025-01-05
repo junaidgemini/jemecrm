@@ -7,6 +7,7 @@ $mod_strings['LBL_JD_REPORT_GROUP'] = 'Report Group';
 $mod_strings['LBL_JD_REPLACEMENT_C'] = 'Replacement';
 $mod_strings['LBL_JD_REPLACEMENT_C_NAME'] = 'Replacement';
 $mod_strings['LBL_JD_USERS_JD_REPLACEMENT_C_LINK'] = 'Replacement';
+$mod_strings['LBL_JD_BRANCH_SIZE'] = 'Branch Size';
 
 // $mod_strings['LBL_JD_ROLE_ID'] = 'Role ID';
 // $mod_strings['LBL_JD_ROLE_NAME'] = 'Role Name';
