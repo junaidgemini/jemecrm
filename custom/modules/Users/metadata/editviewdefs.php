@@ -148,11 +148,7 @@ array (
             'name' => 'jd_branch',
             'label' => 'LBL_JD_BRANCH',
           ),
-          1 => 
-          array (
-            'name' => 'jd_role_name',
-            'label' => 'LBL_JD_ROLE_NAME',
-          ),
+          1 => '',
         ),
         7 => 
         array (

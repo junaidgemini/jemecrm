@@ -48,6 +48,32 @@ $app_list_strings['jd_retention_satisfied_dom']=array (
     'Very UnSatisfied' => 'Very UnSatisfied',
   );
 
+$app_list_strings['jd_roles_c_dom'] = array(
+  '' => '',
+  'DMO (RBO)' => 'DMO (RBO)',
+  'Thrift Collector (RBO)' => 'Thrift Collector (RBO)',
+  'State Team Lead (RBO)' => 'State Team Lead (RBO)',
+  'CLIENT SUPPORT OFFICER' => 'CLIENT SUPPORT OFFICER',
+  'Unit Head' => 'Unit Head',
+  'Head of Department (RBO)' => 'Head of Department (RBO)',
+  'Branch Manager BSO' => 'Branch Manager BSO',
+  'Assistant Branch Manager BSO' => 'Assistant Branch Manager BSO',
+  'BRANCH HEAD OF OPERATIONS BSO' => 'BRANCH HEAD OF OPERATIONS BSO',
+  'COMPLIANCE AND INSPECTION MANAGER BSO' => 'COMPLIANCE AND INSPECTION MANAGER BSO',
+  'Data ENTRY BSO' => 'Data ENTRY BSO',
+  'Agent Supervisor (ABO)' => 'Agent Supervisor (ABO)',
+  'Team Lead (ABO)' => 'Team Lead (ABO)',
+  'Head of Department (ABO)' => 'Head of Department (ABO)',
+  'Head of Department (CEM)' => 'Head of Department (CEM)',
+  'Head, Call Center (CEM)' => 'Head, Call Center (CEM)',
+  'Client Experience Officers (CEM)' => 'Client Experience Officers (CEM)',
+  'Call Agents (CEM)' => 'Call Agents (CEM)',
+  'Head, Client Experience (CEM)' => 'Head, Client Experience (CEM)',
+  'Zonal Manager (BSO)' => 'Zonal Manager (BSO)',
+  'Aggregators (ABO)' => 'Aggregators (ABO)',
+);
+
+
 $app_list_strings['products_dom']=array (
     '' => '',
     'Regular' => 'Regular',
