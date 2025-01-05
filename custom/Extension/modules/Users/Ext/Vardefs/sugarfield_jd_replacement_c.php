@@ -53,5 +53,5 @@ $dictionary["User"]["relationships"]["jd_users_jd_replacement_c_rel"] = array(
     'rhs_module' => 'Users',
     'rhs_table' =>  'users',
     'rhs_key' =>  'jd_replacement_c',
-    'relationship_type' =>  'one-to-many'
+    'relationship_type' =>  'one-to-one'
 );
