@@ -41,3 +41,5 @@ $mod_strings['LBL_JD_DISBURSEMENT_VALID_PERCENT'] = 'Disbursement Valid (%)';
 $mod_strings['LBL_JD_LOAN_PORTFOLIO_VALID_PERCENT'] = 'Loan Portfolio Valid (%)';
 $mod_strings['LBL_JD_NEW_CLIENT_VALID_PERCENT'] = 'New Client Valid (%)';
 $mod_strings['LBL_JD_DEPOSIT_MOBILISE_VALID_PERCENT'] = 'Deposit Mobilised Valid (%)';
+
+$mod_strings['LBL_JD_DEPOSIT_MOBILISE_VALID_PERCENT'] = 'Deposit Balance Valid(%)';
