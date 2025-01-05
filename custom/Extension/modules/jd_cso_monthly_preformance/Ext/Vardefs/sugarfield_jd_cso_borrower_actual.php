@@ -2,13 +2,18 @@
 $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_borrowers_actual'] = array(
 	'name' => 'jd_cso_borrowers_actual',
 	'vname' => 'LBL_JD_CSO_BORROWERS_ACTUAL',
-    'type' => 'decimal', // Specifies the field type as decimal
-    'len' => '18',       // Total length of the number
-    'precision' => '2',  // Number of decimal places
+    'type' => 'enum',
+	'options' => 'jd_cso_borrowers_actual_dom',
+	'massupdate' => 0,
+	'comments' => '',
+	'help' => '',
+	'importable' => 'true',
+	'duplicate_merge' => 'disabled',
+	'duplicate_merge_dom_value' => '0',
+	'audited' => true,
+	'reportable' => true,
 	'required' => true,
-    'comment' => 'A custom decimal field',
-    'importable' => 'true',
-    'audited' => true,
-    'reportable' => true,
+	'unified_search' => false,
+	'merge_filter' => 'disabled',
 );
 ?>
