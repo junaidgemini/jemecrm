@@ -35,4 +35,5 @@ $mod_strings['LBL_JD_CSO_TOTAL_PAR_GRADE'] = 'Total PAR Grade';
 $mod_strings['LBL_JD_CSO_PAR_GRADE_ACTUAL_SCORE'] = 'PAR Grade Actual Score';
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_BALANCE'] = 'Deposit Mobilised Balance %';
 $mod_strings['LBL_JD_TOTAL_PERCENTAGE'] = 'Total Percentage (%)';
-$mod_strings['LBL_JD_PERFORMANCE_GRADE_ACTUAL_SCORE'] = 'Performance ACtual Grade Score';
+$mod_strings['LBL_JD_PERFORMANCE_GRADE_ACTUAL_SCORE'] = 'Performance Actual Grade Score';
+$mod_strings['LBL_JD_TOTAL_PERFOMANCE_GRADE'] = 'Total Performance Grade';
