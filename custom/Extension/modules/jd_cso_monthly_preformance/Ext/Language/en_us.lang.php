@@ -18,6 +18,7 @@ $mod_strings['LBL_JD_CSO_CLIENTS_ACTUAL'] = 'Clients Actual';
 $mod_strings['LBL_JD_CSO_BORROWERS_ACTUAL'] = 'Borrowers Actual';
 $mod_strings['LBL_JD_CSO_DISBURSEMENT_ACTUAL'] = 'Disbursement Actual';
 $mod_strings['LBL_JD_CSO_TOTAL_BORROWERS'] = 'Total Borrowers';
+$mod_strings['LBL_JD_BORROWERS_ACTUAL_SCORE'] = 'Borrowers Actual Score';
 $mod_strings['LBL_JD_CSO_DISBURSEMENT_PERCENT'] = 'Disbursement %';
 $mod_strings['LBL_JD_CSO_NEW_CLIENT_PERCENT'] = 'New Client %';
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_PERCENT'] = 'Deposit Mobilised %';
