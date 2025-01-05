@@ -1261,3 +1261,34 @@ Sun Jan  5 08:02:08 2025 [43013][-none-][FATAL] Could not connect to DB server l
 Sun Jan  5 08:02:08 2025 [25625][-none-][FATAL] Could not connect to DB server localhost as root. port : No such file or directory
 Sun Jan  5 08:02:33 2025 [28259][-none-][FATAL] Could not connect to DB server localhost as root. port 3306: No such file or directory
 Sun Jan  5 08:02:33 2025 [25867][-none-][FATAL] Could not connect to DB server localhost as root. port 3306: No such file or directory
+Sun Jan  5 18:39:51 2025 [33758][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:39:51 2025 [33758][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:39:53 2025 [25461][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:39:53 2025 [25461][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = 'e52a74d1-0ceb-aa45-7f7f-676a70a73c6a' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:39:59 2025 [28061][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:10 2025 [43013][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:10 2025 [43013][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:11 2025 [43013][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:11 2025 [43013][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = 'e52a74d1-0ceb-aa45-7f7f-676a70a73c6a' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:11 2025 [43013][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:11 2025 [43013][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = 'e52a74d1-0ceb-aa45-7f7f-676a70a73c6a' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:13 2025 [25513][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:20 2025 [25867][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:20 2025 [25867][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = 'e52a74d1-0ceb-aa45-7f7f-676a70a73c6a' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL] Mysqli_query failed.
+Sun Jan  5 18:40:20 2025 [25468][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
+Sun Jan  5 18:51:26 2025 [25857][1][FATAL] Email address save error

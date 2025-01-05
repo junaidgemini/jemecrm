@@ -38,11 +38,8 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_branch_state'] = arr
 $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_total_borrowers'] = array(
 	'name' => 'jd_cso_total_borrowers',
 	'vname' => 'LBL_JD_CSO_TOTAL_BORROWERS',
-    'type' => 'decimal', // Specifies the field type as decimal
-    'len' => '18',       // Total length of the number
-    'precision' => '2',  // Number of decimal places
+    'type' => 'varchar', // Specifies the field type as decimal
 	'required' => true,
-    'comment' => 'A custom decimal field',
     'importable' => 'true',
     'audited' => true,
     'reportable' => true,
@@ -57,6 +54,31 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_balance_of_Defaulter
     'precision' => '2',  // Number of decimal places
 	'required' => true,
     'comment' => 'A custom decimal field',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_borrowers_actual_score'] = array(
+	'name' => 'jd_borrowers_actual_score',
+	'vname' => 'LBL_JD_BORROWERS_ACTUAL_SCORE',
+    'type' => 'varchar', // Specifies the field type as decimal
+	'required' => true,
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_disbursement_valid_percent'] = array(
+	'name' => 'jd_disbursement_valid_percent',
+	'vname' => 'LBL_JD_DISBURSEMENT_VALID_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => '',
     'importable' => 'true',
     'audited' => true,
     'reportable' => true,
@@ -137,6 +159,17 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_deposit_mobilised_ac
 );
 
 
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_performance_grade_actual_score'] = array(
+	'name' => 'jd_performance_grade_actual_score',
+	'vname' => 'LBL_JD_PERFORMANCE_GRADE_ACTUAL_SCORE',
+    'type' => 'varchar', // Specifies the field type as decimal
+	'required' => true,
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
 $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_new_client_percent'] = array(
 	'name' => 'jd_cso_new_client_percent',
 	'vname' => 'LBL_JD_CSO_NEW_CLIENT_PERCENT',
@@ -145,6 +178,21 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_new_client_percent']
     'precision' => '2',  // Number of decimal places
 	'required' => true,
     'comment' => 'A custom decimal field',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+// jd_deposit_balance_valid_percent
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_deposit_balance_valid_percent'] = array(
+	'name' => 'jd_deposit_balance_valid_percent',
+	'vname' => 'LBL_JD_DEPOSIT_BALANCE_VALID_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => '',
     'importable' => 'true',
     'audited' => true,
     'reportable' => true,
@@ -193,6 +241,20 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_total_par_grade'] = 
 );
 
 
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_loan_portfolio_valid_percent'] = array(
+	'name' => 'jd_loan_portfolio_valid_percent',
+	'vname' => 'LBL_JD_LOAN_PORTFOLIO_VALID_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => '',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
 $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_month'] = array(
 	'name' => 'jd_cso_month',
 	'vname' => 'LBL_JD_CSO_MONTH',
@@ -218,17 +280,36 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_loan_portfolio_targe
 );
 
 
-$dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_borrowers_actual'] = array(
-	'name' => 'jd_cso_borrowers_actual',
-	'vname' => 'LBL_JD_CSO_BORROWERS_ACTUAL',
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_total_perfomance_grade'] = array(
+	'name' => 'jd_total_perfomance_grade',
+	'vname' => 'LBL_JD_TOTAL_PERFOMANCE_GRADE',
     'type' => 'decimal', // Specifies the field type as decimal
     'len' => '18',       // Total length of the number
-    'precision' => '2',  // Number of decimal places
+    'precision' => '8',  // Number of decimal places
 	'required' => true,
-    'comment' => 'A custom decimal field',
+    'comment' => '',
     'importable' => 'true',
     'audited' => true,
     'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_borrowers_actual'] = array(
+	'name' => 'jd_cso_borrowers_actual',
+	'vname' => 'LBL_JD_CSO_BORROWERS_ACTUAL',
+    'type' => 'enum',
+	'options' => 'jd_cso_borrowers_actual_dom',
+	'massupdate' => 0,
+	'comments' => '',
+	'help' => '',
+	'importable' => 'true',
+	'duplicate_merge' => 'disabled',
+	'duplicate_merge_dom_value' => '0',
+	'audited' => true,
+	'reportable' => true,
+	'required' => true,
+	'unified_search' => false,
+	'merge_filter' => 'disabled',
 );
 
 
@@ -254,6 +335,20 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_par_grade_actual_sco
     'precision' => '2',  // Number of decimal places
 	'required' => true,
     'comment' => 'A custom decimal field',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_deposit_mobilise_valid_percent'] = array(
+	'name' => 'jd_deposit_mobilise_valid_percent',
+	'vname' => 'LBL_JD_DEPOSIT_MOBILISE_VALID_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => '',
     'importable' => 'true',
     'audited' => true,
     'reportable' => true,
@@ -415,6 +510,34 @@ $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_name'] = array(
 $dictionary['jd_cso_monthly_preformance']['fields']['jd_cso_disbursement_percent'] = array(
 	'name' => 'jd_cso_disbursement_percent',
 	'vname' => 'LBL_JD_CSO_DISBURSEMENT_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => 'A custom decimal field',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_new_client_valid_percent'] = array(
+	'name' => 'jd_new_client_valid_percent',
+	'vname' => 'LBL_JD_NEW_CLIENT_VALID_PERCENT',
+    'type' => 'decimal', // Specifies the field type as decimal
+    'len' => '18',       // Total length of the number
+    'precision' => '2',  // Number of decimal places
+	'required' => true,
+    'comment' => '',
+    'importable' => 'true',
+    'audited' => true,
+    'reportable' => true,
+);
+
+
+$dictionary['jd_cso_monthly_preformance']['fields']['jd_total_percentage'] = array(
+	'name' => 'jd_total_percentage',
+	'vname' => 'LBL_JD_TOTAL_PERCENTAGE',
     'type' => 'decimal', // Specifies the field type as decimal
     'len' => '18',       // Total length of the number
     'precision' => '2',  // Number of decimal places

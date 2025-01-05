@@ -21,6 +21,7 @@ $mod_strings['LBL_JD_CSO_CLIENTS_ACTUAL'] = 'Clients Actual';
 $mod_strings['LBL_JD_CSO_BORROWERS_ACTUAL'] = 'Borrowers Actual';
 $mod_strings['LBL_JD_CSO_DISBURSEMENT_ACTUAL'] = 'Disbursement Actual';
 $mod_strings['LBL_JD_CSO_TOTAL_BORROWERS'] = 'Total Borrowers';
+$mod_strings['LBL_JD_BORROWERS_ACTUAL_SCORE'] = 'Borrowers Actual Score';
 $mod_strings['LBL_JD_CSO_DISBURSEMENT_PERCENT'] = 'Disbursement %';
 $mod_strings['LBL_JD_CSO_NEW_CLIENT_PERCENT'] = 'New Client %';
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_PERCENT'] = 'Deposit Mobilised %';
@@ -33,10 +34,15 @@ $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_TARGET'] = 'Deposit Mobilised Target'
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_BALANCE'] = 'Deposit Mobilised Balance %';
 
 $mod_strings['LBL_JD_CSO_OVERALL_SCORE'] = 'OverAll Score %';
-$mod_strings['JD_CSO_TOTAL_PAR_GRADE'] = 'Total PAR Grade';
 $mod_strings['LBL_JD_CSO_TOTAL_PAR_GRADE'] = 'Total PAR Grade';
 $mod_strings['LBL_JD_CSO_PAR_GRADE_ACTUAL_SCORE'] = 'PAR Grade Actual Score';
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_BALANCE'] = 'Deposit Mobilised Balance %';
+$mod_strings['LBL_JD_TOTAL_PERCENTAGE'] = 'Total Percentage (%)';
+$mod_strings['LBL_JD_PERFORMANCE_GRADE_ACTUAL_SCORE'] = 'Performance Actual Grade Score';
+$mod_strings['LBL_JD_TOTAL_PERFOMANCE_GRADE'] = 'Total Performance Grade';
+$mod_strings['LBL_JD_DISBURSEMENT_VALID_PERCENT'] = 'Disbursement Valid (%)';
+$mod_strings['LBL_JD_LOAN_PORTFOLIO_VALID_PERCENT'] = 'Loan Portfolio Valid (%)';
+$mod_strings['LBL_JD_NEW_CLIENT_VALID_PERCENT'] = 'New Client Valid (%)';
+$mod_strings['LBL_JD_DEPOSIT_MOBILISE_VALID_PERCENT'] = 'Deposit Mobilised Valid (%)';
 
-
-
+$mod_strings['LBL_JD_DEPOSIT_BALANCE_VALID_PERCENT'] = 'Deposit Balance Valid(%)';

@@ -148,7 +148,11 @@ array (
             'name' => 'jd_branch',
             'label' => 'LBL_JD_BRANCH',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'jd_replacement_c_name',
+            'label' => 'LBL_JD_REPLACEMENT_C_NAME',
+          ),
         ),
         7 => 
         array (

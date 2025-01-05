@@ -1,5 +1,5 @@
 <?php
-$dictionary['jd_advocacy']['fields']['target'] = array(
+$dictionary['agent_banking_report']['fields']['target'] = array(
 	'name' => 'target',
 	'vname' => 'LBL_TARGET',
 	'type' => 'decimal',
