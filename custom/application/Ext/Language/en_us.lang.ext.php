@@ -711,6 +711,14 @@ $app_list_strings['education_level_dom']=array (
     'Doctorate' => 'Doctorate',
   );
 
+$app_list_strings['jd_cso_borrowers_actual_dom']=array ( 
+    '' => '',
+    'SBN/SUFEN/AGRIC' => 'SBN/SUFEN/AGRIC',
+    'SME/EASYHOME' => 'SME/EASYHOME',
+    'Regular' => 'Regular',
+    'Input Finance' => 'Input Finance',
+  );
+
 $app_list_strings['age_group_dom']=array ( 
     '' => '',
     '18-27' => '18-27',

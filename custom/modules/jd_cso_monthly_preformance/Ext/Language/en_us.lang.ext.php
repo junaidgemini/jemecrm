@@ -33,7 +33,8 @@ $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_TARGET'] = 'Deposit Mobilised Target'
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_BALANCE'] = 'Deposit Mobilised Balance %';
 
 $mod_strings['LBL_JD_CSO_OVERALL_SCORE'] = 'OverAll Score %';
-$mod_strings['jd_cso_total_par_grade'] = 'Total PAR Grade';
+$mod_strings['JD_CSO_TOTAL_PAR_GRADE'] = 'Total PAR Grade';
+$mod_strings['LBL_JD_CSO_TOTAL_PAR_GRADE'] = 'Total PAR Grade';
 $mod_strings['LBL_JD_CSO_PAR_GRADE_ACTUAL_SCORE'] = 'PAR Grade Actual Score';
 $mod_strings['LBL_JD_CSO_DEPOSIT_MOBILISED_BALANCE'] = 'Deposit Mobilised Balance %';
 
