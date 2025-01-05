@@ -1,5 +1,5 @@
 <?php
-$dictionary['User']['fields']['jd_days_open'] = array(
+$dictionary['Lead']['fields']['jd_days_open'] = array(
 	'name' => 'jd_days_open',
 	'vname' => 'LBL_JD_DAYS_OPEN',
 	'type' => 'varchar',

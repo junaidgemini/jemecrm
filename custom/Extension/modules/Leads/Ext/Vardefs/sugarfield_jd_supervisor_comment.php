@@ -1,5 +1,5 @@
 <?php
-$dictionary['User']['fields']['jd_supervisor_comment'] = array(
+$dictionary['Lead']['fields']['jd_supervisor_comment'] = array(
 	'name' => 'jd_supervisor_comment',
 	'vname' => 'LBL_JD_SUPERVISOR_COMMENT',
 	'type' => 'varchar',
