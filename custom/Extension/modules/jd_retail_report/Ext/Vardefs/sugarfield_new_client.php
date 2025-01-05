@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['new_client'] = array(
 	'name' => 'new_client',
 	'vname' => 'LBL_NEW_CLIENT',
-	'required' => true,
+	// 'required' => true,
 	'type' => 'integer',
 	'massupdate' => 0,
 	'comments' => '',

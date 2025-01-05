@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['department_mobilized'] = array(
 	'name' => 'department_mobilized',
 	'vname' => 'LBL_DEPARTMENT_MOBILIZED',
-	'required' => true,
+	// 'required' => true,
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,

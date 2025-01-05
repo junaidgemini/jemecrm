@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['variance'] = array(
 	'name' => 'variance',
 	'vname' => 'LBL_VARIANCE',
-	'required' => true,
+	// 'required' => true,
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,

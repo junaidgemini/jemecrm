@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['zone'] = array(
 	'name' => 'zone',
 	'vname' => 'LBL_ZONE',
-	'required' => true,
+	// 'required' => true,
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,

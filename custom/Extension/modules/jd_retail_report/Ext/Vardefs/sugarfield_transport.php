@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['transport'] = array(
 	'name' => 'transport',
 	'vname' => 'LBL_TRANSPORT',
-	'required' => true,
+	// 'required' => true,
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,

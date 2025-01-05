@@ -2,7 +2,7 @@
 $dictionary['jd_retail_report']['fields']['actual_c'] = array(
 	'name' => 'actual_c',
 	'vname' => 'LBL_ACTUAL_C',
-	'required' => true,
+	// 'required' => true,
     'type' => 'varchar',
     'massupdate' => 0,
     'no_default' => false,
