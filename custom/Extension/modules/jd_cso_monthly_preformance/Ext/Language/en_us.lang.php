@@ -39,3 +39,4 @@ $mod_strings['LBL_JD_PERFORMANCE_GRADE_ACTUAL_SCORE'] = 'Performance Actual Grad
 $mod_strings['LBL_JD_TOTAL_PERFOMANCE_GRADE'] = 'Total Performance Grade';
 $mod_strings['LBL_JD_DISBURSEMENT_VALID_PERCENT'] = 'Disbursement Valid (%)';
 $mod_strings['LBL_JD_LOAN_PORTFOLIO_VALID_PERCENT'] = 'Loan Portfolio Valid (%)';
+$mod_strings['LBL_JD_NEW_CLIENT_VALID_PERCENT'] = 'New Client Valid (%)';
