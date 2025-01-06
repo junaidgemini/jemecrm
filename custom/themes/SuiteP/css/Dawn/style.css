@@ -12735,7 +12735,7 @@ div.p_login {
 }
 
 div.p_login .p_login_top {
-    background-color: #a0bd1c;
+    background-color: #f5f5f5;
     padding: 10px 2% 10px 2%;
     float: left;
     width: 100%
@@ -36018,5 +36018,9 @@ ul.dropdown-menu li a:hover {
 }
 /* remove trademark from footer */
 #copyright_data {
+    display: none !important;
+}
+
+.p_login_bottom{
     display: none !important;
 }
