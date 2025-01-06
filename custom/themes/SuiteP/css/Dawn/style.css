@@ -19716,9 +19716,9 @@ a#powered_by:hover {
     text-decoration: none
 }
 
-#copyright_data {
+/* #copyright_data {
     padding-left: 1%
-}
+} */
 
 .footer_right {
     padding-right: 1%;
@@ -23430,7 +23430,7 @@ hr {
     border: none
 }
 
-#copyright_data a {
+/* #copyright_data a {
     color: #000;
     margin: 0 5px 0 5px
 }
@@ -23438,7 +23438,7 @@ hr {
 #copyright_data a:hover {
     cursor: pointer;
     text-decoration: none
-}
+} */
 
 #links a:hover {
     cursor: pointer;
@@ -36018,5 +36018,5 @@ ul.dropdown-menu li a:hover {
 }
 /* remove trademark from footer */
 #copyright_data {
-    display: none;
+    display: none !important;
 }
