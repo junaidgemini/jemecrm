@@ -224,7 +224,12 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             return priorityMap[data] || 'Unknown';
                         }
                     },
-                    { data: 4, title: 'Status' },
+                    { data: 4, title: 'Status',
+                        render: function (data) {
+                            const statusMap = { 2: 'Open', 3: 'Pending', 4: 'Resolved', 5: 'Closed', };
+                            return statusMap[data] || 'Unknown';
+                        }
+                     },
                     { 
                         data: 5, 
                         title: 'Created At', 
