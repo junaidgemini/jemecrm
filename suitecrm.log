@@ -1292,3 +1292,7 @@ Sun Jan  5 18:40:20 2025 [25468][1][FATAL]  Query Failed: SELECT id FROM users W
 Sun Jan  5 18:40:20 2025 [25468][1][FATAL] Mysqli_query failed.
 Sun Jan  5 18:40:20 2025 [25468][1][FATAL]  Query Failed: SELECT id FROM users WHERE users.jd_replacement_c = '1' AND users.deleted=0: MySQL error 1054: Unknown column 'users.jd_replacement_c' in 'where clause'
 Sun Jan  5 18:51:26 2025 [25857][1][FATAL] Email address save error
+Mon Jan  6 07:37:53 2025 [33758][1][FATAL] User update error: Temp User is not retrieved at ID 7d1734f7-9fa0-2c7f-f097-677b886d7e5c, boolean given
+Mon Jan  6 07:37:53 2025 [33758][1][FATAL] Email address save error
+Tue Jan  7 19:39:35 2025 [12][-none-][FATAL] Could not connect to DB server mysql-5.7 as root. port 3306: Connection refused
+Tue Jan  7 19:39:36 2025 [11][-none-][FATAL] Could not connect to DB server mysql-5.7 as root. port 3306: Connection refused

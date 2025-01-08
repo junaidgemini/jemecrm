@@ -1,16 +1,16 @@
 <?php
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
-class jd_cso_monthly_preformanceViewEdit extends ViewEdit
+class jd_awarenessViewEdit extends ViewEdit
 {
     public function display()
     {
         parent::display();
 
         // Fetch the saved values
-        $savedZone = isset($this->bean->jd_cso_zone) ? $this->bean->jd_cso_zone : '';
-        $savedState = isset($this->bean->jd_cso_branch_state) ? $this->bean->jd_cso_branch_state : '';
-        $savedBranch = isset($this->bean->jd_cso_branch) ? $this->bean->jd_cso_branch : '';
+        $savedZone = isset($this->bean->jd_zone) ? $this->bean->jd_zone : '';
+        $savedState = isset($this->bean->location) ? $this->bean->location : '';
+        $savedBranch = isset($this->bean->jd_branch) ? $this->bean->jd_branch : '';
 
         // Pass these values to the frontend using Smarty
         $this->ss->assign('JD_ZONE', $savedZone);
@@ -22,9 +22,9 @@ class jd_cso_monthly_preformanceViewEdit extends ViewEdit
             $(document).ready(function() {
                 console.log("Custom JS for Tasks is loaded.");
 
-                const zoneField = document.getElementById("jd_cso_zone");
-                const stateField = document.getElementById("jd_cso_branch_state");
-                const branchField = document.getElementById("jd_cso_branch");
+                const zoneField = document.getElementById("jd_zone");
+                const stateField = document.getElementById("location");
+                const branchField = document.getElementById("jd_branch");
 
                 const savedZone = "'.$savedZone.'";
                 const savedState = "'.$savedState.'";
@@ -498,8 +498,9 @@ class jd_cso_monthly_preformanceViewEdit extends ViewEdit
 
                     if (selectedZone) {
                         stateField.innerHTML = "";
-                        branchField.innerHTML = "";
+                        // branchField.innerHTML = "";
                         zoneOptions[selectedZone].forEach(state => {
+                        debugger;
                             const opt = document.createElement("option");
                             opt.value = state.value;
                             opt.textContent = state.value;
@@ -508,19 +509,19 @@ class jd_cso_monthly_preformanceViewEdit extends ViewEdit
                     }
                 });
 
-                stateField.addEventListener("change", function() {
-                    const selectedState = stateField.value;
+                // stateField.addEventListener("change", function() {
+                //     const selectedState = stateField.value;
 
-                    if (selectedState) {
-                        branchField.innerHTML = "";
-                        branchOptions[selectedState].forEach(option => {
-                            const opt = document.createElement("option");
-                            opt.value = option.key;
-                            opt.textContent = option.value;
-                            branchField.appendChild(opt);
-                        });
-                    }
-                });
+                //     if (selectedState) {
+                //         branchField.innerHTML = "";
+                //         branchOptions[selectedState].forEach(option => {
+                //             const opt = document.createElement("option");
+                //             opt.value = option.key;
+                //             opt.textContent = option.value;
+                //             branchField.appendChild(opt);
+                //         });
+                //     }
+                // });
 
                 if (savedZone) {
                     zoneField.value = savedZone;

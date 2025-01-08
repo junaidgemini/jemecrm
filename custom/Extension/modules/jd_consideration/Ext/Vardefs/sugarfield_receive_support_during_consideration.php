@@ -3,7 +3,7 @@ $dictionary['jd_consideration']['fields']['receive_support_during_consideration'
 	'name' => 'receive_support_during_consideration',
 	'vname' => 'LBL_RECEIVE_SUPPORT_DURING_CONSIDERATION',
 	'type' => 'enum',
-	'options' => 'receive_support_during_consideration_dom',
+	'options' => 'bool_dom',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',

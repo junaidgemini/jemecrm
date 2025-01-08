@@ -18,9 +18,6 @@ $dictionary['Task']['fields']['jd_branch'] = array(
 	'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
-	// 'parentenum' => 'jd_branch_state',
-	// 'dependency' => 'jd_branch_state',
-	'dependency' => 'equal($jd_branch_state,"selected_state")', // Add dependency logic
 );
 
 
@@ -28,7 +25,7 @@ $dictionary['Task']['fields']['jd_zone'] = array(
 	'name' => 'jd_zone',
 	'vname' => 'LBL_JD_ZONE',
 	'type' => 'enum',
-	'options' => 'jd_tasks_zone_dom',
+	'options' => 'jd_zone_dom',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',
@@ -47,7 +44,7 @@ $dictionary['Task']['fields']['jd_branch_state'] = array(
 	'name' => 'jd_branch_state',
 	'vname' => 'LBL_JD_BRANCH_STATE',
 	'type' => 'enum',
-	'options' => 'jd_branch_state_dom',
+	'options' => 'jd_state_dom',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',

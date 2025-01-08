@@ -15,8 +15,5 @@ $dictionary['Task']['fields']['jd_branch'] = array(
 	'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
-	// 'parentenum' => 'jd_branch_state',
-	// 'dependency' => 'jd_branch_state',
-	'dependency' => 'equal($jd_branch_state,"selected_state")', // Add dependency logic
 );
 ?>

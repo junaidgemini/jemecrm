@@ -6,6 +6,7 @@ $hook_array = Array();
 // position, file, function 
 $hook_array['after_login'] = Array(); 
 $hook_array['after_login'][] = Array(1, 'SugarFeed old feed entry remover', 'modules/SugarFeed/SugarFeedFlush.php','SugarFeedFlush', 'flushStaleEntries'); 
+$hook_array['after_login'][] = array(1,'Disable Login Wizard','custom/modules/Users/DisableWizard.php','DisableWizard','skipWizard');
 
 
 

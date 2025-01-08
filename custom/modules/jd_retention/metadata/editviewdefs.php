@@ -48,8 +48,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'jd_zone',
-            'label' => 'LBL_JD_ZONE',
+            'name' => 'occupation',
+            'label' => 'LBL_OCCUPATION',
           ),
           1 => 
           array (
@@ -61,8 +61,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'occupation',
-            'label' => 'LBL_OCCUPATION',
+            'name' => 'jd_zone',
+            'label' => 'LBL_JD_ZONE',
           ),
           1 => 
           array (
