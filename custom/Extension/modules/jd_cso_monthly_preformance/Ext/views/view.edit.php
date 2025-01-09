@@ -2,122 +2,706 @@
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 class jd_cso_monthly_preformanceViewEdit extends ViewEdit
-
 {
     public function display()
     {
         parent::display();
 
-        // Fetch the saved state and branch values
-        $savedState = isset($this->bean->jd_cso_branch_state) ? $this->bean->jd_cso_branch_state : ''; // Replace 'state_c' with your actual field name
-        $savedBranch = isset($this->bean->jd_cso_branch) ? $this->bean->jd_cso_branch : ''; // Replace 'branch_c' with your actual field name
+        // Fetch the saved values
+        $savedZone = isset($this->bean->jd_cso_zone) ? $this->bean->jd_cso_zone : '';
+        $savedState = isset($this->bean->jd_cso_branch_state) ? $this->bean->jd_cso_branch_state : '';
+        $savedBranch = isset($this->bean->jd_cso_branch) ? $this->bean->jd_cso_branch : '';
 
         // Pass these values to the frontend using Smarty
-        $this->ss->assign('JD_CSO_BRANCH_STATE', $savedState);
-        $this->ss->assign('JD_CSO_BRANCH', $savedBranch);
+        $this->ss->assign('JD_ZONE', $savedZone);
+        $this->ss->assign('JD_BRANCH_STATE', $savedState);
+        $this->ss->assign('JD_BRANCH', $savedBranch);
 
         // Add custom JS for dropdown dependency
         echo '<script type="text/javascript">
             $(document).ready(function() {
-            console.log("Custom JS for Tasks is loaded.");
+                console.log("Custom JS for Tasks is loaded.");
 
-
-               // Simulate the onchange event of the state dropdown to filter branches
-                // const stateDropdown = document.getElementById("jd_cso_branch_state");
-                // if (stateDropdown) {
-                //     stateDropdown.dispatchEvent(new Event("change"));
-                // }
-
+                const zoneField = document.getElementById("jd_cso_zone");
                 const stateField = document.getElementById("jd_cso_branch_state");
                 const branchField = document.getElementById("jd_cso_branch");
 
+                const savedZone = "'.$savedZone.'";
+                const savedState = "'.$savedState.'";
+                const savedBranch = "'.$savedBranch.'";
 
-
-                const savedState = "{JD_CSO_BRANCH_STATE}";
-                const savedBranch = "{JD_CSO_BRANCH}";
-
-                const stateDropdown = document.getElementById("jd_cso_branch_state");
-                const branchDropdown = document.getElementById("jd_cso_branch");
-
-                // if (stateDropdown && branchDropdown) {
-                //     // Pre-select the saved state
-                //     if (savedState) {
-                //         stateDropdown.value = savedState;
-                //         // Trigger the change event to load branches
-                //         stateDropdown.dispatchEvent(new Event("change"));
-                //     }
-
-                //     // Pre-select the saved branch
-                //     if (savedBranch) {
-                //         setTimeout(() => {
-                //             branchDropdown.value = savedBranch;
-                //         }, 100); // Small delay to ensure branches are loaded
-                //     }
-                // }
-
-
-                const branchOptions = {
-                    "":[
-                   { "key": "Orlu", "value": "Orlu" },
-                        { "key": "Amakohia", "value": "Amakohia" },
-                        { "key": "Wetheral", "value": "Wetheral" },
-                        { "key": "Okigwe", "value": "Okigwe" },
-                        { "key": "Mbaise", "value": "Mbaise" },
-                        { "key": "Douglas", "value": "Douglas" },
-                        { "key": "Ideato South", "value": "Ideato South" },
-                        { "key": "Oreagu", "value": "Oreagu" },
-                        { "key": "Obinze", "value": "Obinze" },
-                        { "key": "South East Zonal Office", "value": "South East Zonal Office" },
-                        { "key": "Asa", "value": "Asa" },
-                        { "key": "Faulks", "value": "Faulks" },
-                        { "key": "Uzuaokoli", "value": "Uzuaokoli" },
-                        { "key": "Ohafia", "value": "Ohafia" },
-                        { "key": "Isuochi", "value": "Isuochi" },
-                        { "key": "Abriba", "value": "Abriba" },
-                        { "key": "Isikwato", "value": "Isikwato" },
-                        { "key": "Ubakala", "value": "Ubakala" },
-                        { "key": "Osisioma", "value": "Osisioma" },
-                        { "key": "Ariaria", "value": "Ariaria" },
-                        { "key": "Arochukwu", "value": "Arochukwu" },
-                        { "key": "Flyover", "value": "Flyover" },
-                        { "key": "Aba", "value": "Aba" }],    
-
-                     "Imo": [
-                        { "key": "Orlu", "value": "Orlu" },
-                        { "key": "Amakohia", "value": "Amakohia" },
-                        { "key": "Wetheral", "value": "Wetheral" },
-                        { "key": "Okigwe", "value": "Okigwe" },
-                        { "key": "Mbaise", "value": "Mbaise" },
-                        { "key": "Douglas", "value": "Douglas" },
-                        { "key": "Ideato South", "value": "Ideato South" },
-                        { "key": "Oreagu", "value": "Oreagu" },
-                        { "key": "Obinze", "value": "Obinze" },
-                        { "key": "South East Zonal Office", "value": "South East Zonal Office" }],
-                    
-                    "Abia": [
-                        { "key": "Asa", "value": "Asa" },
-                        { "key": "Faulks", "value": "Faulks" },
-                        { "key": "Uzuaokoli", "value": "Uzuaokoli" },
-                        { "key": "Ohafia", "value": "Ohafia" },
-                        { "key": "Isuochi", "value": "Isuochi" },
-                        { "key": "Abriba", "value": "Abriba" },
-                        { "key": "Isikwato", "value": "Isikwato" },
-                        { "key": "Ubakala", "value": "Ubakala" },
-                        { "key": "Osisioma", "value": "Osisioma" },
-                        { "key": "Ariaria", "value": "Ariaria" },
-                        { "key": "Arochukwu", "value": "Arochukwu" },
-                        { "key": "Flyover", "value": "Flyover" },
-                        { "key": "Aba", "value": "Aba" }],
-
+                const zoneOptions = {
+                   "Edo": [
+                        {"key": "", "value": ""},
+                        {"key": "Edo", "value": "Edo"}
+                    ],
+                    "Delta": [
+                        {"key": "", "value": ""},
+                        {"key": "Delta", "value": "Delta"},
+                        {"key": "Bayelsa", "value": "Bayelsa"}
+                    ],
+                    "Enugu": [
+                        {"key": "", "value": ""},
+                        {"key": "Anambra", "value": "Anambra"},
+                        {"key": "Enugu", "value": "Enugu"},
+                        {"key": "Ebonyi", "value": "Ebonyi"}
+                    ],
+                    "North East": [
+                        {"key": "", "value": ""},
+                        {"key": "Kano", "value": "Kano"},
+                        {"key": "Jigawa", "value": "Jigawa"},
+                        {"key": "Plateau", "value": "Plateau"},
+                        {"key": "Bauchi", "value": "Bauchi"},
+                        {"key": "Gombe", "value": "Gombe"}
+                    ],
+                    "FCT": [
+                        {"key": "", "value": ""},
+                        {"key": "Abuja", "value": "Abuja"},
+                        {"key": "Kaduna", "value": "Kaduna"},
+                        {"key": "Nasarawa", "value": "Nasarawa"},
+                        {"key": "Niger", "value": "Niger"}
+                    ],
+                    "North West": [
+                        {"key": "", "value": ""},
+                        {"key": "Katsina", "value": "Katsina"},
+                        {"key": "Kebbi", "value": "Kebbi"},
+                        {"key": "Zamfara", "value": "Zamfara"},
+                        {"key": "Sokoto", "value": "Sokoto"}
+                    ],
+                    "Middle Belt": [
+                        {"key": "", "value": ""},
+                        {"key": "Kogi", "value": "Kogi"},
+                        {"key": "Benue", "value": "Benue"},
+                        {"key": "Adamawa", "value": "Adamawa"},
+                        {"key": "Taraba", "value": "Taraba"}
+                    ],
+                    "Ondo": [
+                        {"key": "", "value": ""},
+                        {"key": "Ekiti", "value": "Ekiti"},
+                        {"key": "Ondo", "value": "Ondo"}
+                    ],
+                    "South West": [
+                        {"key": "", "value": ""},
+                        {"key": "Osun", "value": "Osun"},
+                        {"key": "Kwara", "value": "Kwara"},
+                        {"key": "Oyo", "value": "Oyo"}
+                    ],
+                    "Lagos Central": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"},
+                        {"key": "Ogun", "value": "Ogun"}
+                    ],
+                    "Lagos West": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"},
+                        {"key": "Ogun", "value": "Ogun"}
+                    ],
+                    "Lagos Mainland": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"}
+                    ],
+                    "Rivers": [
+                        {"key": "", "value": ""},
+                        {"key": "Rivers", "value": "Rivers"}
+                    ],
+                    "South East": [
+                        {"key": "", "value": ""},
+                        {"key": "Imo", "value": "Imo"},
+                        {"key": "Abia", "value": "Abia"}
+                    ],
+                    "Calabar": [
+                        {"key": "", "value": ""},
+                        {"key": "Cross River", "value": "Cross River"},
+                        {"key": "Calabar", "value": "Calabar"},
+                        {"key": "Akwa-Ibom", "value": "Akwa-Ibom"}
+                    ],
+                    "Oyo": [
+                        {"key": "", "value": ""},
+                        {"key": "Oyo", "value": "Oyo"}
+                    ],
+                    "Public Sector": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"}
+                    ],
+                    "SME Consumer Segment": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"},
+                        {"key": "Ogun", "value": "Ogun"},
+                        {"key": "Oyo", "value": "Oyo"},
+                        {"key": "Ondo", "value": "Ondo"},
+                        {"key": "Edo", "value": "Edo"},
+                        {"key": "Delta", "value": "Delta"},
+                        {"key": "Rivers", "value": "Rivers"},
+                        {"key": "Imo/Abia", "value": "Imo/Abia"},
+                        {"key": "Akwa-Ibom/Cross River", "value": "Akwa-Ibom/Cross River"},
+                        {"key": "Kwara/Osun", "value": "Kwara/Osun"},
+                        {"key": "Kano", "value": "Kano"},
+                        {"key": "Enugu/Anambra", "value": "Enugu/Anambra"},
+                        {"key": "Abuja/Niger/Kaduna/Nassarawa", "value": "Abuja/Niger/Kaduna/Nassarawa"}
+                    ],
+                    "Education Finance": [
+                        {"key": "", "value": ""},
+                        {"key": "Lagos", "value": "Lagos"}
+                    ],
+                    "Head Office": [
+                        {"key": "", "value": ""},
+                        {"key": "Edo", "value": "Edo"}
+                    ],
                 };
+                
+                const branchOptions = {
+                    "Edo": [
+                        {"key": "", "value": ""},
+                        {"key": "Benin 1", "value": "Benin 1"},
+                        {"key": "Benin 2", "value": "Benin 2"},
+                        {"key": "Ikpoba-Hill", "value": "Ikpoba-Hill"},
+                        {"key": "Dawson", "value": "Dawson"},
+                        {"key": "Aduwawa", "value": "Aduwawa"},
+                        {"key": "Auchi", "value": "Auchi"},
+                        {"key": "Uromi", "value": "Uromi"},
+                        {"key": "Ekpoma", "value": "Ekpoma"},
+                        {"key": "Ubiaja", "value": "Ubiaja"},
+                        {"key": "Upper Sokponba", "value": "Upper Sokponba"},
+                        {"key": "Sapele Road", "value": "Sapele Road"},
+                        {"key": "Oka", "value": "Oka"},
+                        {"key": "Oko", "value": "Oko"},
+                        {"key": "First East Circular", "value": "First East Circular"},
+                        {"key": "Uselu", "value": "Uselu"},
+                        {"key": "Evbuotubu", "value": "Evbuotubu"},
+                        {"key": "Uwelu", "value": "Uwelu"},
+                        {"key": "Adesogbe", "value": "Adesogbe"},
+                        {"key": "Ugbowo 1", "value": "Ugbowo 1"},
+                        {"key": "Ugbowo 2", "value": "Ugbowo 2"},
+                        {"key": "Ekenwan Road", "value": "Ekenwan Road"},
+                        {"key": "Okada", "value": "Okada"}
+                    ],
+                    "Delta": [
+                        {"key": "", "value": ""},
+                        {"key": "Ogwashi-Uku", "value": "Ogwashi-Uku"},
+                        {"key": "Asaba 1", "value": "Asaba 1"},
+                        {"key": "Asaba 2", "value": "Asaba 2"},
+                        {"key": "Asaba 3", "value": "Asaba 3"},
+                        {"key": "Agbor 1", "value": "Agbor 1"},
+                        {"key": "Agbor 2", "value": "Agbor 2"},
+                        {"key": "Warri 1", "value": "Warri 1"},
+                        {"key": "Warri 2", "value": "Warri 2"},
+                        {"key": "Warri 3", "value": "Warri 3"},
+                        {"key": "Warri 4", "value": "Warri 4"},
+                        {"key": "Ughelli", "value": "Ughelli"},
+                        {"key": "Oleh", "value": "Oleh"},
+                        {"key": "Sapele", "value": "Sapele"},
+                        {"key": "Abraka", "value": "Abraka"}
+                    ],
+                    "Anambra": [
+                        {"key": "", "value": ""},
+                        {"key": "Iweka", "value": "Iweka"},
+                        {"key": "Awka", "value": "Awka"},
+                        {"key": "Obosi", "value": "Obosi"},
+                        {"key": "Nnewi", "value": "Nnewi"},
+                        {"key": "Okpoko", "value": "Okpoko"},
+                        {"key": "Ekwulobia", "value": "Ekwulobia"},
+                        {"key": "Ihiala", "value": "Ihiala"}
+                    ],
+                    "Bayelsa": [
+                        {"key": "", "value": ""},
+                        {"key": "Akenfa", "value": "Akenfa"},
+                        {"key": "Opolo", "value": "Opolo"},
+                        {"key": "Swali", "value": "Swali"}
+                    ],
+                    "Kano": [
+                        {"key": "", "value": ""},
+                        {"key": "Naibawa", "value": "Naibawa"},
+                        {"key": "Hotoro", "value": "Hotoro"},
+                        {"key": "Dala", "value": "Dala"},
+                        {"key": "Bompai", "value": "Bompai"},
+                        {"key": "Sabo Gari", "value": "Sabo Gari"}
+                    ],
+                    "Kaduna": [
+                        {"key": "", "value": ""},
+                        {"key": "Zaria 1", "value": "Zaria 1"},
+                        {"key": "Zaria 2", "value": "Zaria 2"},
+                        {"key": "Kawo", "value": "Kawo"},
+                        {"key": "Sabo Tasha", "value": "Sabo Tasha"},
+                        {"key": "Nnamdi Azikiwe", "value": "Nnamdi Azikiwe"},
+                        {"key": "Barnawa", "value": "Barnawa"},
+                        {"key": "Kafanchan", "value": "Kafanchan"},
+                        {"key": "Ahmadu Bello", "value": "Ahmadu Bello"}
+                    ],
+                    "Katsina": [
+                        {"key": "", "value": ""},
+                        {"key": "Funtua", "value": "Funtua"}
+                    ],
+                    "Niger": [
+                        {"key": "", "value": ""},
+                        {"key": "Minna 1", "value": "Minna 1"},
+                        {"key": "Bida", "value": "Bida"},
+                        {"key": "Suleja", "value": "Suleja"}
+                    ],
+                    "Nasarawa": [
+                        {"key": "", "value": ""},
+                        {"key": "New Karu", "value": "New Karu"},
+                        {"key": "Nyanyan", "value": "Nyanyan"},
+                        {"key": "Keffi", "value": "Keffi"},
+                        {"key": "Nasarawa", "value": "Nasarawa"},
+                        {"key": "Akwanga", "value": "Akwanga"},
+                        {"key": "Lafia", "value": "Lafia"}
+                    ],
+                    "Abuja": [
+                        {"key": "", "value": ""},
+                        {"key": "Kubwa", "value": "Kubwa"},
+                        {"key": "Abaji", "value": "Abaji"},
+                        {"key": "Kuje", "value": "Kuje"}
+                    ],
+                    "Kogi": [
+                        {"key": "", "value": ""},
+                        {"key": "Lokoja 1", "value": "Lokoja 1"},
+                        {"key": "Lokoja 2", "value": "Lokoja 2"},
+                        {"key": "Okene", "value": "Okene"},
+                        {"key": "Okene 2", "value": "Okene 2"},
+                        {"key": "Obajana", "value": "Obajana"},
+                        {"key": "Kabba", "value": "Kabba"},
+                        {"key": "Isanlu", "value": "Isanlu"},
+                        {"key": "Egbe", "value": "Egbe"},
+                        {"key": "Anyigba", "value": "Anyigba"},
+                        {"key": "Ankpa", "value": "Ankpa"},
+                        {"key": "Idah", "value": "Idah"}
+                    ],
+                    "Benue": [
+                        {"key": "", "value": ""},
+                        {"key": "Makurdi 1", "value": "Makurdi 1"},
+                        {"key": "Makurdi 3", "value": "Makurdi 3"},
+                        {"key": "Gboko 1", "value": "Gboko 1"},
+                        {"key": "Gboko 2", "value": "Gboko 2"},
+                        {"key": "Kastina Ala", "value": "Kastina Ala"},
+                        {"key": "Otupka", "value": "Otupka"}
+                    ],
+                    "Adamawa": [ 
+                        {"key": "", "value": ""}, 
+                        {"key": "Zakibiam", "value": "Zakibiam"},
+                        {"key": "Yola 1", "value": "Yola 1"},
+                        {"key": "Yola 2", "value": "Yola 2"},
+                        {"key": "Yola 3", "value": "Yola 3"},
+                        {"key": "Numan", "value": "Numan"},
+                        {"key": "Mubi 1", "value": "Mubi 1"},
+                        {"key": "Mubi 2", "value": "Mubi 2"},
+                        {"key": "Ganye", "value": "Ganye"}
+                    ],
+                    "Ekiti": [ 
+                        {"key": "", "value": ""},
+                        {"key": "Ikole Ekiti", "value": "Ikole Ekiti"},
+                        {"key": "Omuo Ekiti", "value": "Omuo Ekiti"},
+                        {"key": "Ado Ekiti Mega", "value": "Ado Ekiti Mega"},
+                        {"key": "Ado Ekiti 2", "value": "Ado Ekiti 2"},
+                        {"key": "Oke-Ila", "value": "Oke-Ila"},
+                        {"key": "Ifaki", "value": "Ifaki"},
+                        {"key": "Igbaro-Odo", "value": "Igbaro-Odo"},
+                        {"key": "Aramoko", "value": "Aramoko"},
+                        {"key": "Ido-Ekiti", "value": "Ido-Ekiti"},
+                        {"key": "Ikere-Ekiti", "value": "Ikere-Ekiti"},
+                        {"key": "Iye-Ekiti", "value": "Iye-Ekiti"},
+                        {"key": "Efeson Alaye", "value": "Efeson Alaye"},
+                        {"key": "Efon-Alaye", "value": "Efon-Alaye"}
+                    ],
+                    "Ondo": [
+                        {"key": "", "value": ""},
+                        {"key": "OWO 1", "value": "OWO 1"},
+                        {"key": "OWO 2", "value": "OWO 2"},
+                        {"key": "ONDO 1", "value": "ONDO 1"},
+                        {"key": "ONDO 2", "value": "ONDO 2"},
+                        {"key": "IGELE MAROKO", "value": "IGELE MAROKO"},
+                        {"key": "ORE", "value": "ORE"},
+                        {"key": "OKITIPUPA", "value": "OKITIPUPA"},
+                        {"key": "IKARE", "value": "IKARE"},
+                        {"key": "AKURE 1", "value": "AKURE 1"},
+                        {"key": "AKURE 2", "value": "AKURE 2"},
+                        {"key": "IDANRE", "value": "IDANRE"},
+                        {"key": "OKE IJEBU", "value": "OKE IJEBU"},
+                        {"key": "OSHINLE", "value": "OSHINLE"},
+                        {"key": "ISINKAN", "value": "ISINKAN"},
+                        {"key": "OYEMEKUN", "value": "OYEMEKUN"},
+                        {"key": "ORE 2", "value": "ORE 2"},
+                        {"key": "IKARE 2", "value": "IKARE 2"},
+                        {"key": "ITA-OGBOLU", "value": "ITA-OGBOLU"},
+                        {"key": "ILE-OLUJI", "value": "ILE-OLUJI"},
+                        {"key": "AKURE MEGA", "value": "AKURE MEGA"},
+                        {"key": "LEO", "value": "LEO"},
+                        {"key": "IRELE", "value": "IRELE"},
+                        {"key": "OKA-AKOKO", "value": "OKA-AKOKO"},
+                        {"key": "IDOANI", "value": "IDOANI"},
+                        {"key": "ILARA-MOKIN", "value": "ILARA-MOKIN"},
+                        {"key": "IFON", "value": "IFON"},
+                        {"key": "SME Ondo", "value": "SME Ondo"},
+                        {"key": "ONDO ZONE ZONAL OFFICE", "value": "ONDO ZONE ZONAL OFFICE"}
+                    ],
+                    "Kwara": [
+                        {"key": "", "value": ""},
+                        {"key": "OFFA", "value": "OFFA"},
+                        {"key": "ILLORIN 1 MEGA", "value": "ILLORIN 1 MEGA"},
+                        {"key": "ILLORIN 2", "value": "ILLORIN 2"},
+                        {"key": "ILLORIN 3", "value": "ILLORIN 3"},
+                        {"key": "ILORIN 4", "value": "ILORIN 4"},
+                        {"key": "ORO", "value": "ORO"},
+                        {"key": "OMUARAN", "value": "OMUARAN"},
+                        {"key": "OJA", "value": "OJA"},
+                        {"key": "SHARE", "value": "SHARE"},
+                        {"key": "LAFIAGI", "value": "LAFIAGI"},
+                        {"key": "ERIN-ILE", "value": "ERIN-ILE"},
+                        {"key": "KOSUBOSU", "value": "KOSUBOSU"},
+                        {"key": "KAYAMA", "value": "KAYAMA"},
+                        {"key": "PATIGI", "value": "PATIGI"},
+                        {"key": "SME South west", "value": "SME South west"},
+                        {"key": "OJATUTU", "value": "OJATUTU"},
+                        {"key": "JEBBA", "value": "JEBBA"}
+                    ],
+                    "Ogun": [
+                        {"key": "", "value": ""},
+                        {"key": "IFO", "value": "IFO"},
+                        {"key": "OPE ILU", "value": "OPE ILU"},
+                        {"key": "OWODE", "value": "OWODE"},
+                        {"key": "ELEGA", "value": "ELEGA"},
+                        {"key": "DALEMO", "value": "DALEMO"},
+                        {"key": "AKUTE", "value": "AKUTE"},
+                        {"key": "OKE-ARO", "value": "OKE-ARO"},
+                        {"key": "IJAYE", "value": "IJAYE"},
+                        {"key": "ITOKUN MEGA", "value": "ITOKUN MEGA"},
+                        {"key": "ASERO", "value": "ASERO"},
+                        {"key": "LAFEWA", "value": "LAFEWA"},
+                        {"key": "AGBARA", "value": "AGBARA"},
+                        {"key": "TALA", "value": "TALA"},
+                        {"key": "TUGA", "value": "TUGA"},
+                        {"key": "ABEOKUTA", "value": "ABEOKUTA"},
+                        {"key": "MAKUN", "value": "MAKUN"},
+                        {"key": "SABO", "value": "SABO"},
+                        {"key": "IBAFO", "value": "IBAFO"},
+                        {"key": "IJEBU-IGBO", "value": "IJEBU-IGBO"},
+                        {"key": "ILARO", "value": "ILARO"},
+                        {"key": "IDI-IROKO", "value": "IDI-IROKO"},
+                        {"key": "AGO-IWOYE", "value": "AGO-IWOYE"},
+                        {"key": "IPERU", "value": "IPERU"},
+                        {"key": "AYETORO", "value": "AYETORO"},
+                        {"key": "MATOGUN", "value": "MATOGUN"},
+                        {"key": "ATAN", "value": "ATAN"},
+                        {"key": "IGBOGILA", "value": "IGBOGILA"},
+                        {"key": "ITORI", "value": "ITORI"},
+                        {"key": "OSIELE", "value": "OSIELE"},
+                        {"key": "IYANA-ILOGBO", "value": "IYANA-ILOGBO"},
+                        {"key": "MOWE", "value": "MOWE"},
+                        {"key": "ISHARA", "value": "ISHARA"},
+                        {"key": "KARA", "value": "KARA"},
+                        {"key": "IJOKO", "value": "IJOKO"},
+                        {"key": "OGIJO", "value": "OGIJO"},
+                        {"key": "ITA OSHIN", "value": "ITA OSHIN"},
+                        {"key": "IJEBU MUSHIN", "value": "IJEBU MUSHIN"},
+                        {"key": "OJUORE", "value": "OJUORE"},
+                        {"key": "IMOWO", "value": "IMOWO"},
+                        {"key": "SAPON", "value": "SAPON"},
+                        {"key": "SME Ogun", "value": "SME Ogun"},
+                        {"key": "AKARIGBO", "value": "AKARIGBO"},
+                        {"key": "KUTO", "value": "KUTO"},
+                        {"key": "LUSADA", "value": "LUSADA"}
+                    ],
+                    "Rivers": [
+                        {"key": "", "value": ""},
+                        {"key": "OBIGBO", "value": "OBIGBO"},
+                        {"key": "ELELENWO", "value": "ELELENWO"},
+                        {"key": "OKPORO", "value": "OKPORO"},
+                        {"key": "WOJI", "value": "WOJI"},
+                        {"key": "RUMUOKORO", "value": "RUMUOKORO"},
+                        {"key": "RUMUOKWUTA", "value": "RUMUOKWUTA"},
+                        {"key": "MILE 3", "value": "MILE 3"},
+                        {"key": "BOROKIRI", "value": "BOROKIRI"},
+                        {"key": "MILE 1", "value": "MILE 1"},
+                        {"key": "AGGREY", "value": "AGGREY"},
+                        {"key": "CHOBA", "value": "CHOBA"},
+                        {"key": "AHODA", "value": "AHODA"},
+                        {"key": "ELELE", "value": "ELELE"},
+                        {"key": "NORWAN", "value": "NORWAN"},
+                        {"key": "UMUEBELE", "value": "UMUEBELE"},
+                        {"key": "STADIUM ROAD", "value": "STADIUM ROAD"},
+                        {"key": "STADIUM ROAD-SME", "value": "STADIUM ROAD-SME"},
+                        {"key": "SOUTH-SOUTH ZONE ZONAL OFFICE", "value": "SOUTH-SOUTH ZONE ZONAL OFFICE"}
+                    ],
+                    "Imo": [
+                        {"key": "", "value": ""},
+                        {"key": "OBIGBO", "value": "OBIGBO"},
+                        {"key": "ELELENWO", "value": "ELELENWO"},
+                        {"key": "OKPORO", "value": "OKPORO"},
+                        {"key": "WOJI", "value": "WOJI"},
+                        {"key": "RUMUOKORO", "value": "RUMUOKORO"},
+                        {"key": "RUMUOKWUTA", "value": "RUMUOKWUTA"},
+                        {"key": "MILE 3", "value": "MILE 3"},
+                        {"key": "BOROKIRI", "value": "BOROKIRI"},
+                        {"key": "MILE 1", "value": "MILE 1"},
+                        {"key": "AGGREY", "value": "AGGREY"},
+                        {"key": "CHOBA", "value": "CHOBA"},
+                        {"key": "AHODA", "value": "AHODA"},
+                        {"key": "ELELE", "value": "ELELE"},
+                        {"key": "NORWAN", "value": "NORWAN"},
+                        {"key": "UMUEBELE", "value": "UMUEBELE"},
+                        {"key": "STADIUM ROAD", "value": "STADIUM ROAD"},
+                        {"key": "STADIUM ROAD-SME", "value": "STADIUM ROAD-SME"},
+                        {"key": "SOUTH-SOUTH ZONE ZONAL OFFICE", "value": "SOUTH-SOUTH ZONE ZONAL OFFICE"}
+                    ],
+                    "Abia": [
+                        {"key": "", "value": ""},
+                        {"key": "ASA", "value": "ASA"},
+                        {"key": "FAULKS", "value": "FAULKS"},
+                        {"key": "UZUAOKOLI", "value": "UZUAOKOLI"},
+                        {"key": "OHAFIA", "value": "OHAFIA"},
+                        {"key": "ISUOCHI", "value": "ISUOCHI"},
+                        {"key": "ABRIBA", "value": "ABRIBA"},
+                        {"key": "ISIKWATO", "value": "ISIKWATO"},
+                        {"key": "UBAKALA", "value": "UBAKALA"},
+                        {"key": "OSISIOMA", "value": "OSISIOMA"},
+                        {"key": "ARIARIA", "value": "ARIARIA"},
+                        {"key": "AROCHUKWU", "value": "AROCHUKWU"},
+                        {"key": "FLYOVER", "value": "FLYOVER"},
+                        {"key": "ABA", "value": "ABA"},
+                        {"key": "SME South East", "value": "SME South East"}
+                    ],
+                    "Cross River": [
+                        {"key": "", "value": ""},
+                        {"key": "HARCOURT", "value": "HARCOURT"},
+                        {"key": "MARIAN", "value": "MARIAN"},
+                        {"key": "EKPO ABASI", "value": "EKPO ABASI"},
+                        {"key": "IKOT ANSA", "value": "IKOT ANSA"},
+                        {"key": "IKOM", "value": "IKOM"},
+                        {"key": "UGEP", "value": "UGEP"},
+                        {"key": "IGILI OGOJA", "value": "IGILI OGOJA"},
+                        {"key": "OBUDU", "value": "OBUDU"},
+                        {"key": "AKAMKPA", "value": "AKAMKPA"},
+                        {"key": "HIGH-WAY", "value": "HIGH-WAY"},
+                        {"key": "OBUBRA", "value": "OBUBRA"},
+                        {"key": "IGILI OGOJA 2", "value": "IGILI OGOJA 2"},
+                        {"key": "CALABAR ZONE ZONAL OFFICE", "value": "CALABAR ZONE ZONAL OFFICE"}
+                    ],
+                    "Akwa-Ibom": [
+                        {"key": "", "value": ""},
+                        {"key": "AKA ROAD", "value": "AKA ROAD"},
+                        {"key": "ALDERTON", "value": "ALDERTON"},
+                        {"key": "IKOT EKPENE", "value": "IKOT EKPENE"},
+                        {"key": "ORON", "value": "ORON"},
+                        {"key": "EKET 1", "value": "EKET 1"},
+                        {"key": "EKET 2", "value": "EKET 2"},
+                        {"key": "IKOT ABASI", "value": "IKOT ABASI"},
+                        {"key": "ORON 2", "value": "ORON 2"},
+                        {"key": "ABAK", "value": "ABAK"},
+                        {"key": "NUNG-UDOE", "value": "NUNG-UDOE"},
+                        {"key": "SME Calabar", "value": "SME Calabar"},
+                        {"key": "CALABAR ZONE", "value": "CALABAR ZONE"},
+                        {"key": "ETINAN", "value": "ETINAN"}
+                    ],
+                    "Oyo": [
+                        {"key": "", "value": ""},
+                        {"key": "Oyo 1", "value": "Oyo 1"},
+                        {"key": "Oyo 2", "value": "Oyo 2"},
+                        {"key": "Moniya", "value": "Moniya"},
+                        {"key": "Ilora", "value": "Ilora"},
+                        {"key": "Bodija 2", "value": "Bodija 2"},
+                        {"key": "Dugbe", "value": "Dugbe"},
+                        {"key": "Eleyele", "value": "Eleyele"},
+                        {"key": "Ojo", "value": "Ojo"},
+                        {"key": "Eruwa", "value": "Eruwa"},
+                        {"key": "Bodija 1", "value": "Bodija 1"},
+                        {"key": "Apata", "value": "Apata"},
+                        {"key": "Challenge", "value": "Challenge"},
+                        {"key": "Mokola", "value": "Mokola"},
+                        {"key": "Beere", "value": "Beere"},
+                        {"key": "Oke-Ado 2", "value": "Oke-Ado 2"},
+                        {"key": "Oke-Ado 1", "value": "Oke-Ado 1"},
+                        {"key": "Oja Oba", "value": "Oja Oba"},
+                        {"key": "Old Ife", "value": "Old Ife"},
+                        {"key": "Odinjo", "value": "Odinjo"},
+                        {"key": "Olorunshogo", "value": "Olorunshogo"},
+                        {"key": "Iseyin", "value": "Iseyin"},
+                        {"key": "Isale-Ola", "value": "Isale-Ola"},
+                        {"key": "Saki", "value": "Saki"},
+                        {"key": "Iwo Road 2", "value": "Iwo Road 2"},
+                        {"key": "Iyana Church", "value": "Iyana Church"},
+                        {"key": "Okeho", "value": "Okeho"},
+                        {"key": "Igboho", "value": "Igboho"},
+                        {"key": "Igboora", "value": "Igboora"},
+                        {"key": "Ladoke", "value": "Ladoke"},
+                        {"key": "Oloope", "value": "Oloope"},
+                        {"key": "Abapanu", "value": "Abapanu"}
+                    ],
+                    "Osun": [
+                        {"key": "", "value": ""},
+                        {"key": "Ikire", "value": "Ikire"},
+                        {"key": "Ogo Oluwa", "value": "Ogo Oluwa"},
+                        {"key": "Ila Orangun", "value": "Ila Orangun"},
+                        {"key": "Inisa", "value": "Inisa"},
+                        {"key": "Ilesa 1", "value": "Ilesa 1"},
+                        {"key": "Ede", "value": "Ede"},
+                        {"key": "Erin Osun", "value": "Erin Osun"},
+                        {"key": "Ibokun", "value": "Ibokun"},
+                        {"key": "Estate", "value": "Estate"},
+                        {"key": "Ifetedo", "value": "Ifetedo"},
+                        {"key": "Modakeke", "value": "Modakeke"},
+                        {"key": "Gbongan", "value": "Gbongan"},
+                        {"key": "Ipetumodu", "value": "Ipetumodu"},
+                        {"key": "Araromi", "value": "Araromi"},
+                        {"key": "Obatedo", "value": "Obatedo"},
+                        {"key": "Obelawo Mega", "value": "Obelawo Mega"},
+                        {"key": "Okeho", "value": "Okeho"},
+                        {"key": "Efon-Alaye", "value": "Efon-Alaye"},
+                        {"key": "Ikirun", "value": "Ikirun"},
+                        {"key": "Ilesa 2", "value": "Ilesa 2"},
+                        {"key": "IFE1 Mega", "value": "IFE1 Mega"},
+                        {"key": "Ola", "value": "Ola"},
+                        {"key": "Oke-Ejigbo", "value": "Oke-Ejigbo"},
+                        {"key": "Ayetan", "value": "Ayetan"}
+                    ],
+                    "Enugu": [
+                        {"key": "", "value": ""},
+                        {"key": "Agbani", "value": "Agbani"},
+                        {"key": "Zik Road", "value": "Zik Road"},
+                        {"key": "Nkanu", "value": "Nkanu"},
+                        {"key": "Orji", "value": "Orji"},
+                        {"key": "9th Mile", "value": "9th Mile"},
+                        {"key": "Obollo", "value": "Obollo"},
+                        {"key": "Orba", "value": "Orba"},
+                        {"key": "Nsukka", "value": "Nsukka"},
+                        {"key": "Ogbete", "value": "Ogbete"},
+                        {"key": "Abakpa", "value": "Abakpa"},
+                        {"key": "Emene", "value": "Emene"},
+                        {"key": "Nsukka 2", "value": "Nsukka 2"},
+                        {"key": "Ishiagu", "value": "Ishiagu"},
+                        {"key": "Orifite", "value": "Orifite"},
+                        {"key": "Enugu Zone Zonal Office", "value": "Enugu Zone Zonal Office"}
+                    ],
+                    "Ebonyi": [
+                        {"key": "", "value": ""},
+                        {"key": "Ebonyi Mega", "value": "Ebonyi Mega"},
+                        {"key": "Ogoja", "value": "Ogoja"},
+                        {"key": "Afikpo", "value": "Afikpo"},
+                        {"key": "Abakaliki", "value": "Abakaliki"},
+                        {"key": "Ezzamgbo", "value": "Ezzamgbo"},
+                        {"key": "Onueka", "value": "Onueka"},
+                    ],
+                    "Taraba": [
+                        {"key": "", "value": ""},
+                        {"key": "Wukari", "value": "Wukari"},
+                        {"key": "Hammaruwa", "value": "Hammaruwa"},
+                        {"key": "Sabo Jalingo", "value": "Sabo Jalingo"},
+                        {"key": "Barde", "value": "Barde"},
+                        {"key": "Gembu", "value": "Gembu"}
+                    ],
+                    "Kebbi": [
+                        {"key": "", "value": ""},
+                        {"key": "Zuru", "value": "Zuru"},
+                        {"key": "Yauri", "value": "Yauri"},
+                        {"key": "Kebbi 1", "value": "Kebbi 1"},
+                        {"key": "Kebbi 2", "value": "Kebbi 2"},
+                        {"key": "Jega", "value": "Jega"},
+                        {"key": "Argungu", "value": "Argungu"},
+                        {"key": "Maiyama", "value": "Maiyama"},
+                        {"key": "Bagudo", "value": "Bagudo"}
+                    ],
+                    "Zamfara": [
+                        {"key": "", "value": ""},
+                        {"key": "Gusau 1", "value": "Gusau 1"},
+                        {"key": "Gusau 2", "value": "Gusau 2"},
+                        {"key": "Kaura Namoda", "value": "Kaura Namoda"},
+                        {"key": "North West Zone Zonal Office", "value": "North West Zone Zonal Office"}
+                    ],
+                    "Jigawa": [
+                        {"key": "", "value": ""},
+                        {"key": "Hadeja", "value": "Hadeja"},
+                        {"key": "Dutse", "value": "Dutse"},
+                        {"key": "Gumel", "value": "Gumel"}
+                    ],
+                    "Sokoto": [
+                        {"key": "", "value": ""},
+                        {"key": "Sokoto", "value": "Sokoto"},
+                        {"key": "Angwan Rogo", "value": "Angwan Rogo"},
+                        {"key": "Ilella", "value": "Ilella"},
+                        {"key": "Dandima", "value": "Dandima"},
+                        {"key": "Isa", "value": "Isa"},
+                        {"key": "Tambuwai", "value": "Tambuwai"},
+                        {"key": "Sabon Birni", "value": "Sabon Birni"},
+                        {"key": "Bodinga", "value": "Bodinga"}
+                    ],
+                    "Plateau": [
+                        {"key": "", "value": ""},
+                        {"key": "Bukuru", "value": "Bukuru"},
+                        {"key": "Faringada", "value": "Faringada"},
+                        {"key": "Shendam", "value": "Shendam"},
+                        {"key": "Taraminus", "value": "Taraminus"},
+                        {"key": "Mangu", "value": "Mangu"}
+                    ],
+                    "Bauchi": [
+                        {"key": "", "value": ""},
+                        {"key": "Wunti", "value": "Wunti"},
+                        {"key": "Yelwa", "value": "Yelwa"},
+                        {"key": "Murtala Muhammed", "value": "Murtala Muhammed"},
+                        {"key": "Azare", "value": "Azare"},
+                        {"key": "North East Zone Zonal Office", "value": "North East Zone Zonal Office"}
+                    ],
+                    "Gombe": [
+                        {"key": "", "value": ""},
+                        {"key": "Buba Yaro", "value": "Buba Yaro"},
+                        {"key": "Bank Road", "value": "Bank Road"},
+                        {"key": "Dukku", "value": "Dukku"}
+                    ],
+                    "Imo/Abia": [
+                        {"key": "", "value": ""},
+                        {"key": "SME South East", "value": "SME South East"}
+                    ],
+                    "Akwa-Ibom/Cross River":[
+                        {"key": "", "value": ""},
+                        {"key": "SME Calabar", "value": "SME Calabar"}
+                    ],
+                    "Kwara/Osun":[
+                        {"key": "", "value": ""},
+                        {"key": "SME South west", "value": "SME South West"}
+                    ],
+                    "Enugu/Anambra": [
+                        {"key": "", "value": ""},
+                        {"key": "Naibawa", "value": "Naibawa"},
+                        {"key": "Hotoro", "value": "Hotoro"},
+                        {"key": "Dala", "value": "Dala"},
+                        {"key": "Bompai", "value": "Bompai"},
+                        {"key": "Sabo Gari", "value": "Sabo Gari"},
+                        {"key": "Dawanu", "value": "Dawanu"},
+                        {"key": "Dambatta", "value": "Dambatta"},
+                        {"key": "Wudil", "value": "Wudil"},
+                        {"key": "Rano", "value": "Rano"},
+                        {"key": "Lamingo", "value": "Lamingo"},
+                        {"key": "SME Kano", "value": "SME Kano"},
+                        {"key": "Panshekara", "value": "Panshekara"}
+                    ],
+                    "Abuja/Niger/Kaduna/Nassarawa": [
+                        {"key": "", "value": ""},
+                        {"key": "SME FCT", "value": "SME FCT"},
+                        {"key": "SME FCT 2", "value": "SME FCT 2"}
+                    ],
+                    "Lagos": [
+                        {"key": "Apomu", "value": "Apomu"}
+                    ]
+                };
+
+                zoneField.addEventListener("change", function() {
+                    const selectedZone = zoneField.value;
+                    debugger;
+
+                    if (selectedZone) {
+                        stateField.innerHTML = "";
+                        branchField.innerHTML = "";
+                        zoneOptions[selectedZone].forEach(state => {
+                            const opt = document.createElement("option");
+                            opt.value = state.value;
+                            opt.textContent = state.value;
+                            stateField.appendChild(opt);
+                        });
+                    }
+                });
 
                 stateField.addEventListener("change", function() {
                     const selectedState = stateField.value;
 
-                    // Clear Branch Dropdown
-                    branchField.innerHTML = "";
-
-                    if (branchOptions[selectedState]) {
+                    if (selectedState) {
+                        branchField.innerHTML = "";
                         branchOptions[selectedState].forEach(option => {
                             const opt = document.createElement("option");
                             opt.value = option.key;
@@ -126,11 +710,25 @@ class jd_cso_monthly_preformanceViewEdit extends ViewEdit
                         });
                     }
                 });
+
+                if (savedZone) {
+                    zoneField.value = savedZone;
+                    zoneField.dispatchEvent(new Event("change"));
+                }
+
+                if (savedState) {
+                    setTimeout(() => {
+                        stateField.value = savedState;
+                        stateField.dispatchEvent(new Event("change"));
+                    }, 100);
+                }
+
+                if (savedBranch) {
+                    setTimeout(() => {
+                        branchField.value = savedBranch;
+                    }, 200);
+                }
             });
         </script>';
     }
 }
-
-
-
-

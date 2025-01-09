@@ -604,8 +604,8 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                         {"key": "Gusau 2", "value": "Gusau 2"},
                         {"key": "Kaura Namoda", "value": "Kaura Namoda"},
                         {"key": "North West Zone Zonal Office", "value": "North West Zone Zonal Office"}
-                ],
-                "Jigawa": [
+                    ],
+                    "Jigawa": [
                         {"key": "", "value": ""},
                         {"key": "Hadeja", "value": "Hadeja"},
                         {"key": "Dutse", "value": "Dutse"},

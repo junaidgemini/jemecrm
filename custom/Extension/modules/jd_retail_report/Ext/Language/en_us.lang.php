@@ -48,4 +48,5 @@ $mod_strings = array (
   'LBL_NEW_CLIENT' => 'New Client',
   'LBL_TARGET' => 'Target',
   'LBL_SITTING_BALANCE' => 'Sitting Balance',
+  'LBL_JD_ATTACHMENT' => 'Attachment',
 );
