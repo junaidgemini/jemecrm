@@ -84,10 +84,10 @@
             <a href="index.php?module=Users&action=Resend">{$APP.LBL_RESEND}</a>
         </div>
 
-        <div class="p_login_bottom">
+        {* <div class="p_login_bottom">
             <a id="admin_options">© Supercharged by SuiteCRM</a>
             <a id="powered_by">© Powered By SugarCRM</a>
-        </div>
+        </div> *}
     </div>
 </body>
 </html>
