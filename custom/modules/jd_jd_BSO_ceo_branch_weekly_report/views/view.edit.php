@@ -459,6 +459,22 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                         {"key": "ABA", "value": "ABA"},
                         {"key": "SME South East", "value": "SME South East"}
                     ],
+                    "Cross River": [
+                        {"key": "", "value": ""},
+                        {"key": "HARCOURT", "value": "HARCOURT"},
+                        {"key": "MARIAN", "value": "MARIAN"},
+                        {"key": "EKPO ABASI", "value": "EKPO ABASI"},
+                        {"key": "IKOT ANSA", "value": "IKOT ANSA"},
+                        {"key": "IKOM", "value": "IKOM"},
+                        {"key": "UGEP", "value": "UGEP"},
+                        {"key": "IGILI OGOJA", "value": "IGILI OGOJA"},
+                        {"key": "OBUDU", "value": "OBUDU"},
+                        {"key": "AKAMKPA", "value": "AKAMKPA"},
+                        {"key": "HIGH-WAY", "value": "HIGH-WAY"},
+                        {"key": "OBUBRA", "value": "OBUBRA"},
+                        {"key": "IGILI OGOJA 2", "value": "IGILI OGOJA 2"},
+                        {"key": "CALABAR ZONE ZONAL OFFICE", "value": "CALABAR ZONE ZONAL OFFICE"}
+                    ],
                     "Oyo": [
                         {"key": "", "value": ""},
                         {"key": "Oyo 1", "value": "Oyo 1"},
