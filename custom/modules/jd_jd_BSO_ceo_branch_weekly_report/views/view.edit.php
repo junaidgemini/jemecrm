@@ -475,6 +475,22 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                         {"key": "IGILI OGOJA 2", "value": "IGILI OGOJA 2"},
                         {"key": "CALABAR ZONE ZONAL OFFICE", "value": "CALABAR ZONE ZONAL OFFICE"}
                     ],
+                    "Akwa-Ibom": [
+                        {"key": "", "value": ""},
+                        {"key": "AKA ROAD", "value": "AKA ROAD"},
+                        {"key": "ALDERTON", "value": "ALDERTON"},
+                        {"key": "IKOT EKPENE", "value": "IKOT EKPENE"},
+                        {"key": "ORON", "value": "ORON"},
+                        {"key": "EKET 1", "value": "EKET 1"},
+                        {"key": "EKET 2", "value": "EKET 2"},
+                        {"key": "IKOT ABASI", "value": "IKOT ABASI"},
+                        {"key": "ORON 2", "value": "ORON 2"},
+                        {"key": "ABAK", "value": "ABAK"},
+                        {"key": "NUNG-UDOE", "value": "NUNG-UDOE"},
+                        {"key": "SME Calabar", "value": "SME Calabar"},
+                        {"key": "CALABAR ZONE", "value": "CALABAR ZONE"},
+                        {"key": "ETINAN", "value": "ETINAN"}
+                    ],
                     "Oyo": [
                         {"key": "", "value": ""},
                         {"key": "Oyo 1", "value": "Oyo 1"},
