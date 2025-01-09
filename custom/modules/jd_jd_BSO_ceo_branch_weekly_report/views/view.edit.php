@@ -442,6 +442,23 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                         {"key": "STADIUM ROAD-SME", "value": "STADIUM ROAD-SME"},
                         {"key": "SOUTH-SOUTH ZONE ZONAL OFFICE", "value": "SOUTH-SOUTH ZONE ZONAL OFFICE"}
                     ],
+                    "Abia": [
+                        {"key": "", "value": ""},
+                        {"key": "ASA", "value": "ASA"},
+                        {"key": "FAULKS", "value": "FAULKS"},
+                        {"key": "UZUAOKOLI", "value": "UZUAOKOLI"},
+                        {"key": "OHAFIA", "value": "OHAFIA"},
+                        {"key": "ISUOCHI", "value": "ISUOCHI"},
+                        {"key": "ABRIBA", "value": "ABRIBA"},
+                        {"key": "ISIKWATO", "value": "ISIKWATO"},
+                        {"key": "UBAKALA", "value": "UBAKALA"},
+                        {"key": "OSISIOMA", "value": "OSISIOMA"},
+                        {"key": "ARIARIA", "value": "ARIARIA"},
+                        {"key": "AROCHUKWU", "value": "AROCHUKWU"},
+                        {"key": "FLYOVER", "value": "FLYOVER"},
+                        {"key": "ABA", "value": "ABA"},
+                        {"key": "SME South East", "value": "SME South East"}
+                    ],
                     "Oyo": [
                         {"key": "", "value": ""},
                         {"key": "Oyo 1", "value": "Oyo 1"},
