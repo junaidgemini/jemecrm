@@ -333,6 +333,26 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                         {"key": "SME Ondo", "value": "SME Ondo"},
                         {"key": "ONDO ZONE ZONAL OFFICE", "value": "ONDO ZONE ZONAL OFFICE"}
                     ],
+                    "Kwara": [
+                        {"key": "", "value": ""},
+                        {"key": "OFFA BRANCH", "value": "OFFA BRANCH"},
+                        {"key": "ILLORIN 1 MEGA BRANCH", "value": "ILLORIN 1 MEGA BRANCH"},
+                        {"key": "ILLORIN 2 BRANCH", "value": "ILLORIN 2 BRANCH"},
+                        {"key": "ILLORIN 3 BRANCH", "value": "ILLORIN 3 BRANCH"},
+                        {"key": "ILORIN 4 BRANCH", "value": "ILORIN 4 BRANCH"},
+                        {"key": "ORO BRANCH", "value": "ORO BRANCH"},
+                        {"key": "OMUARAN BRANCH", "value": "OMUARAN BRANCH"},
+                        {"key": "OJA BRANCH", "value": "OJA BRANCH"},
+                        {"key": "SHARE BRANCH", "value": "SHARE BRANCH"},
+                        {"key": "LAFIAGI BRANCH", "value": "LAFIAGI BRANCH"},
+                        {"key": "ERIN-ILE BRANCH", "value": "ERIN-ILE BRANCH"},
+                        {"key": "KOSUBOSU BRANCH", "value": "KOSUBOSU BRANCH"},
+                        {"key": "KAYAMA BRANCH", "value": "KAYAMA BRANCH"},
+                        {"key": "PATIGI BRANCH", "value": "PATIGI BRANCH"},
+                        {"key": "SME South west", "value": "SME South west"},
+                        {"key": "OJATUTU BRANCH", "value": "OJATUTU BRANCH"},
+                        {"key": "JEBBA BRANCH", "value": "JEBBA BRANCH"}
+                    ],
                     "Oyo": [
                         {"key": "", "value": ""},
                         {"key": "Oyo 1", "value": "Oyo 1"},
