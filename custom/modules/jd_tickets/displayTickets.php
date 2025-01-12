@@ -305,7 +305,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                                 </div>
                                 <div class="col-md-6">
                                     <label for="to_emails"><strong>To Emails:</strong></label>
-                                    <input type="text" id="to_emails" class="form-control" value="${ (data.to_emails!= null) ? data.to_emails.join(', '): '' || 'N/A'}" readonly>
+                                    <input type="text" id="to_emails" class="form-control" readonly  value="${(data.to_emails!= null) ? data.to_emails.join(', '): '' || 'N/A'} ">
                                 </div>
                             </div>
 
