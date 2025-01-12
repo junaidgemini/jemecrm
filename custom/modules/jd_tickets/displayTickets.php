@@ -139,6 +139,10 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
     </style>
 </head>
 <body>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <div class="container">
         <h1>Freshdesk Tickets</h1>
 
@@ -202,15 +206,223 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
         </table>
     </div>
 
+
+    <!-- Open Ticket Model -->
+        <div class="modal" id="ticketModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ticket Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <h3>Ticket Details</h3>
+                        </div>
+                        
+                        <!-- Ticket details will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     <script>
+        function viewTicket(ticketId){
+            let ViewUrl = 'index.php?module=jd_tickets&action=viewTicket&ticket_id='+ticketId+'&sugar_body_only=true';
+            console.log(ViewUrl);
+            $.ajax({
+                url: ViewUrl,
+                method: 'GET',
+                success: function (data) {
+                    var data = JSON.parse(data);
+                    // body_content = `<div class="row">
+                    //     <div class="col-md-6">
+                    //         <label for="ticket_id">Ticket ID:</label>
+                    //         <span id="ticket_id">${data.id}</span>
+                    //     </div>
+                    //     <div class="col-md-6">
+                    //         <label for="subject">Subject:</label>
+                    //         <span id="subject">${data.subject}</span>
+                    //     </div>`;
+                    let body_content = `
+                    <div class="container">
+                        <form>
+                            <!-- Basic Ticket Info -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="ticket_id"><strong>Ticket ID:</strong></label>
+                                    <input type="text" id="ticket_id" class="form-control" value="${data.id}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subject"><strong>Subject:</strong></label>
+                                    <input type="text" id="subject" class="form-control" value="${data.subject}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Status and Priority -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="status"><strong>Status:</strong></label>
+                                    <input type="text" id="status" class="form-control" value="${data.status}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="priority"><strong>Priority:</strong></label>
+                                    <input type="text" id="priority" class="form-control" value="${data.priority}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Requester and Responder -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="requester_id"><strong>Requester ID:</strong></label>
+                                    <input type="text" id="requester_id" class="form-control" value="${data.requester_id}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="responder_id"><strong>Responder ID:</strong></label>
+                                    <input type="text" id="responder_id" class="form-control" value="${data.responder_id}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="description"><strong>Description:</strong></label>
+                                    <textarea id="description" class="form-control" rows="3" readonly>${data.description_text}</textarea>
+                                </div>
+                            </div>
+
+                            <!-- CC and To Emails -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="cc_emails"><strong>CC Emails:</strong></label>
+                                    <input type="text" id="cc_emails" class="form-control" value="${ (data.cc_emails!= null) ? data.cc_emails.join(', '): '' || 'N/A'}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="to_emails"><strong>To Emails:</strong></label>
+                                    <input type="text" id="to_emails" class="form-control" value="${ (data.to_emails!= null) ? data.to_emails.join(', '): '' || 'N/A'}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Reply CC Emails and Ticket CC Emails -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="reply_cc_emails"><strong>Reply CC Emails:</strong></label>
+                                    <input type="text" id="reply_cc_emails" class="form-control" value="${ (data.reply_cc_emails!= null) ? data.reply_cc_emails.join(', '): '' || 'N/A'}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="ticket_cc_emails"><strong>Ticket CC Emails:</strong></label>
+                                    <input type="text" id="ticket_cc_emails" class="form-control" value="${(data.ticket_cc_emails!= null) ? data.ticket_cc_emails.join(', '): '' || 'N/A'}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Email Config and Source -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email_config_id"><strong>Email Config ID:</strong></label>
+                                    <input type="text" id="email_config_id" class="form-control" value="${(data.email_config_id!= null) ? data.email_config_id: '' || 'N/A'}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="source"><strong>Source:</strong></label>
+                                    <input type="text" id="source" class="form-control" value="${data.source || 'N/A'}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Due Date -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="due_by"><strong>Due By:</strong></label>
+                                    <input type="text" id="due_by" class="form-control" value="${new Date(data.due_by).toLocaleString()}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Created and Updated At -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="created_at"><strong>Created At:</strong></label>
+                                    <input type="text" id="created_at" class="form-control" value="${new Date(data.created_at).toLocaleString()}" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="updated_at"><strong>Updated At:</strong></label>
+                                    <input type="text" id="updated_at" class="form-control" value="${new Date(data.updated_at).toLocaleString()}" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Source Additional Info -->
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label><strong>Source Additional Info:</strong></label>
+                                    <div class="border p-3">
+                                        ${data.source_additional_info && data.source_additional_info.facebook ? `
+                                            <div class="mb-2">
+                                                <label for="facebook_id"><strong>Facebook ID:</strong></label>
+                                                <input type="text" id="facebook_id" class="form-control" value="${data.source_additional_info.facebook.id || 'N/A'}" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="facebook_type"><strong>Type:</strong></label>
+                                                <input type="text" id="facebook_type" class="form-control" value="${data.source_additional_info.facebook.type || 'N/A'}" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="facebook_page_name"><strong>Page Name:</strong></label>
+                                                <input type="text" id="facebook_page_name" class="form-control" value="${data.source_additional_info.facebook.page.name || 'N/A'}" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="facebook_page_link"><strong>Page Link:</strong></label>
+                                                <a href="${data.source_additional_info.facebook.page.link}" target="_blank" class="form-control text-primary" readonly>${data.source_additional_info.facebook.page.link || 'N/A'}</a>
+                                            </div>
+                                        ` : `<p>No additional Facebook info available.</p>`}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Custom Fields -->
+                            <div class="col-md-6">
+                                <label for="custom_fields"><strong>Custom Fields:</strong></label>
+                                <div class="border p-3">
+                                    ${Object.keys(data.custom_fields).map(field => `
+                                        <div class="mb-2">
+                                            <label><strong>${field}:</strong></label>
+                                            <input type="text" class="form-control" value="${data.custom_fields[field] || 'N/A'}" readonly>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </form>
+                    </div>`;
+                    $('#ticketModal .modal-body').html(body_content);
+                    $('#ticketModal').modal('show');
+                }
+            });
+        }
         $(document).ready(function () {
             var table = $('#ticketsTable').DataTable({
                 processing: true,
                 serverSide: true,
                 searching: true,
+                order: [[0, 'asc']], // Default sorting by Ticket ID column
+                lengthMenu: [10, 20, 50], // Pagination options
+                pageLength: 10, // Default rows per page
                 ajax: {
-                    url: 'index.php?module=Accounts&action=server&sugar_body_only=true',
+                    url: 'index.php?module=jd_tickets&action=server&sugar_body_only=true',
                     type: 'GET',
+                    dataSrc: function(json) {
+                        debugger;
+                        // Check if the server returned an error
+                        if (json.error) {
+                            alert('Error: ' + json.error);
+                            return [];
+                        }
+                        // Return the data array from the response
+                        return json.data;
+                    },
+                    error: function(xhr, error, thrown) {
+                        console.error('AJAX error:', error, thrown);
+                        alert('Failed to fetch data');
+                    },
                 },
                 columns: [
                     { data: 0, title: 'Ticket ID',
@@ -271,9 +483,6 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                     { data: 27, title: 'NR Due By'},
                     { data: 28, title: 'NR Escalated'},
                 ],
-                order: [[0, 'asc']], // Default sorting by Ticket ID column
-                lengthMenu: [10, 20, 50], // Pagination options
-                pageLength: 10, // Default rows per page
             });
 
             // Initialize the multi-select dropdown
@@ -317,7 +526,6 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                 var pageLength = parseInt($(this).val());
                 table.page.len(pageLength).draw();
             });
-            
         });
     </script>
 </body>
@@ -378,7 +586,7 @@ die;
         $(document).ready(function () {
             $('#ticketsTable').DataTable({
                 ajax: {
-                    url: 'index.php?module=Accounts&action=freshdeskTickets', // Your PHP endpoint
+                    url: 'index.php?module=jd_tickets&action=freshdeskTickets', // Your PHP endpoint
                     dataSrc: ''
                 },
                 columns: [
