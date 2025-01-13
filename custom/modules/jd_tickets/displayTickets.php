@@ -236,6 +236,19 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
         function viewTicket(ticketId){
             let ViewUrl = 'index.php?module=jd_tickets&action=viewTicket&ticket_id='+ticketId+'&sugar_body_only=true';
             console.log(ViewUrl);
+            const priorityMap = {
+                    1: "Low",
+                    2: "Medium",
+                    3: "High",
+                    4: "Urgent"
+                };
+
+                const statusMap = {
+                    2: "Open",
+                    3: "Pending",
+                    4: "Resolved",
+                    5: "Closed",
+                };
             $.ajax({
                 url: ViewUrl,
                 method: 'GET',
@@ -250,6 +263,8 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                     //         <label for="subject">Subject:</label>
                     //         <span id="subject">${data.subject}</span>
                     //     </div>`;
+                    // Priority and Status Mappings
+
                     let body_content = `
                     <div class="container">
                         <form>
@@ -269,11 +284,11 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="status"><strong>Status:</strong></label>
-                                    <input type="text" id="status" class="form-control" value="${data.status}" readonly>
+                                    <input type="text" id="status" class="form-control" value="${statusMap[data.status] || "Unknown"}" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="priority"><strong>Priority:</strong></label>
-                                    <input type="text" id="priority" class="form-control" value="${data.priority}" readonly>
+                                    <input type="text" id="priority" class="form-control" value="${priorityMap[data.priority] || "Unknown"}" readonly>
                                 </div>
                             </div>
 
