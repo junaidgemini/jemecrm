@@ -1,34 +1,5 @@
-<!-- <!DOCTYPE html>
-index.php?module=jd_tickets&action=FCUBSCustomerServiceProcess&sugar_body_only=true
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Query</title>
-</head>
-<body>
-    <form action="index.php?module=jd_tickets&action=XmlFeedProcess&sugar_body_only=true" method="post">
-        <label for="source">Source:</label>
-        <input type="text" id="source" name="source" required><br><br>
-        
-        <label for="ub_comp">UBSCOMP:</label>
-        <input type="text" id="ub_comp" name="ub_comp" required><br><br>
-        
-        <label for="userid">User ID:</label>
-        <input type="text" id="userid" name="userid" required><br><br>
-        
-        <label for="branch">Branch:</label>
-        <input type="text" id="branch" name="branch" required><br><br>
-        
-        <label for="custno">Customer Number:</label>
-        <input type="text" id="custno" name="custno" required><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,43 +7,38 @@ index.php?module=jd_tickets&action=FCUBSCustomerServiceProcess&sugar_body_only=t
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
+        /* dynamic form */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            margin: 20px;
         }
         h2 {
             text-align: center;
-            color: #333333;
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            align-items: start;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
         }
         label {
-            display: block;
-            margin-top: 10px;
-            color: #333333;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
         input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #cccccc;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
             border-radius: 4px;
-        }
+        }       
         button {
             width: 100%;
             padding: 10px;
-            margin-top: 20px;
+            /* margin-top: 20px; */
             background-color: #007bff;
             color: #ffffff;
             border: none;
@@ -88,60 +54,79 @@ index.php?module=jd_tickets&action=FCUBSCustomerServiceProcess&sugar_body_only=t
     <div class="container">
         <h2>Customer Query</h2>
         <form id="customerForm">
-            <label for="source">Source:</label>
-            <input type="text" id="source" name="source" required>
-            
-            <label for="ub_comp">UBSCOMP:</label>
-            <input type="text" id="ub_comp" name="ub_comp" required>
-            
-            <label for="userid">User ID:</label>
-            <input type="text" id="userid" name="userid" required>
-            
-            <label for="branch">Branch:</label>
-            <input type="text" id="branch" name="branch" required>
-            
-            <label for="custno">Customer Number:</label>
+            <label for="custno">Customer Number (CUSTNO):</label>
             <input type="text" id="custno" name="custno" required>
-            
             <button type="submit">Submit</button>
         </form>
+        <!-- show details -->
+        <h2>Customer Information</h2>
+        <form id="dynamicForm">
+            <!-- Input fields will be dynamically added here -->
+        </form>
     </div>
-
     <script>
         $(document).ready(function(){
-            $("#customerForm").on("submit", function(event){
-                event.preventDefault();
-                
-                $.ajax({
-                    url: "index.php?module=jd_tickets&action=FCUBSCustomerServiceProcess&sugar_body_only=true",
-                    method: "POST",
-                    data: $(this).serialize(),
-                    success: function(response){
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: response.message,
-                            });
-                            $("#customerForm")[0].reset();  // Reset the form
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: response.message,
-                            });
-                        }
-                    },
-                    error: function(xhr, status, error){
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: "Error: " + error,
-                        });
+            // document.getElementById("myReadonlyInput").setAttribute("readonly", "true");
+            $("#customerForm").on("submit", function(event) {
+            event.preventDefault();
+
+            const submitButton = $(this).find('button[type="submit"]');
+            
+            // Add a loader to the submit button
+            submitButton.prop("disabled", true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...');
+            
+            $.ajax({
+                url: "index.php?module=jd_tickets&action=FCUBSCustomerServiceProcess&sugar_body_only=true",
+                method: "POST",
+                data: $(this).serialize(),
+                success: function(response) {
+                    response = JSON.parse(response);
+
+                    const form = document.getElementById("dynamicForm");
+                    form.innerHTML = ""; // Clear previous form fields
+
+                    for (const [key, value] of Object.entries(response)) {
+                        // Create a container for the label and input
+                        const formGroup = document.createElement("div");
+                        formGroup.classList.add("form-group");
+
+                        // Create a label
+                        const label = document.createElement("label");
+                        label.textContent = key.replace(/_/g, " "); // Replace underscores with spaces for readability
+                        label.setAttribute("for", key);
+
+                        // Create an input
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.id = key;
+                        input.name = key;
+                        input.value = value;
+                        input.setAttribute("readonly", true); // Make the input non-editable
+
+                        // Append label and input to the container
+                        formGroup.appendChild(label);
+                        formGroup.appendChild(input);
+
+                        // Append the container to the form
+                        form.appendChild(formGroup);
                     }
-                });
+
+                    // Restore the submit button
+                    submitButton.prop("disabled", false).text("Submit");
+                },
+                error: function(xhr, status, error) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Error: " + error,
+                    });
+
+                    // Restore the submit button
+                    submitButton.prop("disabled", false).text("Submit");
+                }
             });
         });
+    });
     </script>
 </body>
 </html>
