@@ -80,36 +80,124 @@
                 method: "POST",
                 data: $(this).serialize(),
                 success: function(response) {
-                    response = JSON.parse(response);
 
-                    const form = document.getElementById("dynamicForm");
-                    form.innerHTML = ""; // Clear previous form fields
+                    // Parse XML string into a DOM object
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(response, "text/xml");
 
-                    for (const [key, value] of Object.entries(response)) {
-                        // Create a container for the label and input
-                        const formGroup = document.createElement("div");
-                        formGroup.classList.add("form-group");
+                    // Function to extract data dynamically, including nested elements
+                    function extractData(xml, parentNode) {
+                        const parentElement = xml.querySelector(parentNode);
 
-                        // Create a label
-                        const label = document.createElement("label");
-                        label.textContent = key.replace(/_/g, " "); // Replace underscores with spaces for readability
-                        label.setAttribute("for", key);
+                        if (!parentElement) {
+                            console.log(`${parentNode} element not found`);
+                            return {};
+                        }
 
-                        // Create an input
-                        const input = document.createElement("input");
-                        input.type = "text";
-                        input.id = key;
-                        input.name = key;
-                        input.value = value;
-                        input.setAttribute("readonly", true); // Make the input non-editable
+                        const data = {};
 
-                        // Append label and input to the container
-                        formGroup.appendChild(label);
-                        formGroup.appendChild(input);
+                        // Recursive function to process nested elements
+                        function processElement(element, prefix = "") {
+                            element.childNodes.forEach((child) => {
+                                if (child.nodeType === 1) { // Element node
+                                    const key = prefix ? `${prefix}_${child.tagName}` : child.tagName;
 
-                        // Append the container to the form
-                        form.appendChild(formGroup);
+                                    if (child.tagName === "UDFDETAILS") {
+                                        // Special handling for UDFDETAILS
+                                        const fldName = child.querySelector("FLDNAM")?.textContent.trim();
+                                        const fldVal = child.querySelector("FLDVAL")?.textContent.trim();
+                                        if (fldName) {
+                                            data[fldName] = fldVal || "N/A";
+                                        }
+                                    } else if (child.children.length > 0) {
+                                        // If the child has its own children, recurse
+                                        processElement(child, key);
+                                    } else {
+                                        // Otherwise, it's a leaf node; save the text content
+                                        data[key] = child.textContent.trim();
+                                    }
+                                }
+                            });
+                        }
+
+                        processElement(parentElement);
+
+                        return data;
                     }
+
+                    // Function to render dynamic input fields on the front end
+                    function renderDynamicFields(data) {
+                        const form = document.getElementById("dynamicForm");
+                        form.innerHTML = ""; // Clear previous form fields
+
+                        Object.entries(data).forEach(([key, value]) => {
+                            // Create a container for the label and input
+                            const formGroup = document.createElement("div");
+                            formGroup.classList.add("form-group");
+
+                            // Create a label
+                            const label = document.createElement("label");
+                            label.textContent = key.replace(/_/g, " "); // Replace underscores with spaces for readability
+                            label.setAttribute("for", key);
+
+                            // Create an input
+                            const input = document.createElement("input");
+                            input.type = "text";
+                            input.id = key;
+                            input.name = key;
+                            input.value = value;
+                            input.setAttribute("readonly", true); // Make the input non-editable
+
+                            // Append label and input to the container
+                            formGroup.appendChild(label);
+                            formGroup.appendChild(input);
+
+                            // Append the container to the form
+                            form.appendChild(formGroup);
+                        });
+                    }
+
+                    // Example usage
+                    const customerData = extractData(
+                        xmlDoc,
+                        "QUERYCUSTACC_IOFS_RES > FCUBS_BODY > Cust-Account-Full"
+                    );
+
+                    // Render fields dynamically
+                    renderDynamicFields(customerData);
+
+
+
+                    // response = JSON.parse(response);
+
+                    // const form = document.getElementById("dynamicForm");
+                    // form.innerHTML = ""; // Clear previous form fields
+
+                    // for (const [key, value] of Object.entries(response)) {
+                    //     // Create a container for the label and input
+                    //     const formGroup = document.createElement("div");
+                    //     formGroup.classList.add("form-group");
+
+                    //     // Create a label
+                    //     const label = document.createElement("label");
+                    //     label.textContent = key.replace(/_/g, " "); // Replace underscores with spaces for readability
+                    //     label.setAttribute("for", key);
+
+                    //     // Create an input
+                    //     const input = document.createElement("input");
+                    //     input.type = "text";
+                    //     input.id = key;
+                    //     input.name = key;
+                    //     input.value = value;
+                    //     input.setAttribute("readonly", true); // Make the input non-editable
+
+                    //     // Append label and input to the container
+                    //     formGroup.appendChild(label);
+                    //     formGroup.appendChild(input);
+
+                    //     // Append the container to the form
+                    //     form.appendChild(formGroup);
+                    // }
 
                     // Restore the submit button
                     submitButton.prop("disabled", false).text("Submit");
