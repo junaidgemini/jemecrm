@@ -405,7 +405,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             </div> -->
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <input type="reset">
+                                    <input type="reset" onClick="window.location.reload()">
                                 </div>
                             </div>
                         </form>
