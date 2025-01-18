@@ -125,7 +125,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
         .row-controls {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             margin-bottom: 20px;
         }
 
@@ -133,14 +133,12 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             display: inline-block;
         }
         .dataTables_length {
-            display: none !important;
+            /* display: none !important; */
         }
 
     </style>
 </head>
-<body>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<body>  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <div class="container">
@@ -152,16 +150,19 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             <button class="column-select-btn" id="toggleColumnSelectBtn">
                 <i class="fa fa-columns"></i> <!-- Column icon (using Font Awesome) -->
             </button>
+            <button class="column-select-btn" onclick="filterTicket()" id="toggleFilterBtn">
+                <i class="fa fa-filter"></i> <!-- Column icon (using Font Awesome) -->
+            </button>
 
             <!-- Rows per page dropdown -->
-            <div class="select-wrapper">
+            <!-- <div class="select-wrapper">
                 <label for="rowsPerPage">Rows per page:</label>
                 <select id="rowsPerPage">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
                 </select>
-            </div>
+            </div> -->
         </div>
 
         <!-- Multi-Select Dropdown for Column Visibility -->
@@ -201,8 +202,6 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
         </div>
 
         <table id="ticketsTable" class="display" style="width:100%">
-            <thead>
-            </thead>
         </table>
     </div>
 
@@ -214,7 +213,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                     <div class="modal-header">
                         <h5 class="modal-title">Ticket Details</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span >&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -231,8 +230,275 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             </div>
         </div>
 
+        <!-- Filters Form -->
+        <div class="modal" id="filterModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Filter Tickets</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span >&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <h3>Filter Tickets</h3>
+                        </div>
+                        
+                        <!-- all Filters Fields -->
+                        <div class="container">
+                        <form>
+                            <!-- Basic Ticket Info -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="ticket_id"><strong>Ticket ID:</strong></label>
+                                    <input type="text" id="filter_ticket_id" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subject"><strong>Subject:</strong></label>
+                                    <input type="text" id="filter_subject" class="form-control">
+                                </div>
+                            </div> -->
+
+                            <!-- Status and Priority -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="status"><strong>Status:</strong></label>
+                                    <!-- <input type="text" id="filter_status" class="form-control"> -->
+                                    <select name="filter_status" id="filter_status" multiple="multiple">
+                                        <option value="">-Select-</option>
+                                        <option value="2">open</option>
+                                        <option value="3">Pending</option>
+                                        <option value="4">Resolved</option>
+                                        <option value="5">Closed</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="priority"><strong>Priority:</strong></label>
+                                    <!-- <input type="text" id="filter_priority" class="form-control"> -->
+                                    <select name="filter_priority" id="filter_priority" multiple="multiple">
+                                        <option value="">-Select-</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">High</option>
+                                        <option value="4">Urgent</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Requester and Responder -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="responder_id"><strong>Responder ID:</strong></label>
+                                    <input type="text" id="filter_responder_id" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="requester_id"><strong>Requester ID:</strong></label>
+                                    <input type="text" id="filter_requester_id" class="form-control">
+                                </div>
+                            </div> -->
+                            <!-- Group ID and priority -->
+
+                            <div class="row mb-3">
+                                
+                                <div class="col-md-6">
+                                    <label for="group_id"><strong>Group ID:</strong></label>
+                                    <input type="text" id="filter_group_id" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="priority"><strong>Type:</strong></label>
+                                    <br/>
+                                    <select name="filter_type" id="filter_type">
+                                        <option value="">-Select-</option>
+                                        <option value="Enquiries">Enquiries</option>
+                                        <option value="Requests">Requests</option>
+                                        <!-- <option value="Complaints/Issues">Complaints/Issues</option> -->
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="description"><strong>Description:</strong></label>
+                                    <textarea id="filter_description" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div> -->
+
+                            <!-- CC and To Emails -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="cc_emails"><strong>CC Emails:</strong></label>
+                                    <input type="text" id="filter_cc_emails" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="to_emails"><strong>To Emails:</strong></label>
+                                    <input type="text" id="filter_to_emails" class="form-control">
+                                </div>
+                            </div> -->
+
+                            <!-- Reply CC Emails and Ticket CC Emails -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="reply_cc_emails"><strong>Reply CC Emails:</strong></label>
+                                    <input type="text" id="filter_reply_cc_emails" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="ticket_cc_emails"><strong>Ticket CC Emails:</strong></label>
+                                    <input type="text" id="filter_ticket_cc_emails" class="form-control">
+                                </div>
+                            </div> -->
+
+                            <!-- Email Config and Source -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email_config_id"><strong>Email Config ID:</strong></label>
+                                    <input type="text" id="filter_email_config_id" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="source"><strong>Source:</strong></label>
+                                    <input type="text" id="filter_source" class="form-control">
+                                </div>
+                            </div> -->
+
+                            <!-- Due Date -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="due_by"><strong>Due By:</strong></label>
+                                    <input type="text" id="filter_due_by" class="form-control">
+                                </div>
+                            </div> -->
+
+                            <!-- Created and Updated At -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="created_at"><strong>Created At:</strong></label>
+                                    <input type="date" id="filter_created_at" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="updated_at"><strong>Updated At:</strong></label>
+                                    <input type="date" id="filter_updated_at" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Source Additional Info -->
+                            <!-- <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label><strong>Source Additional Info:</strong></label>
+                                    <div class="border p-3">
+                                            <div class="mb-2">
+                                                <label for="facebook_id"><strong>Facebook ID:</strong></label>
+                                                <input type="text" id="filter_facebook_id" class="form-control">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="facebook_type"><strong>Type:</strong></label>
+                                                <input type="text" id="filter_facebook_type" class="form-control">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="facebook_page_name"><strong>Page Name:</strong></label>
+                                                <input type="text" id="filter_facebook_page_name" class="form-control">
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input type="reset">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary apply_filter_btn" onclick="ApplyFilterBtn()"> Apply </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     <script>
+        function ApplyFilterBtn(){
+            debugger;
+            $('#filterModal').modal('hide');
+            // var filter_ticket_id = $('#filter_ticket_id').val();
+            // var filter_subject = $('#filter_subject').val();
+            var filter_status = $('#filter_status').val();
+            var filter_priority = $('#filter_priority').val();
+            var filter_type = $('#filter_type').val();
+            // var filter_responder_id = $('#filter_responder_id').val();
+            // var filter_requester_id = $('#filter_requester_id').val();
+            
+            // var filter_description = $('#filter_description').val();
+            // var filter_cc_emails = $('#filter_cc_emails').val();
+            // var filter_to_emails = $('#filter_to_emails').val();
+            // var filter_reply_cc_emails = $('#filter_reply_cc_emails').val();
+            // var filter_ticket_cc_emails = $('#filter_ticket_cc_emails').val();
+            // var filter_email_config_id = $('#filter_email_config_id').val();
+            // var filter_source = $('#filter_source').val();
+            // var filter_due_by = $('#filter_due_by').val();
+            var filter_created_at = $('#filter_created_at').val();
+            var filter_updated_at = $('#filter_updated_at').val();
+            // var filter_facebook_id = $('#filter_facebook_id').val();
+            // var filter_facebook_type = $('#filter_facebook_type').val();
+            // var filter_facebook_page_name = $('#filter_facebook_page_name').val();
+            // var filter_facebook_page_link = $('#filter_facebook_page_link').val();
+            // var filter_association_type = $('#filter_association_type').val();
+            // var filter_product_id = $('#filter_product_id').val();
+            // var filter_associated_tickets_count = $('#filter_associated_tickets_count').val();
+            // var filter_tags = $('#filter_tags').val();
+            // var filter_nr_due_by = $('#filter_nr_due_by').val();
+            // var filter_nr_escalated = $('#filter_nr_escalated').val();
+            // var filter_spam = $('#filter_spam').val();
+            // var filter_fr_escalated = $('#filter_fr_escalated').val();
+            // var filter_fr_due_by = $('#filter_fr_due_by').val();
+            var filter_group_id = $('#filter_group_id').val();
+            // var filter_fwd_emails = $('#filter_fwd_emails').val();
+            // var filter_ticket_bcc_emails = $('#filter_ticket_bcc_emails').val();
+            // var filter_support_email = $('#filter_support_email').val();
+            // var filter_association_type = $('#filter_association_type').val();
+            // var filter_product_id = $('#filter_product_id').val();
+            // f_id = filter_ticket_id;
+            // f_subject = filter_subject;
+            gf_type  = filter_type;
+            gf_priority  = filter_priority;
+            gf_status    = filter_status;
+            gfilter_c = 'true';
+            gf_created_at    = filter_created_at;
+            gf_updated_at    = filter_updated_at;
+            // gf_responder_id = filter_responder_id;
+            // gf_requester_id  = filter_requester_id;
+            // f_fr_escalated    = filter_fr_escalated;
+            // f_fr_due_by    = filter_fr_due_by;
+            gf_group_id  = filter_group_id;
+            // f_cc_emails     = filter_cc_emails;
+            // f_reply_cc_emails   = filter_reply_cc_emails;
+            // f_ticket_cc_emails  = filter_ticket_cc_emails;
+            // f_ticket_bcc_emails = filter_ticket_bcc_emails;
+            // f_fwd_emails    = filter_fwd_emails;
+            // f_to_emails     = filter_to_emails;
+            // f_spam  = filter_spam;
+            // f_email_config_id    = filter_email_config_id;
+            // f_source    = filter_source;
+            // f_company_id    = filter_company_id;
+            // f_association_type  = filter_association_type;
+            // f_product_id    = filter_product_id;
+            // f_associated_tickets_count   = filter_associated_tickets_count;
+            // f_tags  = filter_tags;
+            // f_nr_due_by    = filter_nr_due_by;
+            // f_nr_escalated  = filter_nr_escalated;
+            
+            var table = $('#ticketsTable').DataTable();
+            // table.clear().draw();
+			table.ajax.reload(null,false);
+        };
+         function filterTicket(){
+            $('#filterModal').modal('show');
+        };
         function viewTicket(ticketId){
             let ViewUrl = 'index.php?module=jd_tickets&action=viewTicket&ticket_id='+ticketId+'&sugar_body_only=true';
             console.log(ViewUrl);
@@ -249,20 +515,13 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                     4: "Resolved",
                     5: "Closed",
                 };
+                const sourceMap = { 1: 'Email', 2: 'Portal', 3: 'Phone', 7: 'Chat', 9:'Feedback Widget',10:'Outbound Email' };
+                
             $.ajax({
                 url: ViewUrl,
                 method: 'GET',
                 success: function (data) {
                     var data = JSON.parse(data);
-                    // body_content = `<div class="row">
-                    //     <div class="col-md-6">
-                    //         <label for="ticket_id">Ticket ID:</label>
-                    //         <span id="ticket_id">${data.id}</span>
-                    //     </div>
-                    //     <div class="col-md-6">
-                    //         <label for="subject">Subject:</label>
-                    //         <span id="subject">${data.subject}</span>
-                    //     </div>`;
                     // Priority and Status Mappings
 
                     let body_content = `
@@ -344,7 +603,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                                 </div>
                                 <div class="col-md-6">
                                     <label for="source"><strong>Source:</strong></label>
-                                    <input type="text" id="source" class="form-control" value="${data.source || 'N/A'}" readonly>
+                                    <input type="text" id="source" class="form-control" value="${sourceMap[data.source] || "Other"}" readonly>
                                 </div>
                             </div>
 
@@ -413,26 +672,41 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                 }
             });
         }
-        $(document).ready(function () {
-            var table = $('#ticketsTable').DataTable({
+       
+        function jd_dataTable(filter_c,filter_status,filter_priority,group_id,filter_type,filter_created_at,filter_updated_at,filter_responder_id,filter_requester_id){
+            debugger;
+            gfilter_c = filter_c;
+            gf_status = filter_status;
+            gf_priority = filter_priority;
+            gf_group_id = group_id;
+            gf_type = filter_type;
+            gf_created_at = filter_created_at;
+            gf_updated_at = filter_updated_at;
+            // gf_responder_id = filter_responder_id;
+            // gf_requester_id = filter_requester_id;
+            table = $('#ticketsTable').DataTable({
                 processing: true,
                 serverSide: true,
-                searching: true,
+                searching: false,
+                paging: true,
                 order: [[0, 'asc']], // Default sorting by Ticket ID column
-                lengthMenu: [10, 20, 50], // Pagination options
-                pageLength: 10, // Default rows per page
+                lengthMenu: [30, 50], // Pagination options
+                pageLength: 30, // Default rows per page
                 ajax: {
                     url: 'index.php?module=jd_tickets&action=server&sugar_body_only=true',
                     type: 'GET',
-                    dataSrc: function(json) {
+                    dataSrc: 'data',
+                    data: function(data) {
+                        data.filter_c = gfilter_c;
+                        data.status = gf_status;
+                        data.priority = gf_priority;
+                        data.group_id = gf_group_id;
+                        data.type = gf_type;
+                        data.created_at = gf_created_at;
+                        data.updated_at = gf_updated_at;
+                        // data.responder_id = gf_responder_id;
+                        // data.requester_id = gf_requester_id;
                         debugger;
-                        // Check if the server returned an error
-                        if (json.error) {
-                            alert('Error: ' + json.error);
-                            return [];
-                        }
-                        // Return the data array from the response
-                        return json.data;
                     },
                     error: function(xhr, error, thrown) {
                         console.error('AJAX error:', error, thrown);
@@ -440,66 +714,250 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                     },
                 },
                 columns: [
-                    { data: 0, title: 'Ticket ID',
-                        render: function(data, type, row) {
-                        return `<button onclick="viewTicket(${data})">View</button>`+data;
-                    }
+                    {
+                        "mData": null,
+                        title: "ID",
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return '<button onclick="viewTicket('+data['id']+')">View</button>'+data['id'];
+                        },
+                    },
+                    {
+                        "mData": null,
+                        title: "Subject",
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['subject'];
+                        },
+                    },
+                    {
+                        "mData": null,
+                        title: "Type",
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            // const statusMap = { 2: 'Open', 3: 'Pending', 4: 'Resolved', 5: 'Closed', };
+                            return data['type'];
+                        },
                      },
-                    { data: 1, title: 'Subject' },
-                    { data: 2, title: 'Type' },
-                    { 
-                        data: 3, 
-                        title: 'Priority', 
-                        render: function (data) {
+                     {
+                        "mData": null,
+                        title: "Priority",
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
                             const priorityMap = { 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Urgent' };
-                            return priorityMap[data] || 'Unknown';
-                        }
-                    },
-                    { data: 4, title: 'Status',
-                        render: function (data) {
-                            const statusMap = { 2: 'Open', 3: 'Pending', 4: 'Resolved', 5: 'Closed', };
-                            return statusMap[data] || 'unresolved';
-                        }
+                            return priorityMap[data['priority']] || 'Unknown';
+                        },
                      },
+                    {
+                        "mData": null,
+                        title: "Status",
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            const statusMap = { 2: 'Open', 3: 'Pending', 4: 'Resolved', 5: 'Closed', };
+                            return statusMap[data['status']] || 'unresolved';
+                        },
+                     },
+                     
                     { 
-                        data: 5, 
-                        title: 'Created At', 
-                        render: function (data) {
-                            return new Date(data).toLocaleString();
-                        }
+                        "mData": null,
+                        title: 'Created At',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return new Date(data['created_at']).toDateString();
+                        },
                     },
                     { 
-                        data: 6, 
-                        title: 'Updated At', 
-                        render: function (data) {
-                            return new Date(data).toLocaleString();
-                        }
+                        "mData": null,
+                        title: 'Updated At',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return new Date(data['updated_at']).toDateString();
+                        },
                     },
-                    { data: 7, title: 'Escalated' },
-                    { data: 8, title: 'Due Date' },
-                    { data: 9, title: 'Group ID' },
-                    { data: 10, title: 'CC Email'},
-                    { data: 11, title: 'Reply CC Email'},
-                    { data: 12, title: 'Ticket CC Email'},
-                    { data: 13, title: 'Ticket BCC Email'},
-                    { data: 14, title: 'forward Email'},
-                    { data: 15, title: 'Support Email'},
-                    { data: 16, title: 'To Email'},
-                    { data: 17, title: 'Spam'},
-                    { data: 18, title: 'email Config Id'},
-                    { data: 19, title: 'Requester ID'},
-                    { data: 20, title: 'Source'},
-                    { data: 21, title: 'Company ID'},
-                    { data: 22, title: 'Association Type'},
-                    { data: 23, title: 'Responder ID'},
-                    { data: 24, title: 'Product ID'},
-                    { data: 25, title: 'Associated Tickets Count'},
-                    { data: 26, title: 'Tags'},
-                    { data: 27, title: 'NR Due By'},
-                    { data: 28, title: 'NR Escalated'},
+                    {   
+                        "mData": null,
+                        title: 'Escalated',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['fr_escalated'];
+                        },
+                     },
+                    {
+                        "mData": null,
+                        title: 'Due Date',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return new Date(data['fr_due_by']).toDateString();
+                        },
+                    },
+                    { 
+                        "mData": null,
+                        title: 'Group ID',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['group_id'];
+                        },
+                    },
+                    { 
+                        "mData": null,
+                        title: 'CC Email',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['cc_emails'];
+                        },
+
+                    },
+                    { 
+                        "mData": null,
+                        title: 'Reply CC Email',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['reply_cc_emails'];
+                        },
+                    },
+                    {
+                        title: 'Ticket CC Email',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['ticket_cc_emails'];
+                        },
+                    },
+                    { 
+                        title: 'Ticket BCC Email',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['ticket_bcc_emails'];
+                        },
+                    },
+                    { 
+                        title: 'forward Email',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['fwd_emails'];
+                        },
+                    },
+                    {
+                        "mData": null,
+                        title: 'Support Email',
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['support_email'];
+                        },
+                    },
+                    { 
+                        title: 'To Email',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['to_emails'];
+                        },
+                    },
+                    { 
+                        title: 'Spam',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['spam'];
+                        },
+                    },
+                    { 
+                        title: 'email Config Id',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['email_config_id'];
+                        },
+                    },
+                    { 
+                        title: 'Requester ID',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['requester_id'];
+                        },
+                    },
+                    { 
+                        title: 'Source',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            const sourceMap = { 1: 'Email', 2: 'Portal', 3: 'Phone', 7: 'Chat', 9:'Feedback Widget',10:'Outbound Email' };
+                            return sourceMap[data['source']] || 'Other';
+                        },
+                    },
+                    { 
+                        title: 'Company ID',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['company_id'];
+                        },
+                    },
+                    { 
+                        title: 'Association Type',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['association_type'];
+                        },
+                    },
+                    {
+                        title: 'Responder ID',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['responder_id'];
+                        },
+                    },
+                    { 
+                        title: 'Product ID',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['product_id'];
+                        },
+                    },
+                    { 
+                        title: 'Associated Tickets Count',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['associated_tickets_count'];
+                        },
+                    },
+                    { 
+                        title: 'Tags',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['tags'];
+                        },
+                    },
+                    { 
+                        title: 'NR Due By',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['nr_due_by'];
+                        },
+                    },
+                    { 
+                        title: 'NR Escalated',
+                        "mData": null,
+                        className: 'py-rem font-black',
+                        mRender: function (data, type, full) {
+                            return data['nr_escalated'];
+                        },
+                    },
                 ],
             });
-
+        }
+        $(document).ready(function () {
+            // on load run the function to load all data.
+            jd_dataTable();
             // Initialize the multi-select dropdown
             $('#columnVisibility').select2({
                 placeholder: "Select columns to display"
@@ -526,7 +984,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             });
 
             // Set default visibility for the first few columns
-            $('#columnVisibility').val([0, 1, 2,10,11]);  // Show columns: Ticket ID, Subject, and Type by default
+            $('#columnVisibility').val([0, 1, 2]);  // Show columns: Ticket ID, Subject, and Type by default
             $('#columnVisibility').trigger('change');
 
             // Close dropdown if clicked outside
@@ -537,109 +995,21 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             });
 
             // Handle rows per page change
-            $('#rowsPerPage').on('change', function() {
-                var pageLength = parseInt($(this).val());
-                table.page.len(pageLength).draw();
-            });
+            // $('#rowsPerPage').on('change', function() {
+            //     var pageLength = parseInt($(this).val());
+            //     table.page.len(pageLength).draw();
+            //     debugger;
+            // });
         });
+
+        function toggleColumn(tableId, columnIndex, show) {
+            // Get the DataTable instance by table ID
+            var table = $('#' + tableId).DataTable();
+
+            // Toggle visibility of the column
+            table.column(columnIndex).visible(show);
+        }
+
     </script>
 </body>
 </html>
-<?php
-die;
-
-?>
-<title>Freshdesk Tickets</title>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
-<!-- DataTables CSS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <h1>Freshdesk Tickets</h1>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<body>
-    <table id="ticketsTable" class="display" style="width:100%">
-        <thead>
-            <!-- <tr>
-                <th>Ticket ID</th>
-                <th>Subject</th>
-                <th>Status</th>
-                <th>Priority</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-            </tr> -->
-        </thead>
-        <tbody>
-            <!-- Data will be dynamically populated -->
-        </tbody>
-    </table>
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <script>
-        // $(document).ready(function() {
-        //     $('#ticketsTable').DataTable({
-        //         processing: true,
-        //         serverSide: true,
-        //         ajax: {
-        //             url: 'index.php?entryPoint=freshdeskTickets',
-        //             type: 'GET'
-        //         },
-        //         columns: [
-        //             { title: "ID" },
-        //             { title: "Subject" },
-        //             { title: "Status" },
-        //             { title: "Priority" }
-        //         ]
-        //     });
-        // });
-        $(document).ready(function () {
-            $('#ticketsTable').DataTable({
-                ajax: {
-                    url: 'index.php?module=jd_tickets&action=freshdeskTickets', // Your PHP endpoint
-                    dataSrc: ''
-                },
-                columns: [
-                    { data: 'id', title: 'Ticket ID', "orderable": true },
-                    { data: 'subject', title: 'Subject' },
-                    { 
-                        data: 'status',
-                        title: 'Status',
-                        render: function (data) {
-                            const statusMap = { 2: 'Open', 5: 'Resolved' };
-                            return statusMap[data] || 'Unknown';
-                        }
-                    },
-                    { 
-                        data: 'priority',
-                        title: 'Priority',
-                        render: function (data) {
-                            const priorityMap = { 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Urgent' };
-                            return priorityMap[data] || 'Unknown';
-                        }
-                    },
-                    { 
-                        data: 'created_at',
-                        title: 'Created At',
-                        render: function (data) {
-                            return new Date(data).toLocaleString();
-                        }
-                    },
-                    { 
-                        data: 'updated_at',
-                        title: 'Updated At',
-                        render: function (data) {
-                            return new Date(data).toLocaleString();
-                        }
-                    }
-                ]
-            });
-            
-        });
-
-    </script>
