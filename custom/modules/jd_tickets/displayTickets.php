@@ -499,6 +499,12 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
          function filterTicket(){
             $('#filterModal').modal('show');
         };
+        function jd_formatDateTime(date) {
+            const NewDate = new Date(date);
+            const formattedDate = NewDate.toDateString();
+            const formattedTime = NewDate.toLocaleTimeString();
+            return `${formattedDate} ${formattedTime}`;
+        }
         function viewTicket(ticketId){
             let ViewUrl = 'index.php?module=jd_tickets&action=viewTicket&ticket_id='+ticketId+'&sugar_body_only=true';
             console.log(ViewUrl);
@@ -611,7 +617,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="due_by"><strong>Due By:</strong></label>
-                                    <input type="text" id="due_by" class="form-control" value="${new Date(data.due_by).toLocaleString()}" readonly>
+                                    <input type="text" id="due_by" class="form-control" value="${jd_formatDateTime(data.due_by)}" readonly>
                                 </div>
                             </div>
 
@@ -619,11 +625,11 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="created_at"><strong>Created At:</strong></label>
-                                    <input type="text" id="created_at" class="form-control" value="${new Date(data.created_at).toLocaleString()}" readonly>
+                                    <input type="text" id="created_at" class="form-control" value="${ jd_formatDateTime(data.created_at)}" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="updated_at"><strong>Updated At:</strong></label>
-                                    <input type="text" id="updated_at" class="form-control" value="${new Date(data.updated_at).toLocaleString()}" readonly>
+                                    <input type="text" id="updated_at" class="form-control" value="${ jd_formatDateTime(data.updated_at)}" readonly>
                                 </div>
                             </div>
 
@@ -767,6 +773,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             var date_created_string = new Date(data['created_at']).toLocaleString();
                             var date_created_time = date_created_string.split(' ');
                             return date_created+' '+date_created_time['1'];
+                            
                             // return new Date(data['created_at']).toDateString();
                         },
                     },
