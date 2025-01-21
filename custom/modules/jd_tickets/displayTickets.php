@@ -549,7 +549,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="status"><strong>Status:</strong></label>
-                                    <input type="text" id="status" class="form-control" value="${statusMap[data.status] || "Unknown"}" readonly>
+                                    <input type="text" id="status" class="form-control" value="${statusMap[data.status] || "UnResolved"}" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="priority"><strong>Priority:</strong></label>
@@ -769,11 +769,11 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         title: 'Created At',
                         className: 'py-rem font-black',
                         mRender: function (data, type, full) {
-                            var date_created = new Date(data['created_at']).toDateString();
-                            var date_created_string = new Date(data['created_at']).toLocaleString();
-                            var date_created_time = date_created_string.split(' ');
-                            return date_created+' '+date_created_time['1'];
-                            
+                            // var date_created = new Date(data['created_at']).toDateString();
+                            // var date_created_string = new Date(data['created_at']).toLocaleString();
+                            // var date_created_time = date_created_string.split(' ');
+                            // return date_created+' '+date_created_time['1'];
+                            return jd_formatDateTime(data['created_at']);
                             // return new Date(data['created_at']).toDateString();
                         },
                     },
@@ -783,10 +783,11 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         className: 'py-rem font-black',
                         mRender: function (data, type, full) {
                             // return new Date(data['updated_at']).toDateString();
-                            var date_updated = new Date(data['created_at']).toDateString();
-                            var date_updated_string = new Date(data['created_at']).toLocaleString();
-                            var date_updated_time = date_updated_string.split(' ');
-                            return date_updated+' '+date_updated_time['1'];
+                            // var date_updated = new Date(data['created_at']).toDateString();
+                            // var date_updated_string = new Date(data['created_at']).toLocaleString();
+                            // var date_updated_time = date_updated_string.split(' ');
+                            // return date_updated+' '+date_updated_time['1'];
+                            return jd_formatDateTime(data['updated_at']);
 
                         },
                     },
@@ -804,10 +805,12 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         className: 'py-rem font-black',
                         mRender: function (data, type, full) {
                             // return new Date(data['fr_due_by']).toDateString();
-                            var fr_due_by_d = new Date(data['fr_due_by']).toDateString();
-                            var fr_due_by_string = new Date(data['fr_due_by']).toLocaleString();
-                            var fr_due_by_time = fr_due_by_string.split(' ');
-                            return fr_due_by_d+' '+fr_due_by_time['1'];
+                            // var fr_due_by_d = new Date(data['fr_due_by']).toDateString();
+                            // var fr_due_by_string = new Date(data['fr_due_by']).toLocaleString();
+                            // var fr_due_by_time = fr_due_by_string.split(' ');
+                            // return fr_due_by_d+' '+fr_due_by_time['1'];
+                            return jd_formatDateTime(data['fr_due_by']);
+
                         },
                     },
                     { 
