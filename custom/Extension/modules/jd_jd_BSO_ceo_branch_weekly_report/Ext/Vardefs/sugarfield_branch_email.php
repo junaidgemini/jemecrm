@@ -2,7 +2,8 @@
 $dictionary['jd_jd_BSO_ceo_branch_weekly_report']['fields']['branch_email'] = array(
 	'name' => 'branch_email',
 	'vname' => 'LBL_BRANCH_EMAIL',
-	'type' => 'varchar',
+	'type' => 'enum',
+	'options' => 'branch_emails_dom',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',
