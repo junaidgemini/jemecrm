@@ -58,8 +58,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'branch_emails',
-            'label' => 'LBL_BRANCH_EMAILS',
+            'name' => 'mobile',
+            'label' => 'LBL_MOBILE',
           ),
           1 => 
           array (
@@ -89,8 +89,8 @@ array (
           ),
           1 => 
           array (
-            'name' => 'mobile',
-            'label' => 'LBL_MOBILE',
+            'name' => 'branch_emails',
+            'label' => 'LBL_BRANCH_EMAILS',
           ),
         ),
         4 => 
