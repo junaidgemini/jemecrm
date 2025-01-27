@@ -87,6 +87,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
+          ),
+          1 => '',
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'jd_other',
             'label' => 'LBL_JD_OTHER',
           ),
@@ -96,7 +105,7 @@ array (
             'label' => 'LBL_COMMENTS',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -109,7 +118,7 @@ array (
             'label' => 'LBL_RECOMMEND_REASON',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -117,7 +126,7 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -125,7 +134,7 @@ array (
             'label' => 'LBL_REFERRAL_PROGRAM',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'description',
         ),
