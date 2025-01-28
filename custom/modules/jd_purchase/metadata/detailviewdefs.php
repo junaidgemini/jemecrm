@@ -97,6 +97,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
+          ),
+          1 => '',
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'specify_other',
             'label' => 'LBL_SPECIFY_OTHER',
           ),
@@ -106,7 +115,7 @@ array (
             'label' => 'LBL_JD_OTHER',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -121,7 +130,7 @@ array (
             'label' => 'LBL_EXPERIENCE',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -134,7 +143,7 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'description',
         ),
