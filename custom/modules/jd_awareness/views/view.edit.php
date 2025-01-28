@@ -1333,11 +1333,11 @@ class jd_awarenessViewEdit extends ViewEdit
                     }, 100);
                 }
 
-                // if (savedBranch) {
-                //     setTimeout(() => {
-                //         branchField.value = savedBranch;
-                //     }, 200);
-                // }
+                if (savedBranch) {
+                    setTimeout(() => {
+                        branchField.value = savedBranch;
+                    }, 200);
+                }
             });
         </script>';
     }
