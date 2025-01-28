@@ -72,21 +72,21 @@ array (
         array (
           0 => 
           array (
-            'name' => 'date_of_visit',
-            'label' => 'LBL_DATE_OF_VISIT',
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
           ),
           1 => 
           array (
-            'name' => 'jd_branch',
-            'label' => 'LBL_JD_BRANCH',
+            'name' => 'branch_email',
+            'label' => 'LBL_BRANCH_EMAIL',
           ),
         ),
         3 => 
         array (
           0 => 
           array (
-            'name' => 'branch_email',
-            'label' => 'LBL_BRANCH_EMAIL',
+            'name' => 'date_of_visit',
+            'label' => 'LBL_DATE_OF_VISIT',
           ),
           1 => 
           array (

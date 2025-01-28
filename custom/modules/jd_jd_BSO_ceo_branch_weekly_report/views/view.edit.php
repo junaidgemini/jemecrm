@@ -11,13 +11,13 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
         $savedZone = isset($this->bean->jd_zone) ? $this->bean->jd_zone : '';
         $savedState = isset($this->bean->jd_branch_state) ? $this->bean->jd_branch_state : '';
         $savedBranch = isset($this->bean->jd_branch) ? $this->bean->jd_branch : '';
-        $savedBranchEmails = isset($this->bean->branch_emails) ? $this->bean->branch_emails : '';
+        $savedBranchEmails = isset($this->bean->branch_email) ? $this->bean->branch_email : '';
         
         // Pass these values to the frontend using Smarty
         $this->ss->assign('JD_ZONE', $savedZone);
         $this->ss->assign('JD_BRANCH_STATE', $savedState);
         $this->ss->assign('JD_BRANCH', $savedBranch);
-        $this->ss->assign('JD_SAVEDBRANCHEMAILS', $savedBranchEmails);
+        $this->ss->assign('JD_SAVEDBRANCHEMAILS', $savedBranchEmail);
 
         // Add custom JS for dropdown dependency
         echo '<script type="text/javascript">
@@ -27,7 +27,7 @@ class jd_jd_BSO_ceo_branch_weekly_reportViewEdit extends ViewEdit
                 const zoneField = document.getElementById("jd_zone");
                 const stateField = document.getElementById("jd_branch_state");
                 const branchField = document.getElementById("jd_branch");
-                const branchEmails = document.getElementById("branch_emails");
+                const branchEmails = document.getElementById("branch_email");
 
                 const savedZone = "'.$savedZone.'";
                 const savedState = "'.$savedState.'";
