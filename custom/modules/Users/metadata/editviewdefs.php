@@ -150,30 +150,38 @@ array (
           ),
           1 => 
           array (
-            'name' => 'jd_roles_c',
-            'label' => 'LBL_JD_ROLES_C',
+            'name' => 'jd_branch_size',
+            'label' => 'LBL_JD_BRANCH_SIZE',
           ),
         ),
         7 => 
         array (
+          0 => 
+          array (
+            'name' => 'jd_roles_c',
+            'label' => 'LBL_JD_ROLES_C',
+          ),
+        ),
+        8 => 
+        array (
           0 => 'messenger_type',
           1 => 'messenger_id',
         ),
-        8 => 
+        9 => 
         array (
           0 => 'address_street',
           1 => 'address_city',
         ),
-        9 => 
+        10 => 
         array (
           0 => 'address_state',
           1 => 'address_postalcode',
         ),
-        10 => 
+        11 => 
         array (
           0 => 'address_country',
         ),
-        11 => 
+        12 => 
         array (
           0 => 'description',
         ),
