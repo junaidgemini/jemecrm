@@ -40,11 +40,12 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_JD_ZONE' => 'Zone',
+  'LBL_JD_BRANCH' => 'Branch',
   'LBL_LAPO_HEARING' => 'How Did You First Hear About LA',
   'LBL_LAPO_ENGAGEMENT_INFO' => 'How Engaging Was The Information You Received?:',
   'LBL_ATTRACTION' => 'What attracts you to learn more.?',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
-  'LBL_LOCATION' => 'Location',
+  'LBL_LOCATION' => 'State',
   'LBL_MOBILE' => 'Mobile Number',
   'LBL_SPECIFY_OTHER' => 'Specify Other',
   'LBL_COMMENTS' => 'Comments',

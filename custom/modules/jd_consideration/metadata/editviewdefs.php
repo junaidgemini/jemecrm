@@ -74,6 +74,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
+          ),
+          1 => '',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
             'name' => 'occupation',
             'label' => 'LBL_OCCUPATION',
           ),
@@ -83,7 +92,7 @@ array (
             'label' => 'LBL_JD_OTHER',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -96,7 +105,7 @@ array (
             'label' => 'LBL_AGREE_FOR_COMMUNICATIONS',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -110,7 +119,7 @@ array (
             'label' => 'LBL_SPECIFY_OTHER',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -123,7 +132,7 @@ array (
             'label' => 'LBL_RECEIVE_SUPPORT_DURING_CONSIDERATION',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'description',
         ),
