@@ -50,29 +50,29 @@ array (
           0 => 'name',
           1 => 
           array (
-            'name' => 'jd_zone',
-            'label' => 'LBL_JD_ZONE',
+            'name' => 'demography',
+            'label' => 'LBL_DEMOGRAPHY',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'jd_branch_state',
-            'label' => 'LBL_JD_BRANCH_STATE',
+            'name' => 'jd_zone',
+            'label' => 'LBL_JD_ZONE',
           ),
           1 => 
           array (
-            'name' => 'jd_branch',
-            'label' => 'LBL_JD_BRANCH',
+            'name' => 'jd_branch_state',
+            'label' => 'LBL_JD_BRANCH_STATE',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'demography',
-            'label' => 'LBL_DEMOGRAPHY',
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
           ),
           1 => 
           array (
