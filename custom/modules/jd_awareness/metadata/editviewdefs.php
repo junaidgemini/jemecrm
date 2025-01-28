@@ -61,6 +61,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
             'name' => 'customer_full_name',
             'label' => 'LBL_CUSTOMER_FULL_NAME',
           ),
@@ -70,7 +79,7 @@ array (
             'label' => 'LBL_MOBILE',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -83,7 +92,7 @@ array (
             'label' => 'LBL_SPECIFY_OTHER',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -92,7 +101,7 @@ array (
           ),
           1 => 'assigned_user_name',
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -100,7 +109,7 @@ array (
             'label' => 'LBL_LAPO_HEARING',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -108,7 +117,7 @@ array (
             'label' => 'LBL_ATTRACTION',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -121,7 +130,7 @@ array (
             'label' => 'LBL_RECIEVE_PROMOTION',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'description',
           1 => 

@@ -680,6 +680,615 @@ class jd_awarenessViewEdit extends ViewEdit
                         {"key": "Apomu", "value": "Apomu"}
                     ]
                 };
+                
+                const branches_emails = {
+                    "ABEOKUTA": [
+                    {"key": "abeokuta@lapo-nigeria.org", "value": "abeokuta@lapo-nigeria.org"}
+                    ],
+                    "ADO EKITI": [
+                    {"key": "adoekiti@lapo-nigeria.org", "value": "adoekiti@lapo-nigeria.org"}
+                    ],
+                    "AKURE": [
+                    {"key": "akure@lapo-nigeria.org", "value": "akure@lapo-nigeria.org"}
+                    ],
+                    "CALABAR ZONE": [
+                    {"key": "calabarzone@lapo-nigeria.org", "value": "calabarzone@lapo-nigeria.org"}
+                    ],
+                    "ABAK": [
+                    {"key": "abak@lapo-nigeria.org", "value": "abak@lapo-nigeria.org"}
+                    ],
+                    "AKAMKPA": [
+                    {"key": "akamkpa@lapo-nigeria.org", "value": "akamkpa@lapo-nigeria.org"}
+                    ],
+                    "AKA ROAD": [
+                    {"key": "aka.rd@lapo-nigeria.org", "value": "aka.rd@lapo-nigeria.org"}
+                    ],
+                    "ALDERTON": [
+                    {"key": "alderton@lapo-nigeria.org", "value": "alderton@lapo-nigeria.org"}
+                    ],
+                    "EKET 1": [
+                    {"key": "eket1@lapo-nigeria.org", "value": "eket1@lapo-nigeria.org"}
+                    ],
+                    "EKET 2": [
+                    {"key": "eket2@lapo-nigeria.org", "value": "eket2@lapo-nigeria.org"}
+                    ],
+                    "EKPO ABASI": [
+                    {"key": "ekpo.abasi@lapo-nigeria.org", "value": "ekpo.abasi@lapo-nigeria.org"}
+                    ],
+                    "ETINAN": [
+                    {"key": "lapoetinanubium@yahoo.com", "value": "lapoetinanubium@yahoo.com"}
+                    ],
+                    "HARCOURT": [
+                    {"key": "harcourt@lapo-nigeria.org", "value": "harcourt@lapo-nigeria.org"}
+                    ],
+                    "HIGH-WAY": [
+                    {"key": "highway@lapo-nigeria.org", "value": "highway@lapo-nigeria.org"}
+                    ],
+                    "IGILI OGOJA 1": [
+                    {"key": "igili.ogoja@lapo-nigeria.org", "value": "igili.ogoja@lapo-nigeria.org"}
+                    ],
+                    "IGILI OGOJA 2": [
+                    {"key": "igili.ogoja2@lapo-nigeria.org", "value": "igili.ogoja2@lapo-nigeria.org"}
+                    ],
+                    "IKOM": [
+                    {"key": "ikom@lapo-nigeria.org", "value": "ikom@lapo-nigeria.org"}
+                    ],
+                    "IKOT ABASI": [
+                    {"key": "ikot.abasi@lapo-nigeria.org", "value": "ikot.abasi@lapo-nigeria.org"}
+                    ],
+                    "IKOT ANSA": [
+                    {"key": "ikot.ansa@lapo-nigeria.org", "value": "ikot.ansa@lapo-nigeria.org"}
+                    ],
+                    "IKOT-EKPENE ROAD": [
+                    {"key": "ikot.ekpene@lapo-nigeria.org", "value": "ikot.ekpene@lapo-nigeria.org"}
+                    ],
+                    "MARIAN": [
+                    {"key": "marian@lapo-nigeria.org", "value": "marian@lapo-nigeria.org"}
+                    ],
+                    "NUNG-UDOE": [
+                    {"key": "nung.udoe@lapo-nigeria.org", "value": "nung.udoe@lapo-nigeria.org"}
+                    ],
+                    "OBUBRA": [
+                    {"key": "obubra@lapo-nigeria.org", "value": "obubra@lapo-nigeria.org"}
+                    ],
+                    "OBUDU": [
+                    {"key": "obudu@lapo-nigeria.org", "value": "obudu@lapo-nigeria.org"}
+                    ],
+                    "ORON 1": [
+                    {"key": "oron@lapo-nigeria.org", "value": "oron@lapo-nigeria.org"}
+                    ],
+                    "ORON 2": [
+                    {"key": "oron2@lapo-nigeria.org", "value": "oron2@lapo-nigeria.org"}
+                    ],
+                    "UGEP": [
+                    {"key": "ugep@lapo-nigeria.org", "value": "ugep@lapo-nigeria.org"}
+                    ],
+                    "DELTA ZONE": [
+                    {"key": "deltazone@lapo-nigeria.org", "value": "deltazone@lapo-nigeria.org"}
+                    ],
+                    "ABRAKA": [
+                    {"key": "abraka@lapo-nigeria.org", "value": "abraka@lapo-nigeria.org"}
+                    ],
+                    "AGBARO": [
+                    {"key": "agbaro@lapo-nigeria.org", "value": "agbaro@lapo-nigeria.org"}
+                    ],
+                    "AGBOR 1": [
+                    {"key": "agbor@lapo-nigeria.org", "value": "agbor@lapo-nigeria.org"}
+                    ],
+                    "AGBOR 2": [
+                    {"key": "agbor2@lapo-nigeria.org", "value": "agbor2@lapo-nigeria.org"}
+                    ],
+                    "AKENFA": [
+                    {"key": "akenfa@lapo-nigeria.org", "value": "akenfa@lapo-nigeria.org"}
+                    ],
+                    "AMASSOMA": [
+                    {"key": "amassoma@lapo-nigeria.org", "value": "amassoma@lapo-nigeria.org"}
+                    ],
+                    "AMUKPE": [
+                    {"key": "amukpe@lapo-nigeria.org", "value": "amukpe@lapo-nigeria.org"}
+                    ],
+                    "ASABA 1": [
+                    {"key": "asaba@lapo-nigeria.org", "value": "asaba@lapo-nigeria.org"}
+                    ],
+                    "ASABA 2": [
+                    {"key": "asaba2@lapo-nigeria.org", "value": "asaba2@lapo-nigeria.org"}
+                    ],
+                    "ASABA 3": [
+                    {"key": "asaba3@lapo-nigeria.org", "value": "asaba3@lapo-nigeria.org"}
+                    ],
+                    "AZIKORO": [
+                    {"key": "azikoro@lapo-nigeria.org", "value": "azikoro@lapo-nigeria.org"}
+                    ],
+                    "EKIUGBO": [
+                    {"key": "ekiugbo@lapo-nigeria.org", "value": "ekiugbo@lapo-nigeria.org"}
+                    ],
+                    "IGBOGENE": [
+                    {"key": "igbogene@lapo-nigeria.org", "value": "igbogene@lapo-nigeria.org"}
+                    ],
+                    "ISSELE-UKU": [
+                    {"key": "Issele.uku@lapo-nigeria.org", "value": "Issele.uku@lapo-nigeria.org"}
+                    ],
+                    "OGHARA": [
+                    {"key": "oghara@lapo-nigeria.org", "value": "oghara@lapo-nigeria.org"}
+                    ],
+                    "OGUNU": [
+                    {"key": "ogunu@lapo-nigeria.org", "value": "ogunu@lapo-nigeria.org"}
+                    ],
+                    "OGWASHI-UKU": [
+                    {"key": "ogwashi.uku@lapo-nigeria.org", "value": "ogwashi.uku@lapo-nigeria.org"}
+                    ],
+                    "OLEH": [
+                    {"key": "oleh@lapo-nigeria.org", "value": "oleh@lapo-nigeria.org"}
+                    ],
+                    "OPOLO": [
+                    {"key": "opolo@lapo-nigeria.org", "value": "opolo@lapo-nigeria.org"}
+                    ],
+                    "OTUOKE": [
+                    {"key": "otuoke@lapo-nigeria.org", "value": "otuoke@lapo-nigeria.org"}
+                    ],
+                    "OZORO": [
+                    {"key": "ozoro@lapo-nigeria.org", "value": "ozoro@lapo-nigeria.org"}
+                    ],
+                    "PATANI": [
+                    {"key": "patani@lapo-nigeria.org", "value": "patani@lapo-nigeria.org"}
+                    ],
+                    "SAPELE": [
+                    {"key": "sapele@lapo-nigeria.org", "value": "sapele@lapo-nigeria.org"}
+                    ],
+                    "SWALI": [
+                    {"key": "swali@lapo-nigeria.org", "value": "swali@lapo-nigeria.org"}
+                    ],
+                    "UDU": [
+                    {"key": "udu@lapo-nigeria.org", "value": "udu@lapo-nigeria.org"}
+                    ],
+                    "UGHELLI": [
+                    {"key": "ughelli@lapo-nigeria.org", "value": "ughelli@lapo-nigeria.org"}
+                    ],
+                    "WARRI 1": [
+                    {"key": "warri1@lapo-nigeria.org", "value": "warri1@lapo-nigeria.org"}
+                    ],
+                    "WARRI 2": [
+                    {"key": "warri2@lapo-nigeria.org", "value": "warri2@lapo-nigeria.org"}
+                    ],
+                    "WARRI 3": [
+                    {"key": "warri3@lapo-nigeria.org", "value": "warri3@lapo-nigeria.org"}
+                    ],
+                    "WARRI 4": [
+                    {"key": "warri4@lapo-nigeria.org", "value": "warri4@lapo-nigeria.org"}
+                    ],
+                    "EDO ZONE": [
+                    {"key": "edozone@lapo-nigeria.org", "value": "edozone@lapo-nigeria.org"}
+                    ],
+                    "ADESOGBE": [
+                    {"key": "adesogbe@lapo-nigeria.org", "value": "adesogbe@lapo-nigeria.org"}
+                    ],
+                    "ADUWAWA": [
+                    {"key": "aduwawa@lapo-nigeria.org", "value": "aduwawa@lapo-nigeria.org"}
+                    ],
+                    "AGENEGBODE": [
+                    {"key": "agenegbode@lapo-nigeria.org", "value": "agenegbode@lapo-nigeria.org"}
+                    ],
+                    "AUCHI": [
+                    {"key": "auchi@lapo-nigeria.org", "value": "auchi@lapo-nigeria.org"}
+                    ],
+                    "AUCHI 2": [
+                    {"key": "auchi2@lapo-nigeria.org", "value": "auchi2@lapo-nigeria.org"}
+                    ],
+                    "BENIN 1": [
+                    {"key": "benin1@lapo-nigeria.org", "value": "benin1@lapo-nigeria.org"}
+                    ],
+                    "BENIN 2": [
+                    {"key": "benin2@lapo-nigeria.org", "value": "benin2@lapo-nigeria.org"}
+                    ],
+                    "DAWSON": [
+                    {"key": "edls.dawson@lapo-nigeria.org", "value": "edls.dawson@lapo-nigeria.org"}
+                    ],
+                    "EGOR": [
+                    {"key": "egor@lapo-nigeria.org", "value": "egor@lapo-nigeria.org"}
+                    ],
+                    "EKENWAN ROAD": [
+                    {"key": "edls.ekenwuan@lapo-nigeria.org", "value": "edls.ekenwuan@lapo-nigeria.org"}
+                    ],
+                    "EKPOMA": [
+                    {"key": "ekpoma@lapo-nigeria.org", "value": "ekpoma@lapo-nigeria.org"}
+                    ],
+                    "EVBUOTUBU": [
+                    {"key": "evbuotubu@lapo-nigeria.org", "value": "evbuotubu@lapo-nigeria.org"}
+                    ],
+                    "FIRST EAST CIRCULAR": [
+                    {"key": "edls.1st@lapo-nigeria.org", "value": "edls.1st@lapo-nigeria.org"}
+                    ],
+                    "FUGAR": [
+                    {"key": "fugar@lapo-nigeria.org", "value": "fugar@lapo-nigeria.org"}
+                    ],
+                    "IDOGBO": [
+                    {"key": "idogbo@lapo-nigeria.org", "value": "idogbo@lapo-nigeria.org"}
+                    ],
+                    "IGARRA": [
+                    {"key": "igarra@lapo-nigeria.org", "value": "igarra@lapo-nigeria.org"}
+                    ],
+                    "IKPOBA-HILL": [
+                    {"key": "ikpoba.hill@lapo-nigeria.org", "value": "ikpoba.hill@lapo-nigeria.org"}
+                    ],
+                    "MISSION ROAD": [
+                    {"key": "mission.road@lapo-nigeria.org", "value": "mission.road@lapo-nigeria.org"}
+                    ],
+                    "OGHEDE": [
+                    {"key": "oghede@lapo-nigeria.org", "value": "oghede@lapo-nigeria.org"}
+                    ],
+                    "OKA": [
+                    {"key": "oka@lapo-nigeria.org", "value": "oka@lapo-nigeria.org"}
+                    ],
+                    "OKADA": [
+                    {"key": "okada@lapo-nigeria.org", "value": "okada@lapo-nigeria.org"}
+                    ],
+                    "OKO": [
+                    {"key": "oko@lapo-nigeria.org", "value": "oko@lapo-nigeria.org"}
+                    ],
+                    "SAPELE ROAD": [
+                    {"key": "sapele.road@lapo-nigeria.org", "value": "sapele.road@lapo-nigeria.org"}
+                    ],
+                    "UBIAJA": [
+                    {"key": "ubiaja@lapo-nigeria.org", "value": "ubiaja@lapo-nigeria.org"}
+                    ],
+                    "UGBOWO 1": [
+                    {"key": "ugbowo1@lapo-nigeria.org", "value": "ugbowo1@lapo-nigeria.org"}
+                    ],
+                    "UGBOWO 2": [
+                    {"key": "ugbowo2@lapo-nigeria.org", "value": "ugbowo2@lapo-nigeria.org"}
+                    ],
+                    "UPPER SOKPONBA": [
+                    {"key": "upper.sakponba@lapo-nigeria.org", "value": "upper.sakponba@lapo-nigeria.org"}
+                    ],
+                    "UROMI": [
+                    {"key": "uromi@lapo-nigeria.org", "value": "uromi@lapo-nigeria.org"}
+                    ],
+                    "USELU": [
+                    {"key": "edls.uselu@lapo-nigeria.org", "value": "edls.uselu@lapo-nigeria.org"}
+                    ],
+                    "UWELU": [
+                    {"key": "uwelu@lapo-nigeria.org", "value": "uwelu@lapo-nigeria.org"}
+                    ],
+                    "ENUGU ZONE": [
+                    {"key": "enuguzone@lapo-nigeria.org", "value": "enuguzone@lapo-nigeria.org"}
+                    ],
+                    "9TH MILE": [
+                    {"key": "9th.Mile@lapo-nigeria.org", "value": "9th.Mile@lapo-nigeria.org"}
+                    ],
+                    "ABAGANA": [
+                    {"key": "abagana@lapo-nigeria.org", "value": "abagana@lapo-nigeria.org"}
+                    ],
+                    "ABAKALIKI": [
+                    {"key": "abakaliki@lapo-nigeria.org", "value": "abakaliki@lapo-nigeria.org"}
+                    ],
+                    "ABAKPA": [
+                    {"key": "abakpa@lapo-nigeria.org", "value": "abakpa@lapo-nigeria.org"}
+                    ],
+                    "AFIKPO": [
+                    {"key": "afikpo@lapo-nigeria.org", "value": "afikpo@lapo-nigeria.org"}
+                    ],
+                    "AGBANI": [
+                    {"key": "agbani@lapo-nigeria.org", "value": "agbani@lapo-nigeria.org"}
+                    ],
+                    "AGULERI": [
+                    {"key": "aguleri@lapo-nigeria.org", "value": "aguleri@lapo-nigeria.org"}
+                    ],
+                    "AROMA": [
+                    {"key": "aroma@lapo-nigeria.org", "value": "aroma@lapo-nigeria.org"}
+                    ],
+                    "AWKA": [
+                    {"key": "awka@lapo-nigeria.org", "value": "awka@lapo-nigeria.org"}
+                    ],
+                    "EBONYI": [
+                    {"key": "ebonyi@lapo-nigeria.org", "value": "ebonyi@lapo-nigeria.org"}
+                    ],
+                    "EKWULOBIA": [
+                    {"key": "ekwulobia@lapo-nigeria.org", "value": "ekwulobia@lapo-nigeria.org"}
+                    ],
+                    "EMENE": [
+                    {"key": "emene@lapo-nigeria.org", "value": "emene@lapo-nigeria.org"}
+                    ],
+                    "EZZAMGBO": [
+                    {"key": "ezzamgbo@lapo-nigeria.org", "value": "ezzamgbo@lapo-nigeria.org"}
+                    ],
+                    "IHIALA": [
+                    {"key": "ihiala@lapo-nigeria.org", "value": "ihiala@lapo-nigeria.org"}
+                    ],
+                    "ISHIAGU": [
+                    {"key": "amorji.nike@lapo-nigeria.org", "value": "amorji.nike@lapo-nigeria.org"}
+                    ],
+                    "IWEKA": [
+                    {"key": "iweka@lapo-nigeria.org", "value": "iweka@lapo-nigeria.org"}
+                    ],
+                    "NKANU": [
+                    {"key": "nkanu@lapo-nigeria.org", "value": "nkanu@lapo-nigeria.org"}
+                    ],
+                    "NKWELLE": [
+                    {"key": "nkwelle@lapo-nigeria.org", "value": "nkwelle@lapo-nigeria.org"}
+                    ],
+                    "NNEWI": [
+                    {"key": "nnewi@lapo-nigeria.org", "value": "nnewi@lapo-nigeria.org"}
+                    ],
+                    "NSUKKA": [
+                    {"key": "nsukka@lapo-nigeria.org", "value": "nsukka@lapo-nigeria.org"}
+                    ],
+                    "NSUKKA 2": [
+                    {"key": "nsukka2@lapo-nigeria.org", "value": "nsukka2@lapo-nigeria.org"}
+                    ],
+                    "OBOLLO": [
+                    {"key": "obollo@lapo-nigeria.org", "value": "obollo@lapo-nigeria.org"}
+                    ],
+                    "OBOSI": [
+                    {"key": "obosi@lapo-nigeria.org", "value": "obosi@lapo-nigeria.org"}
+                    ],
+                    "OCHANJA": [
+                    {"key": "ochanja@lapo-nigeria.org", "value": "ochanja@lapo-nigeria.org"}
+                    ],
+                    "OGBETE": [
+                    {"key": "ogbete@lapo-nigeria.org", "value": "ogbete@lapo-nigeria.org"}
+                    ],
+                    "OGBUEFURE": [
+                    {"key": "ogbuefere@lapo-nigeria.org", "value": "ogbuefere@lapo-nigeria.org"}
+                    ],
+                    "OGIDI": [
+                    {"key": "ogidi@lapo-nigeria.org", "value": "ogidi@lapo-nigeria.org"}
+                    ],
+                    "OGOJA": [
+                    {"key": "ogoja@lapo-nigeria.org", "value": "ogoja@lapo-nigeria.org"}
+                    ],
+                    "OKPOKO": [
+                    {"key": "okpoko@lapo-nigeria.org", "value": "okpoko@lapo-nigeria.org"}
+                    ],
+                    "ONUEKA": [
+                    {"key": "onueka@lapo-nigeria.org", "value": "onueka@lapo-nigeria.org"}
+                    ],
+                    "ORBA": [
+                    {"key": "orba@lapo-nigeria.org", "value": "orba@lapo-nigeria.org"}
+                    ],
+                    "ORIFITE": [
+                    {"key": "umuzocha@lapo-nigeria.org", "value": "umuzocha@lapo-nigeria.org"}
+                    ],
+                    "ORJI": [
+                    {"key": "orji@lapo-nigeria.org", "value": "orji@lapo-nigeria.org"}
+                    ],
+                    "UKPOR": [
+                    {"key": "ukpor@lapo-nigeria.org", "value": "ukpor@lapo-nigeria.org"}
+                    ],
+                    "UMUZE": [
+                    {"key": "Umuze@lapo-nigeria.org", "value": "Umuze@lapo-nigeria.org"}
+                    ],
+                    "ZIK ROAD": [
+                    {"key": "zik.road@lapo-nigeria.org", "value": "zik.road@lapo-nigeria.org"}
+                    ],
+                    "FCT ZONE": [
+                    {"key": "fct@lapo-nigeria.org", "value": "fct@lapo-nigeria.org"}
+                    ],
+                    "ABAJI": [
+                    {"key": "abaji@lapo-nigeria.org", "value": "abaji@lapo-nigeria.org"}
+                    ],
+                    "AHMADU BELLO": [
+                    {"key": "ahmadu.bello@lapo-nigeria.org", "value": "ahmadu.bello@lapo-nigeria.org"}
+                    ],
+                    "AKWANGA": [
+                    {"key": "akwanga@lapo-nigeria.org", "value": "akwanga@lapo-nigeria.org"}
+                    ],
+                    "BARNAWA": [
+                    {"key": "barnawa@lapo-nigeria.org", "value": "barnawa@lapo-nigeria.org"}
+                    ],
+                    "BIDA": [
+                    {"key": "bida@lapo-nigeria.org", "value": "bida@lapo-nigeria.org"}
+                    ],
+                    "BWARI": [
+                    {"key": "bwari@lapo-nigeria.org", "value": "bwari@lapo-nigeria.org"}
+                    ],
+                    "DOMA": [
+                    {"key": "doma@lapo-nigeria.org", "value": "doma@lapo-nigeria.org"}
+                    ],
+                    "GONI GORA": [
+                    {"key": "gonigora@lapo-nigeria.org", "value": "gonigora@lapo-nigeria.org"}
+                    ],
+                    "GWAGWALADA": [
+                    {"key": "gwagwalada@lapo-nigeria.org", "value": "gwagwalada@lapo-nigeria.org"}
+                    ],
+                    "KACHIA": [
+                    {"key": "kachia@lapo-nigeria.org", "value": "kachia@lapo-nigeria.org"}
+                    ],
+                    "KADO": [
+                    {"key": "kado@lapo-nigeria.org", "value": "kado@lapo-nigeria.org"}
+                    ],
+                    "KAFANCHAN": [
+                    {"key": "kafanchan@lapo-nigeria.org", "value": "kafanchan@lapo-nigeria.org"}
+                    ],
+                    "KAINJI": [
+                    {"key": "new.bussa@lapo-nigeria.org", "value": "new.bussa@lapo-nigeria.org"}
+                    ],
+                    "KAKURI": [
+                    {"key": "kakuri@lapo-nigeria.org", "value": "kakuri@lapo-nigeria.org"}
+                    ],
+                    "KARU": [
+                    {"key": "karu@lapo-nigeria.org", "value": "karu@lapo-nigeria.org"}
+                    ],
+                    "KAWO": [
+                    {"key": "kawo@lapo-nigeria.org", "value": "kawo@lapo-nigeria.org"}
+                    ],
+                    "KEFFI": [
+                    {"key": "keffi@lapo-nigeria.org", "value": "keffi@lapo-nigeria.org"}
+                    ],
+                    "KONTAGORA": [
+                    {"key": "kontagora@lapo-nigeria.org", "value": "kontagora@lapo-nigeria.org"}
+                    ],
+                    "KUBWA": [
+                    {"key": "kubwa@lapo-nigeria.org", "value": "kubwa@lapo-nigeria.org"}
+                    ],
+                    "KUJE": [
+                    {"key": "kuje@lapo-nigeria.org", "value": "kuje@lapo-nigeria.org"}
+                    ],
+                    "LAFIA": [
+                    {"key": "lafia@lapo-nigeria.org", "value": "lafia@lapo-nigeria.org"}
+                    ],
+                    "LAPAI": [
+                    {"key": "lapai@lapo-nigeria.org", "value": "lapai@lapo-nigeria.org"}
+                    ],
+                    "MINNA 1": [
+                    {"key": "minna1@lapo-nigeria.org", "value": "minna1@lapo-nigeria.org"}
+                    ],
+                    "MINNA 2": [
+                    {"key": "minna2@lapo-nigeria.org", "value": "minna2@lapo-nigeria.org"}
+                    ],
+                    "MOKWA": [
+                    {"key": "mokwa@lapo-nigeria.org", "value": "mokwa@lapo-nigeria.org"}
+                    ],
+                    "NASARAWA": [
+                    {"key": "nasarawa@lapo-nigeria.org", "value": "nasarawa@lapo-nigeria.org"}
+                    ],
+                    "NEW KARU": [
+                    {"key": "newkaru@lapo-nigeria.org", "value": "newkaru@lapo-nigeria.org"}
+                    ],
+                    "NNAMDI AZIKIWE": [
+                    {"key": "nnamdi.azikiwe@lapo-nigeria.org", "value": "nnamdi.azikiwe@lapo-nigeria.org"}
+                    ],
+                    "NYANYAN": [
+                    {"key": "nyanyan@lapo-nigeria.org", "value": "nyanyan@lapo-nigeria.org"}
+                    ],
+                    "SABO 2": [
+                    {"key": "sabo2@lapo-nigeria.org", "value": "sabo2@lapo-nigeria.org"}
+                    ],
+                    "SABO TASHA": [
+                    {"key": "sabo.tasha@lapo-nigeria.org", "value": "sabo.tasha@lapo-nigeria.org"}
+                    ],
+                    "SAMINAKA": [
+                    {"key": "saminaka@lapo-nigeria.org", "value": "saminaka@lapo-nigeria.org"}
+                    ],
+                    "SULEJA": [
+                    {"key": "suleja@lapo-nigeria.org", "value": "suleja@lapo-nigeria.org"}
+                    ],
+                    "WUSE": [
+                    {"key": "wuse@lapo-nigeria.org", "value": "wuse@lapo-nigeria.org"}
+                    ],
+                    "ZARIA 1": [
+                    {"key": "zaria1@lapo-nigeria.org", "value": "zaria1@lapo-nigeria.org"}
+                    ],
+                    "ZARIA 2": [
+                    {"key": "zaria2@lapo-nigeria.org", "value": "zaria2@lapo-nigeria.org"}
+                    ],
+                    "ZUBA": [
+                    {"key": "zuba@lapo-nigeria.org", "value": "zuba@lapo-nigeria.org"}
+                    ],
+                    "LAGOS CENTRAL ZONE": [
+                    {"key": "lagos.central@lapo-nigeria.org", "value": "lagos.central@lapo-nigeria.org"}
+                    ],
+                    "ABULEGBA": [
+                    {"key": "abulegba@lapo-nigeria.org", "value": "abulegba@lapo-nigeria.org"}
+                    ],
+                    "AGBARA": [
+                    {"key": "agbara@lapo-nigeria.org", "value": "agbara@lapo-nigeria.org"}
+                    ],
+                    "AJAGBADI": [
+                    {"key": "ajagbadi@lapo-nigeria.org", "value": "ajagbadi@lapo-nigeria.org"}
+                    ],
+                    "ALABA": [
+                    {"key": "alaba@lapo-nigeria.org", "value": "alaba@lapo-nigeria.org"}
+                    ],
+                    "ALAGBADO": [
+                    {"key": "alagbado@lapo-nigeria.org", "value": "alagbado@lapo-nigeria.org"}
+                    ],
+                    "ATAN": [
+                    {"key": "atan@lapo-nigeria.org", "value": "atan@lapo-nigeria.org"}
+                    ],
+                    "AYOBO": [
+                    {"key": "ayobo@lapo-nigeria.org", "value": "ayobo@lapo-nigeria.org"}
+                    ],
+                    "BADAGRY": [
+                    {"key": "badagry@lapo-nigeria.org", "value": "badagry@lapo-nigeria.org"}
+                    ],
+                    "BARUWA": [
+                    {"key": "baruwa@lapo.nigeria.org", "value": "baruwa@lapo.nigeria.org"}
+                    ],
+                    "BAYEIKU": [
+                    {"key": "bayeiku@lapo.nigeria.org", "value": "bayeiku@lapo.nigeria.org"}
+                    ],
+                    "DALEMO": [
+                    {"key": "dalemo@lapo-nigeria.org", "value": "dalemo@lapo-nigeria.org"}
+                    ],
+                    "EGBEDA 1": [
+                    {"key": "edls.egbeda@lapo-nigeria.org", "value": "edls.egbeda@lapo-nigeria.org"}
+                    ],
+                    "EGBEDA 2": [
+                    {"key": "egbeda@lapo-nigeria.org", "value": "egbeda@lapo-nigeria.org"}
+                    ],
+                    "EJIGBO": [
+                    {"key": "ejigbo@lapo-nigeria.org", "value": "ejigbo@lapo-nigeria.org"}
+                    ],
+                    "IDI-IROKO": [
+                    {"key": "idi.iroko@lapo-nigeria.org", "value": "idi.iroko@lapo-nigeria.org"}
+                    ],
+                    "IFO": [
+                    {"key": "ifo@lapo-nigeria.org", "value": "ifo@lapo-nigeria.org"}
+                    ],
+                    "IGANDO": [
+                    {"key": "igando@lapo-nigeria.org", "value": "igando@lapo-nigeria.org"}
+                    ],
+                    "IGBEDE": [
+                    {"key": "igbede@lapo-nigeria.org", "value": "igbede@lapo-nigeria.org"}
+                    ],
+                    "IGBOGILA": [
+                    {"key": "igbogila@lapo-nigeria.org", "value": "igbogila@lapo-nigeria.org"}
+                    ],
+                    "IJANIKIN": [
+                    {"key": "ijanikin@lapo-nigeria.org", "value": "ijanikin@lapo-nigeria.org"}
+                    ],
+                    "IJEGUN": [
+                    {"key": "ijegun@lapo-nigeria.org", "value": "ijegun@lapo-nigeria.org"}
+                    ],
+                    "IKOTUN": [
+                    {"key": "ikotun@lapo-nigeria.org", "value": "ikotun@lapo-nigeria.org"}
+                    ],
+                    "ILAJE": [
+                    {"key": "ilaje@lapo-nigeria.org", "value": "ilaje@lapo-nigeria.org"}
+                    ],
+                    "ILARO": [
+                    {"key": "illaro@lapo-nigeria.org", "value": "illaro@lapo-nigeria.org"}
+                    ],
+                    "IPAJA": [
+                    {"key": "ipaja@lapo-nigeria.org", "value": "ipaja@lapo-nigeria.org"}
+                    ],
+                    "ISOLO": [
+                    {"key": "isolo@lapo-nigeria.org", "value": "isolo@lapo-nigeria.org"}
+                    ],
+                    "ITORI": [
+                    {"key": "Itori@lapo-nigeria.org", "value": "Itori@lapo-nigeria.org"}
+                    ],
+                    "IYANA-ILOGBO": [
+                    {"key": "iyana.ilogbo@lapo-nigeria.org", "value": "iyana.ilogbo@lapo-nigeria.org"}
+                    ],
+                    "IYANA SCHOOL": [
+                    {"key": "iyana.school@lapo-nigeria.org", "value": "iyana.school@lapo-nigeria.org"}
+                    ],
+                    "JAKANDE": [
+                    {"key": "jakande@lapo-nigeria.org", "value": "jakande@lapo-nigeria.org"}
+                    ], 
+                    "LUSADA": [
+                    {"key": "lusada@lapo-nigeria.org", "value": "lusada@lapo-nigeria.org"}
+                    ],
+                    "OJUORE": [
+                    {"key": "oju.ore@lapo-nigeria.org", "value": "oju.ore@lapo-nigeria.org"}
+                    ],
+                    "OKE-ODO": [
+                    {"key": "oke.odo@lapo-nigeria.org", "value": "oke.odo@lapo-nigeria.org"}
+                    ],
+                    "OKO-AFO": [
+                    {"key": "oke.odo@lapo-nigeria.org", "value": "oke.odo@lapo-nigeria.org"}
+                    ],
+                    "OKOKO": [
+                        {"key": "okoko@lapo-nigeria.org", "value": "okoko@lapo-nigeria.org"}
+                    ],
+                    "OWODE": [
+                        {"key": "owode@lapo-nigeria.org", "value": "owode@lapo-nigeria.org"}
+                    ],
+                    "OWODE-APA": [
+                        {"key": "owode.apa@lapo-nigeria.org", "value": "owode.apa@lapo-nigeria.org"}
+                    ],
+                };
 
                 zoneField.addEventListener("change", function() {
                     const selectedZone = zoneField.value;
@@ -698,19 +1307,19 @@ class jd_awarenessViewEdit extends ViewEdit
                     }
                 });
 
-                // stateField.addEventListener("change", function() {
-                //     const selectedState = stateField.value;
+                stateField.addEventListener("change", function() {
+                    const selectedState = stateField.value;
 
-                //     if (selectedState) {
-                //         branchField.innerHTML = "";
-                //         branchOptions[selectedState].forEach(option => {
-                //             const opt = document.createElement("option");
-                //             opt.value = option.key;
-                //             opt.textContent = option.value;
-                //             branchField.appendChild(opt);
-                //         });
-                //     }
-                // });
+                    if (selectedState) {
+                        branchField.innerHTML = "";
+                        branchOptions[selectedState].forEach(option => {
+                            const opt = document.createElement("option");
+                            opt.value = option.key;
+                            opt.textContent = option.value;
+                            branchField.appendChild(opt);
+                        });
+                    }
+                });
 
                 if (savedZone) {
                     zoneField.value = savedZone;
@@ -724,11 +1333,11 @@ class jd_awarenessViewEdit extends ViewEdit
                     }, 100);
                 }
 
-                if (savedBranch) {
-                    setTimeout(() => {
-                        branchField.value = savedBranch;
-                    }, 200);
-                }
+                // if (savedBranch) {
+                //     setTimeout(() => {
+                //         branchField.value = savedBranch;
+                //     }, 200);
+                // }
             });
         </script>';
     }
