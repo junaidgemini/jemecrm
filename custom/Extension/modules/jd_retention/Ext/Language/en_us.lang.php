@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_DESCRIPTION' => 'ANY ADDITIONAL FEEDBACK ABOUT Experiance',
+  'LBL_DESCRIPTION' => 'Any Additional Feedback About Experiance',
   'LBL_JD_ZONE' => 'Zone',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
   'LBL_LOCATION' => 'State',
@@ -54,6 +54,6 @@ $mod_strings = array (
   'LBL_EMAIL' => 'Email',
   'LBL_SPECIFY_ADDITIONAL_SERVICE' => 'Specify Additional Service',
   'LBL_SATISFACTION' => 'Satisfied With The Services .?',
-  'LBL_RECIEVE_COMMUNICATIONS' => 'AGREE TO RECEIVE COMMUNICATIONS FROM LAPO ?',
+  'LBL_RECIEVE_COMMUNICATIONS' => 'Agree TO Receive Communications.?',
   'LBL_GET_ADDITIONAL_SERVICE' => 'Get Advantage of Additional Services.?',
 );

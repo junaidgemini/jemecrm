@@ -20005,7 +20005,8 @@ table.view {
     text-align: left;
     vertical-align: baseline;
     white-space: pre-wrap;
-    line-height: 10px
+    /* line-height: 10px */
+    line-height: 20px;
 }
 
 #lineItems {
