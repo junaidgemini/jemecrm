@@ -15,7 +15,7 @@ class jd_retentionViewEdit extends ViewEdit
         // Pass these values to the frontend using Smarty
         $this->ss->assign('JD_ZONE', $savedZone);
         $this->ss->assign('JD_BRANCH_STATE', $savedState);
-        // $this->ss->assign('JD_BRANCH', $savedBranch);
+        $this->ss->assign('JD_BRANCH', $savedBranch);
 
         // Add custom JS for dropdown dependency
         echo '<script type="text/javascript">
@@ -684,7 +684,6 @@ class jd_retentionViewEdit extends ViewEdit
 
                 zoneField.addEventListener("change", function() {
                     const selectedZone = zoneField.value;
-                    debugger;
                     if (selectedZone) {
                         stateField.innerHTML = "";
                         // branchField.innerHTML = "";
@@ -698,19 +697,19 @@ class jd_retentionViewEdit extends ViewEdit
                     }
                 });
 
-                // stateField.addEventListener("change", function() {
-                //     const selectedState = stateField.value;
+                stateField.addEventListener("change", function() {
+                    const selectedState = stateField.value;
 
-                //     if (selectedState) {
-                //         branchField.innerHTML = "";
-                //         branchOptions[selectedState].forEach(option => {
-                //             const opt = document.createElement("option");
-                //             opt.value = option.key;
-                //             opt.textContent = option.value;
-                //             branchField.appendChild(opt);
-                //         });
-                //     }
-                // });
+                    if (selectedState) {
+                        branchField.innerHTML = "";
+                        branchOptions[selectedState].forEach(option => {
+                            const opt = document.createElement("option");
+                            opt.value = option.key;
+                            opt.textContent = option.value;
+                            branchField.appendChild(opt);
+                        });
+                    }
+                });
 
                 if (savedZone) {
                     zoneField.value = savedZone;
@@ -724,11 +723,11 @@ class jd_retentionViewEdit extends ViewEdit
                     }, 100);
                 }
 
-                if (savedBranch) {
-                    setTimeout(() => {
-                        branchField.value = savedBranch;
-                    }, 200);
-                }
+                // if (savedBranch) {
+                //     setTimeout(() => {
+                //         branchField.value = savedBranch;
+                //     }, 200);
+                // }
             });
         </script>';
     }
