@@ -12,11 +12,11 @@ $dictionary['User']['fields']['jd_branch'] = array(
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
 	'reportable' => true,
-	'required' => true,
+	// 'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
 	// 'parentenum' => 'jd_branch_state',
 	// 'dependency' => 'jd_branch_state',
-	'dependency' => 'equal($jd_branch_state,"selected_state")', // Add dependency logic
+	// 'dependency' => 'equal($jd_branch_state,"selected_state")', // Add dependency logic
 );
 ?>

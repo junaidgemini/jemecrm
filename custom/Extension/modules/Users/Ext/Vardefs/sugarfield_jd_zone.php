@@ -12,7 +12,7 @@ $dictionary['User']['fields']['jd_zone'] = array(
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
 	'reportable' => true,
-	'required' => true,
+	// 'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
 );
