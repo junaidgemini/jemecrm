@@ -25,20 +25,21 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => true,
+      'useTabs' => false,
       'tabDefs' => 
       array (
         'LBL_USER_INFORMATION' => 
         array (
-          'newTab' => true,
+          'newTab' => false,
           'panelDefault' => 'expanded',
         ),
         'LBL_EMPLOYEE_INFORMATION' => 
         array (
           'newTab' => false,
-          'panelDefault' => 'collapsed',
+          'panelDefault' => 'expanded',
         ),
       ),
+      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -46,21 +47,33 @@ array (
       array (
         0 => 
         array (
-          0 => 'full_name',
-          1 => 'user_name',
+          0 => 'user_name',
+          1 => 
+          array (
+            'name' => 'first_name',
+            'label' => 'LBL_FIRST_NAME',
+          ),
         ),
         1 => 
         array (
           0 => 'status',
           1 => 
           array (
-            'name' => 'UserType',
-            'customCode' => '{if isset($USER_TYPE_READONLY)}{$USER_TYPE_READONLY}{/if}',
+            'name' => 'last_name',
+            'label' => 'LBL_LAST_NAME',
           ),
         ),
         2 => 
         array (
           0 => 'photo',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'factor_auth',
+            'label' => 'LBL_FACTOR_AUTH',
+          ),
         ),
       ),
       'LBL_EMPLOYEE_INFORMATION' => 
@@ -87,6 +100,11 @@ array (
         ),
         4 => 
         array (
+          0 => 'phone_fax',
+          1 => 'phone_home',
+        ),
+        5 => 
+        array (
           0 => 
           array (
             'name' => 'jd_zone',
@@ -98,7 +116,7 @@ array (
             'label' => 'LBL_JD_BRANCH_STATE',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -107,19 +125,17 @@ array (
           ),
           1 => 
           array (
-            'name' => 'jd_roles_c',
-            'label' => 'LBL_JD_ROLES_C',
+            'name' => 'jd_branch_size',
+            'label' => 'LBL_JD_BRANCH_SIZE',
           ),
-        ),
-        6 => 
-        array (
-          0 => 'phone_fax',
-          1 => 'phone_home',
         ),
         7 => 
         array (
-          0 => 'messenger_type',
-          1 => 'messenger_id',
+          0 => 
+          array (
+            'name' => 'jd_roles_c',
+            'label' => 'LBL_JD_ROLES_C',
+          ),
         ),
         8 => 
         array (

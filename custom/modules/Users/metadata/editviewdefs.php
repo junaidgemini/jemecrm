@@ -38,6 +38,7 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
+      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -66,17 +67,9 @@ array (
         ),
         2 => 
         array (
-          0 => 
-          array (
-            'name' => 'UserType',
-            'customCode' => '{if $IS_ADMIN}{$USER_TYPE_DROPDOWN}{else}{$USER_TYPE_READONLY}{/if}',
-          ),
-        ),
-        3 => 
-        array (
           0 => 'photo',
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -164,24 +157,19 @@ array (
         ),
         8 => 
         array (
-          0 => 'messenger_type',
-          1 => 'messenger_id',
-        ),
-        9 => 
-        array (
           0 => 'address_street',
           1 => 'address_city',
         ),
-        10 => 
+        9 => 
         array (
           0 => 'address_state',
           1 => 'address_postalcode',
         ),
-        11 => 
+        10 => 
         array (
           0 => 'address_country',
         ),
-        12 => 
+        11 => 
         array (
           0 => 'description',
         ),
