@@ -14,6 +14,22 @@ array (
     ),
     'advanced_search' => 
     array (
+      'first_name' => 
+      array (
+        'type' => 'name',
+        'label' => 'LBL_FIRST_NAME',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'first_name',
+      ),
+      'last_name' => 
+      array (
+        'type' => 'name',
+        'label' => 'LBL_LAST_NAME',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'last_name',
+      ),
       'user_name' => 
       array (
         'name' => 'user_name',
