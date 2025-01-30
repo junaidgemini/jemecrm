@@ -682,7 +682,7 @@ class UsersViewEdit extends ViewEdit
                         {"key": "SME FCT 2", "value": "SME FCT 2"}
                     ],
                     "Lagos": [
-                    {"key": "", "value": ""}
+                    {"key": "", "value": ""},
                     {"key": "APOMU", "value": "APOMU"}
                     ]
                 };
