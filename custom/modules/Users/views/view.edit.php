@@ -381,7 +381,7 @@ EOD
                         {"key": "Edo", "value": "Edo"}
                     ],
                 };
-
+                
                 const branchOptions = {
                     "Edo": [
                         {"key": "", "value": ""},
@@ -914,6 +914,7 @@ EOD
                     {"key": "APOMU", "value": "APOMU"}
                     ]
                 };
+
 
                 const branches_emails = {
                     "ABEOKUTA": [
