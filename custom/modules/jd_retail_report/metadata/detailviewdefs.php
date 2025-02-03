@@ -1,5 +1,5 @@
 <?php
-$module_name = 'jd_retention';
+$module_name = 'jd_retail_report';
 $viewdefs [$module_name] = 
 array (
   'DetailView' => 
@@ -48,104 +48,84 @@ array (
         0 => 
         array (
           0 => 'name',
-          1 => 
-          array (
-            'name' => 'customer_full_name',
-            'label' => 'LBL_CUSTOMER_FULL_NAME',
-          ),
+          1 => 'assigned_user_name',
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'occupation',
-            'label' => 'LBL_OCCUPATION',
+            'name' => 'actual_c',
+            'label' => 'LBL_ACTUAL_C',
           ),
           1 => 
           array (
-            'name' => 'mobile',
-            'label' => 'LBL_MOBILE',
+            'name' => 'target',
+            'comment' => 'A custom decimal field',
+            'label' => 'LBL_TARGET',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'jd_zone',
-            'label' => 'LBL_JD_ZONE',
+            'name' => 'new_client',
+            'label' => 'LBL_NEW_CLIENT',
           ),
           1 => 
           array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
+            'name' => 'department_mobilized',
+            'label' => 'LBL_DEPARTMENT_MOBILIZED',
           ),
         ),
         3 => 
         array (
           0 => 
           array (
-            'name' => 'jd_branch',
-            'label' => 'LBL_JD_BRANCH',
+            'name' => 'state',
+            'label' => 'LBL_STATE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'branch',
+            'label' => 'LBL_BRANCH',
+          ),
         ),
         4 => 
         array (
           0 => 
           array (
-            'name' => 'gender',
-            'label' => 'LBL_GENDER',
+            'name' => 'zone',
+            'label' => 'LBL_ZONE',
           ),
           1 => 
           array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
+            'name' => 'jd_attachment',
+            'comment' => 'Upload field for <ModuleName>',
+            'label' => 'LBL_JD_ATTACHMENT',
           ),
         ),
         5 => 
         array (
           0 => 
           array (
-            'name' => 'get_additional_service',
-            'label' => 'LBL_GET_ADDITIONAL_SERVICE',
+            'name' => 'transport',
+            'label' => 'LBL_TRANSPORT',
           ),
           1 => 
           array (
-            'name' => 'specify_additional_service',
-            'label' => 'LBL_SPECIFY_ADDITIONAL_SERVICE',
+            'name' => 'variance',
+            'label' => 'LBL_VARIANCE',
           ),
         ),
         6 => 
         array (
           0 => 
           array (
-            'name' => 'satisfaction',
-            'label' => 'LBL_SATISFACTION',
+            'name' => 'sitting_balance',
+            'comment' => 'A custom decimal field',
+            'label' => 'LBL_SITTING_BALANCE',
           ),
-          1 => 
-          array (
-            'name' => 'comments',
-            'label' => 'LBL_COMMENTS',
-          ),
-        ),
-        7 => 
-        array (
-          0 => 'description',
-          1 => 
-          array (
-            'name' => 'recieve_communications',
-            'label' => 'LBL_RECIEVE_COMMUNICATIONS',
-          ),
-        ),
-        8 => 
-        array (
-          0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
+          1 => 'description',
         ),
       ),
     ),

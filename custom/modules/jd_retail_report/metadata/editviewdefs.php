@@ -29,6 +29,7 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
+      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -86,7 +87,12 @@ array (
             'name' => 'zone',
             'label' => 'LBL_ZONE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'jd_attachment',
+            'comment' => 'Upload field for <ModuleName>',
+            'label' => 'LBL_JD_ATTACHMENT',
+          ),
         ),
         5 => 
         array (

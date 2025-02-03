@@ -195,6 +195,16 @@ array (
             'label' => 'LBL_ANY_ADDITIONAL_FEEDBACK',
           ),
         ),
+        13 => 
+        array (
+          0 => 'assigned_user_name',
+          1 => 
+          array (
+            'name' => 'date_entered',
+            'comment' => 'Date record created',
+            'label' => 'LBL_DATE_ENTERED',
+          ),
+        ),
       ),
     ),
   ),

@@ -38,4 +38,4 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-$app_list_strings['moduleList']['jd_agent_banking_report'] = 'Agent Baking Report';
+$app_list_strings['moduleList']['jd_agent_banking_report'] = 'Agent Banking Report';

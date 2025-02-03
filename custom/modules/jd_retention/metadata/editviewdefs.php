@@ -120,12 +120,22 @@ array (
         ),
         7 => 
         array (
-          0 => 
+          0 => 'description',
+          1 => 
           array (
             'name' => 'recieve_communications',
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
-          1 => 'description',
+        ),
+        8 => 
+        array (
+          0 => 'assigned_user_name',
+          1 => 
+          array (
+            'name' => 'date_entered',
+            'comment' => 'Date record created',
+            'label' => 'LBL_DATE_ENTERED',
+          ),
         ),
       ),
     ),

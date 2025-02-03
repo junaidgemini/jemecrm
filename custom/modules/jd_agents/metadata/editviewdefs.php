@@ -1,21 +1,11 @@
 <?php
-$module_name = 'jd_user_replacement';
+$module_name = 'jd_agents';
 $viewdefs [$module_name] = 
 array (
-  'DetailView' => 
+  'EditView' => 
   array (
     'templateMeta' => 
     array (
-      'form' => 
-      array (
-        'buttons' => 
-        array (
-          0 => 'EDIT',
-          1 => 'DUPLICATE',
-          2 => 'DELETE',
-          3 => 'FIND_DUPLICATES',
-        ),
-      ),
       'maxColumns' => '2',
       'widths' => 
       array (
@@ -39,7 +29,6 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
-      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -47,31 +36,34 @@ array (
       array (
         0 => 
         array (
-          0 => 
-          array (
-            'name' => 'jd_primary_user_name',
-            'label' => 'LBL_JD_PRIMARY_USER_NAME',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_acting_user_name',
-            'label' => 'LBL_JD_ACTING_USER_NAME',
-          ),
+          0 => 'name',
+          1 => 'assigned_user_name',
         ),
         1 => 
         array (
-          0 => 'name',
-          1 => 'description',
+          0 => 
+          array (
+            'name' => 'bvn',
+            'label' => 'LBL_BVN',
+          ),
+          1 => 
+          array (
+            'name' => 'dob',
+            'label' => 'LBL_DOB',
+          ),
         ),
         2 => 
         array (
-          0 => 'assigned_user_name',
-          1 => 
+          0 => 
           array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
-            'label' => 'LBL_DATE_ENTERED',
+            'name' => 'nin',
+            'label' => 'LBL_NIN',
           ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 'description',
         ),
       ),
     ),

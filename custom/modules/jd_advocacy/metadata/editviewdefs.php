@@ -138,6 +138,16 @@ array (
         array (
           0 => 'description',
         ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'date_entered',
+            'comment' => 'Date record created',
+            'label' => 'LBL_DATE_ENTERED',
+          ),
+          1 => 'assigned_user_name',
+        ),
       ),
     ),
   ),

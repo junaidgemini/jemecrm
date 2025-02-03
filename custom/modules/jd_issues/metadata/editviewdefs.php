@@ -1,5 +1,5 @@
 <?php
-$module_name = 'jd_user_replacement';
+$module_name = 'jd_issues';
 $viewdefs [$module_name] = 
 array (
   'EditView' => 
@@ -29,7 +29,6 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
-      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -37,31 +36,12 @@ array (
       array (
         0 => 
         array (
-          0 => 
-          array (
-            'name' => 'jd_primary_user_name',
-            'label' => 'LBL_JD_PRIMARY_USER_NAME',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_acting_user_name',
-            'label' => 'LBL_JD_ACTING_USER_NAME',
-          ),
+          0 => 'name',
+          1 => 'assigned_user_name',
         ),
         1 => 
         array (
-          0 => 'name',
-          1 => 'description',
-        ),
-        2 => 
-        array (
-          0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'date_entered',
-            'comment' => 'Date record created',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
+          0 => 'description',
         ),
       ),
     ),
