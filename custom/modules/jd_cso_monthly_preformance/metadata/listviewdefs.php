@@ -44,6 +44,13 @@ array (
     'width' => '10%',
     'default' => true,
   ),
+  'JD_CSO_ZONE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_JD_CSO_ZONE',
+    'width' => '10%',
+    'default' => true,
+  ),
   'ASSIGNED_USER_NAME' => 
   array (
     'width' => '9%',
@@ -200,6 +207,48 @@ array (
   array (
     'type' => 'decimal',
     'label' => 'LBL_JD_CSO_DEPOSIT_MOBILISED_TARGET',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_DISBURSEMENT_PERCENT' => 
+  array (
+    'type' => 'decimal',
+    'label' => 'LBL_JD_CSO_DISBURSEMENT_PERCENT',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_DEPOSIT_BALANCE_ACTUAL' => 
+  array (
+    'type' => 'decimal',
+    'label' => 'LBL_JD_CSO_DEPOSIT_BALANCE_ACTUAL',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_CLIENTS_TARGET' => 
+  array (
+    'type' => 'decimal',
+    'label' => 'LBL_JD_CSO_CLIENTS_TARGET',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_PAR_GRADE_ACTUAL_SCORE' => 
+  array (
+    'type' => 'decimal',
+    'label' => 'LBL_JD_CSO_PAR_GRADE_ACTUAL_SCORE',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_NEW_CLIENTS_ACTUAL' => 
+  array (
+    'type' => 'decimal',
+    'label' => 'LBL_JD_CSO_NEW_CLIENTS_ACTUAL',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_CSO_NAME' => 
+  array (
+    'type' => 'varchar',
+    'label' => 'LBL_JD_CSO_NAME',
     'width' => '10%',
     'default' => false,
   ),

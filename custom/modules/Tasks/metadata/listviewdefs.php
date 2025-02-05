@@ -93,6 +93,38 @@ array (
     'link' => false,
     'default' => false,
   ),
+  'JD_BRANCH_STATE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_JD_BRANCH_STATE',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'PRIORITY' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_PRIORITY',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_BRANCH' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_JD_BRANCH',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'CONTACT_PHONE' => 
+  array (
+    'type' => 'phone',
+    'studio' => 
+    array (
+      'listview' => true,
+    ),
+    'label' => 'LBL_CONTACT_PHONE',
+    'width' => '10%',
+    'default' => false,
+  ),
   'JD_ZONE' => 
   array (
     'type' => 'enum',
