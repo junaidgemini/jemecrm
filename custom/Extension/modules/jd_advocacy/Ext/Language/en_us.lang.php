@@ -52,7 +52,7 @@ $mod_strings = array (
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
   'LBL_EMAIL' => 'Email',
   'LBL_REFERRAL_PROGRAM' => 'Would You Be Interested In Participating In Referral Programs Or Client events?',
-  'LBL_RECOMMEND_TO_OTHERS' => 'Would You Recommend Lapo Microfinance Bank To Others ?:',
-  'LBL_RECOMMEND_REASON' => 'why or why not ?',
-  'LBL_RECIEVE_COMMUNICATIONS' => 'Do You Agree To Receive Communications From Lapo MFB Regarding Products, Promotions, And Educational Opportunities?',
+  'LBL_RECOMMEND_TO_OTHERS' => 'Would You Recommend LAPO Microfinance Bank To Others ?',
+  'LBL_RECOMMEND_REASON' => 'Why Or Why Not ?',
+  'LBL_RECIEVE_COMMUNICATIONS' => 'Do You Agree To Receive Communications From LAPO MFB Regarding Products, Promotions, And Educational Opportunities?',
 );
