@@ -15,5 +15,6 @@ $dictionary['jd_purchase']['fields']['experience'] = array(
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
 	'studio' => 'visible',
+	'required' => true,
 );
 ?>

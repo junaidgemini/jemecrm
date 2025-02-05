@@ -1,8 +1,8 @@
 <?php
-$dictionary['jd_purchase']['fields']['jd_other'] = array(
-	'name' => 'jd_other',
-	'vname' => 'LBL_JD_OTHER',
-	'type' => 'text',
+$dictionary['jd_purchase']['fields']['other_product_or_ervices'] = array(
+	'name' => 'other_product_or_ervices',
+	'vname' => 'LBL_OTHER_PRODUCT_OR_ERVICES',
+	'type' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',

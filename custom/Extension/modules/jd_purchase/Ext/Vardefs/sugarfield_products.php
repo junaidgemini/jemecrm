@@ -14,6 +14,7 @@ $dictionary['jd_purchase']['fields']['products'] = array(
 	'reportable' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
+	'required' => true,
 	'studio' => 'visible',
 );
 ?>

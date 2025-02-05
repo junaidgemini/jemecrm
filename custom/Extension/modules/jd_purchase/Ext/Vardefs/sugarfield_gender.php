@@ -13,6 +13,7 @@ $dictionary['jd_purchase']['fields']['gender'] = array(
 	'audited' => true,
 	'reportable' => true,
 	'unified_search' => false,
+	'required' => true,
 	'merge_filter' => 'disabled',
 );
 ?>
