@@ -64,11 +64,7 @@ array (
             'name' => 'gender',
             'label' => 'LBL_GENDER',
           ),
-          1 => 
-          array (
-            'name' => 'occupation',
-            'label' => 'LBL_OCCUPATION',
-          ),
+          1 => '',
         ),
         3 => 
         array (
@@ -96,13 +92,13 @@ array (
         array (
           0 => 
           array (
-            'name' => 'specify_other',
-            'label' => 'LBL_SPECIFY_OTHER',
+            'name' => 'occupation',
+            'label' => 'LBL_OCCUPATION',
           ),
           1 => 
           array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
+            'name' => 'specify_other_occupation',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
           ),
         ),
         6 => 
@@ -115,12 +111,21 @@ array (
           ),
           1 => 
           array (
+            'name' => 'other_product_or_ervices',
+            'label' => 'LBL_OTHER_PRODUCT_OR_ERVICES',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
             'name' => 'experience',
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE',
           ),
+          1 => '',
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -133,11 +138,12 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'description',
+          1 => '',
         ),
-        9 => 
+        10 => 
         array (
           0 => 'assigned_user_name',
         ),
