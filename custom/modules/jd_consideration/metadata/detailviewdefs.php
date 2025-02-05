@@ -98,8 +98,8 @@ array (
           ),
           1 => 
           array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
+            'name' => 'specify_other_occupation',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
           ),
         ),
         5 => 
@@ -123,11 +123,7 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_DECISION_TO_CONSIDER_LAPO',
           ),
-          1 => 
-          array (
-            'name' => 'specify_other',
-            'label' => 'LBL_SPECIFY_OTHER',
-          ),
+          1 => '',
         ),
         7 => 
         array (
