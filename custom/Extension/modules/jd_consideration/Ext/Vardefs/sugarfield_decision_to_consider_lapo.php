@@ -2,8 +2,7 @@
 $dictionary['jd_consideration']['fields']['decision_to_consider_lapo'] = array(
 	'name' => 'decision_to_consider_lapo',
 	'vname' => 'LBL_DECISION_TO_CONSIDER_LAPO',
-	'type' => 'multienum',
-	'isMultiSelect' => true,
+	'type' => 'enum',
 	'options' => 'decision_to_consider_lapo_dom',
 	'massupdate' => 0,
 	'comments' => '',
