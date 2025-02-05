@@ -52,13 +52,6 @@ array (
     'width' => '10%',
     'default' => true,
   ),
-  'DEMOGRAPHY' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_DEMOGRAPHY',
-    'width' => '10%',
-    'default' => true,
-  ),
   'ESCALATION_OFFICER_NAME' => 
   array (
     'type' => 'varchar',
@@ -100,6 +93,13 @@ array (
   array (
     'type' => 'enum',
     'label' => 'LBL_ESCALATION_OFFICER',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'DEMOGRAPHY' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_DEMOGRAPHY',
     'width' => '10%',
     'default' => false,
   ),
