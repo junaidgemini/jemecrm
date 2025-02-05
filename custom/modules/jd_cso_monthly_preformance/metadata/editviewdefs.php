@@ -61,21 +61,21 @@ array (
         array (
           0 => 
           array (
-            'name' => 'jd_cso_month',
-            'label' => 'LBL_JD_CSO_MONTH',
+            'name' => 'jd_cso_branch',
+            'label' => 'LBL_JD_CSO_BRANCH',
           ),
           1 => 
           array (
-            'name' => 'jd_cso_branch',
-            'label' => 'LBL_JD_CSO_BRANCH',
+            'name' => 'jd_cso_branch_size',
+            'label' => 'LBL_JD_CSO_BRANCH_SIZE',
           ),
         ),
         3 => 
         array (
           0 => 
           array (
-            'name' => 'jd_cso_branch_size',
-            'label' => 'LBL_JD_CSO_BRANCH_SIZE',
+            'name' => 'jd_cso_month',
+            'label' => 'LBL_JD_CSO_MONTH',
           ),
           1 => 'assigned_user_name',
         ),
