@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_DESCRIPTION' => 'What would encourage you to refer others to LAPO MFB ?',
+  'LBL_DESCRIPTION' => 'What Would Encourage You To Refer Others To LAPO MFB ?',
   'LBL_JD_ZONE' => 'Zone',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
   'LBL_LOCATION' => 'State',
@@ -54,5 +54,5 @@ $mod_strings = array (
   'LBL_REFERRAL_PROGRAM' => 'Would You Be Interested In Participating In Referral Programs Or Client events?',
   'LBL_RECOMMEND_TO_OTHERS' => 'Would You Recommend Lapo Microfinance BANK To Others ?:',
   'LBL_RECOMMEND_REASON' => 'why or why not ?',
-  'LBL_RECIEVE_COMMUNICATIONS' => 'Do you agree to receive communications from lapo mfb regarding products, promotions, and educational opportunities?',
+  'LBL_RECIEVE_COMMUNICATIONS' => 'Do You Agree To Receive Communications From Lapo MFB Regarding Products, Promotions, And Educational Opportunities?',
 );
