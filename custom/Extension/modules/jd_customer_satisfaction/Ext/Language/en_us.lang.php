@@ -66,4 +66,8 @@ $mod_strings = array (
   'LBL_SPECIFY_BUSINESS_OTHER' => 'Specify Business Other',
   'LBL_SPECIFY_ENGAGMENT_OTHER' => 'Specify Engagment Other',
   'LBL_SPECIFY_PURPOSE_OF_ENGAGMENT_OTHER' => 'Specify Purpose Of Engagment Other',
+  'LBL_ESCALATION_OFFICER_NAME' => 'Escalation Officer Name',
+  'LBL_ESCALATION_OFFICER_EMAIL' => 'Escalation Officer Email',
+  'LBL_ESCALATION_OFFICER' => 'Escalation Officer',
+  'LBL_SPECIFY_OTHER_ESCALATION_OFFICER' => 'Escalation Officer Specify Other',
 );

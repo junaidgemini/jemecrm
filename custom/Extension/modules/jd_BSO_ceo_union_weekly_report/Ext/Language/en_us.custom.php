@@ -12,3 +12,5 @@ $mod_strings['LBL_JD_STATUS'] = 'Status';
 $mod_strings['LBL_PURPOSE_OF_VISIT'] = 'Purpose of Visit';
 $mod_strings['LBL_ESCALATION_OFFICER_NAME'] = 'Escalation Officer Name';
 $mod_strings['LBL_ESCALATION_OFFICER_EMAIL'] = 'Escalation Officer Email';
+$mod_strings['LBL_ESCALATION_OFFICER'] = 'Escalation Officer';
+$mod_strings['LBL_SPECIFY_OTHER_ESCALATION_OFFICER'] = 'Escalation Officer Specify Other';
