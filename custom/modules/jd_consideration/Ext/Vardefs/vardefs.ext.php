@@ -17,21 +17,6 @@ $dictionary['jd_consideration']['fields']['jd_other'] = array(
 );
 
 
-$dictionary['jd_consideration']['fields']['specify_other'] = array(
-	'name' => 'specify_other',
-	'vname' => 'LBL_SPECIFY_OTHER',
-	'type' => 'varchar',
-	'massupdate' => 0,
-	'comments' => '',
-	'help' => '',
-	'importable' => 'true',
-	'duplicate_merge' => 'disabled',
-	'duplicate_merge_dom_value' => '0',
-	'audited' => true,
-	'reportable' => true,
-);
-
-
 $dictionary['jd_consideration']['fields']['gender'] = array(
 	'name' => 'gender',
 	'vname' => 'LBL_GENDER',
@@ -85,6 +70,39 @@ $dictionary['jd_consideration']['fields']['occupation'] = array(
 	'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
+);
+
+
+$dictionary['jd_consideration']['fields']['jd_branch'] = array(
+	'name' => 'jd_branch',
+	'vname' => 'LBL_JD_BRANCH',
+	'type' => 'enum',
+	'options' => 'jd_branch_dom',
+	'massupdate' => 0,
+	'comments' => '',
+	'help' => '',
+	'importable' => 'true',
+	'duplicate_merge' => 'disabled',
+	'duplicate_merge_dom_value' => '0',
+	'audited' => true,
+	'reportable' => true,
+	'unified_search' => false,
+	'merge_filter' => 'disabled',
+);
+
+
+$dictionary['jd_consideration']['fields']['specify_other_occupation'] = array(
+	'name' => 'specify_other_occupation',
+	'vname' => 'LBL_SPECIFY_OTHER_OCCUPATION',
+	'type' => 'varchar',
+	'massupdate' => 0,
+	'comments' => '',
+	'help' => '',
+	'importable' => 'true',
+	'duplicate_merge' => 'disabled',
+	'duplicate_merge_dom_value' => '0',
+	'audited' => true,
+	'reportable' => true,
 );
 
 
