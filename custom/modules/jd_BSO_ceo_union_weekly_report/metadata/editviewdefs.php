@@ -20,12 +20,17 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'DEFAULT' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
+          'panelDefault' => 'expanded',
+        ),
+        'LBL_EDITVIEW_PANEL1' => 
+        array (
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
       ),
@@ -104,6 +109,35 @@ array (
         array (
           0 => 'assigned_user_name',
           1 => '',
+        ),
+      ),
+      'lbl_editview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'escalation_officer_name',
+            'label' => 'LBL_ESCALATION_OFFICER_NAME',
+          ),
+          1 => 
+          array (
+            'name' => 'escalation_officer_email',
+            'label' => 'LBL_ESCALATION_OFFICER_EMAIL',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'escalation_officer',
+            'label' => 'LBL_ESCALATION_OFFICER',
+          ),
+          1 => 
+          array (
+            'name' => 'specify_other_escalation_officer',
+            'label' => 'LBL_SPECIFY_OTHER_ESCALATION_OFFICER',
+          ),
         ),
       ),
     ),
