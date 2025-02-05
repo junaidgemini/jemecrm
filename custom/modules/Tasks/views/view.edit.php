@@ -21,7 +21,7 @@ class TasksViewEdit extends ViewEdit
         echo '<script type="text/javascript">
             $(document).ready(function() {
                 // hide assignedto field
-                // $(`div[data-field="assigned_user_name"]`).hide();
+                $(`div[data-field="assigned_user_name"]`).hide();
 
                 console.log("Custom JS for Tasks is loaded.");
 
