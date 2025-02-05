@@ -201,51 +201,6 @@ array (
         ),
         12 => 
         array (
-          0 => 
-          array (
-            'name' => 'jd_cso_disbursement_percent',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_DISBURSEMENT_PERCENT',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_cso_loan_portfolio_percent',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_LOAN_PORTFOLIO_PERCENT',
-          ),
-        ),
-        13 => 
-        array (
-          0 => 
-          array (
-            'name' => 'jd_cso_new_client_percent',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_NEW_CLIENT_PERCENT',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_cso_deposit_mobilised_percent',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_DEPOSIT_MOBILISED_PERCENT',
-          ),
-        ),
-        14 => 
-        array (
-          0 => 
-          array (
-            'name' => 'jd_cso_deposit_balance',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_DEPOSIT_BALANCE',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_cso_par_percent',
-            'comment' => 'A custom decimal field',
-            'label' => 'LBL_JD_CSO_PAR_PERCENT',
-          ),
-        ),
-        15 => 
-        array (
           0 => 'description',
           1 => '',
         ),
