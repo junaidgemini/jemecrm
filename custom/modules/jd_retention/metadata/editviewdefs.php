@@ -99,11 +99,6 @@ array (
             'name' => 'gender',
             'label' => 'LBL_GENDER',
           ),
-          1 => 
-          array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
-          ),
         ),
         6 => 
         array (
