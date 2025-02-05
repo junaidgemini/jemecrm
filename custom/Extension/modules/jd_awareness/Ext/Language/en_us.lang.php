@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_JD_ZONE' => 'Zone',
-  'LBL_LAPO_HEARING' => 'How Did You First Hear About LAPO',
+  'LBL_LAPO_HEARING' => 'How Did You First Hear About LAPO MFB',
   'LBL_LAPO_ENGAGEMENT_INFO' => 'How Engaging Was The Information You Received?:',
   'LBL_ATTRACTION' => '⁠What Attracted You To Learn More About LAPO MFB',
   'LBL_GENDER' => 'Gender',
@@ -50,7 +50,7 @@ $mod_strings = array (
   'LBL_MOBILE' => 'Mobile Number',
   'LBL_SPECIFY_OTHER_OCCUPATION' => 'Specify Other Occupation',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_JD_OTHER' => 'Specify Other',
+  'LBL_SPECIFY_OTHER' => 'Specify Other',
   'LBL_OCCUPATION' => 'Occupation',
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
   
