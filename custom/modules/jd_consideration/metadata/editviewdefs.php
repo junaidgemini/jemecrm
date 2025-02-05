@@ -109,9 +109,9 @@ array (
         array (
           0 => 
           array (
-            'name' => 'decision_to_consider_lapo',
+            'name' => 'factors_decision_to_consider_lapo',
             'studio' => 'visible',
-            'label' => 'LBL_DECISION_TO_CONSIDER_LAPO',
+            'label' => 'LBL_FACTORS_DECISION_TO_CONSIDER_LAPO',
           ),
           1 => '',
         ),

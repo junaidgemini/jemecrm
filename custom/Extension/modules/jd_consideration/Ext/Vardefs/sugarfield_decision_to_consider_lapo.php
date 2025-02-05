@@ -1,9 +1,9 @@
 <?php
-$dictionary['jd_consideration']['fields']['decision_to_consider_lapo'] = array(
-	'name' => 'decision_to_consider_lapo',
-	'vname' => 'LBL_DECISION_TO_CONSIDER_LAPO',
+$dictionary['jd_consideration']['fields']['factors_decision_to_consider_lapo'] = array(
+	'name' => 'factors_decision_to_consider_lapo',
+	'vname' => 'LBL_FACTORS_DECISION_TO_CONSIDER_LAPO',
 	'type' => 'enum',
-	'options' => 'decision_to_consider_lapo_dom',
+	'options' => 'factors_decision_to_consider_lapo_dom',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',
