@@ -89,7 +89,7 @@ array (
           1 => 
           array (
             'name' => 'specify_other',
-            'label' => 'LBL_SPECIFY_OTHER',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
           ),
         ),
         5 => 
