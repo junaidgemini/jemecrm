@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_DESCRIPTION' => 'Any Additional Feedback About Experiance',
+  'LBL_DESCRIPTION' => 'Any Additional Feedback About Experience',
   'LBL_JD_ZONE' => 'Zone',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
   'LBL_LOCATION' => 'State',
