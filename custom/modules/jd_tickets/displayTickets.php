@@ -1007,7 +1007,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             });
 
             // Set default visibility for the first few columns
-            $('#columnVisibility').val([0, 1, 2]);  // Show columns: Ticket ID, Subject, and Type by default
+            $('#columnVisibility').val([0, 1, 2, 3, 4, 5, 6]);  // Show columns: Ticket ID, Subject, and Type by default
             $('#columnVisibility').trigger('change');
 
             // Close dropdown if clicked outside
