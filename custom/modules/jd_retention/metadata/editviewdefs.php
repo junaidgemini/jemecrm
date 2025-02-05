@@ -83,6 +83,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'gender',
+            'label' => 'LBL_GENDER',
+          ),
+          1 => '',
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'occupation',
             'label' => 'LBL_OCCUPATION',
           ),
@@ -91,15 +100,6 @@ array (
             'name' => 'specify_other_occupation',
             'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
           ),
-        ),
-        5 => 
-        array (
-          0 => 
-          array (
-            'name' => 'gender',
-            'label' => 'LBL_GENDER',
-          ),
-          1 => '',
         ),
         6 => 
         array (
