@@ -123,7 +123,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_FACTORS_DECISION_TO_CONSIDER_LAPO',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'factors_decision_to_consider_lapo_other',
+            'studio' => 'visible',
+            'label' => 'LBL_FACTORS_DECISION_TO_CONSIDER_LAPO_OTHER',
+          ),
         ),
         7 => 
         array (
