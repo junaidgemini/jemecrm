@@ -1,5 +1,5 @@
 <?php
-$dictionary['jd_purchase']['fields']['specify_other'] = array(
+$dictionary['jd_retention']['fields']['specify_other'] = array(
 	'name' => 'specify_other',
 	'vname' => 'LBL_SPECIFY_OTHER',
 	'type' => 'varchar',

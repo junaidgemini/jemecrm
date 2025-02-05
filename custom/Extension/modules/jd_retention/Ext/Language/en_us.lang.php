@@ -53,7 +53,8 @@ $mod_strings = array (
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
   'LBL_EMAIL' => 'Email',
   'LBL_SPECIFY_ADDITIONAL_SERVICE' => 'Specify Additional Service',
-  'LBL_SATISFACTION' => 'Satisfied With The Services .?',
-  'LBL_RECIEVE_COMMUNICATIONS' => 'Agree TO Receive Communications.?',
-  'LBL_GET_ADDITIONAL_SERVICE' => 'Get Advantage of Additional Services.?',
+  'LBL_SATISFACTION' => 'Since Becoming A Customer, How Satisfied Are You With The Services Continuing To Receive?',
+  'LBL_RECIEVE_COMMUNICATIONS' => 'Do You Agree To Receive Communications From LAPO MFB Regarding Products, Promotions, And Educational Opportunities?',
+  'LBL_GET_ADDITIONAL_SERVICE' => 'Have You Taken Advantage Of Any Additional Services?',
+  'LBL_SPECIFY_OTHER_OCCUPATION' => 'Specify Other Occupation'
 );

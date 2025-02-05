@@ -13,6 +13,7 @@ $dictionary['jd_retention']['fields']['jd_branch'] = array(
 	'audited' => true,
 	'reportable' => true,
 	'unified_search' => false,
+	'required' => true,
 	'merge_filter' => 'disabled',
 );
 ?>

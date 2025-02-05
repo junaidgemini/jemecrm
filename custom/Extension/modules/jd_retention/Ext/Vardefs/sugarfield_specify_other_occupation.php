@@ -1,7 +1,7 @@
 <?php
-$dictionary['jd_retention']['fields']['email'] = array(
-	'name' => 'email',
-	'vname' => 'LBL_EMAIL',
+$dictionary['jd_retention']['fields']['specify_other_occupation'] = array(
+	'name' => 'specify_other_occupation',
+	'vname' => 'LBL_SPECIFY_OTHER_OCCUPATION',
 	'type' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
@@ -10,7 +10,6 @@ $dictionary['jd_retention']['fields']['email'] = array(
 	'duplicate_merge' => 'disabled',
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
-	'required' => true,
 	'reportable' => true,
 );
 ?>

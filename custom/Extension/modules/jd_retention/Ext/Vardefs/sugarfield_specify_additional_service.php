@@ -2,7 +2,7 @@
 $dictionary['jd_retention']['fields']['specify_additional_service'] = array(
 	'name' => 'specify_additional_service',
 	'vname' => 'LBL_SPECIFY_ADDITIONAL_SERVICE',
-	'type' => 'text',
+	'type' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',

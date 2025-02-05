@@ -14,6 +14,7 @@ $dictionary['jd_retention']['fields']['occupation'] = array(
 	'reportable' => true,
 	'required' => true,
 	'unified_search' => false,
+	'required' => true,
 	'merge_filter' => 'disabled',
 );
 ?>

@@ -15,5 +15,6 @@ $dictionary['jd_retention']['fields']['get_additional_service'] = array(
 	'required' => true,
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
+	'required' => true,
 );
 ?>

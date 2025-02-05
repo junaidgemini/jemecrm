@@ -48,13 +48,13 @@ array (
         array (
           0 => 
           array (
-            'name' => 'occupation',
-            'label' => 'LBL_OCCUPATION',
+            'name' => 'mobile',
+            'label' => 'LBL_MOBILE',
           ),
           1 => 
           array (
-            'name' => 'mobile',
-            'label' => 'LBL_MOBILE',
+            'name' => 'email',
+            'label' => 'LBL_EMAIL',
           ),
         ),
         2 => 
@@ -83,6 +83,19 @@ array (
         array (
           0 => 
           array (
+            'name' => 'occupation',
+            'label' => 'LBL_OCCUPATION',
+          ),
+          1 => 
+          array (
+            'name' => 'specify_other_occupation',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'gender',
             'label' => 'LBL_GENDER',
           ),
@@ -92,7 +105,7 @@ array (
             'label' => 'LBL_JD_OTHER',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -105,7 +118,7 @@ array (
             'label' => 'LBL_SPECIFY_ADDITIONAL_SERVICE',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -118,7 +131,7 @@ array (
             'label' => 'LBL_COMMENTS',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'description',
           1 => 
@@ -127,15 +140,9 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'date_entered',
-            'comment' => 'Date record created',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
         ),
       ),
     ),
