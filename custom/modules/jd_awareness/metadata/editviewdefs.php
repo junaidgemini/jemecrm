@@ -83,8 +83,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
+            'name' => 'occupation',
+            'label' => 'LBL_OCCUPATION',
           ),
           1 => 
           array (
@@ -96,20 +96,16 @@ array (
         array (
           0 => 
           array (
-            'name' => 'occupation',
-            'label' => 'LBL_OCCUPATION',
-          ),
-          1 => 'assigned_user_name',
-        ),
-        6 => 
-        array (
-          0 => 
-          array (
             'name' => 'lapo_hearing',
             'label' => 'LBL_LAPO_HEARING',
           ),
+          1 => 
+          array (
+            'name' => 'jd_other',
+            'label' => 'LBL_JD_OTHER',
+          ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -117,7 +113,7 @@ array (
             'label' => 'LBL_ATTRACTION',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
@@ -130,7 +126,7 @@ array (
             'label' => 'LBL_RECIEVE_PROMOTION',
           ),
         ),
-        9 => 
+        8 => 
         array (
           0 => 'description',
           1 => 
@@ -138,6 +134,10 @@ array (
             'name' => 'comments',
             'label' => 'LBL_COMMENTS',
           ),
+        ),
+        9 => 
+        array (
+          0 => 'assigned_user_name',
         ),
       ),
     ),
