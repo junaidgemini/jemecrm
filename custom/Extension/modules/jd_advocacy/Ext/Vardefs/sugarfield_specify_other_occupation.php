@@ -1,8 +1,8 @@
 <?php
-$dictionary['jd_advocacy']['fields']['jd_other'] = array(
-	'name' => 'jd_other',
-	'vname' => 'LBL_JD_OTHER',
-	'type' => 'text',
+$dictionary['jd_advocacy']['fields']['specify_other_occupation'] = array(
+	'name' => 'specify_other_occupation',
+	'vname' => 'LBL_SPECIFY_OTHER_OCCUPATION',
+	'type' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
 	'help' => '',

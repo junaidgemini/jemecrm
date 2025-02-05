@@ -64,13 +64,22 @@ array (
             'name' => 'gender',
             'label' => 'LBL_GENDER',
           ),
-          1 => 
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
           array (
             'name' => 'occupation',
             'label' => 'LBL_OCCUPATION',
           ),
+          1 => 
+          array (
+            'name' => 'specify_other_occupation',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
+          ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -83,7 +92,7 @@ array (
             'label' => 'LBL_LOCATION',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -91,19 +100,6 @@ array (
             'label' => 'LBL_JD_BRANCH',
           ),
           1 => '',
-        ),
-        5 => 
-        array (
-          0 => 
-          array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
-          ),
-          1 => 
-          array (
-            'name' => 'comments',
-            'label' => 'LBL_COMMENTS',
-          ),
         ),
         6 => 
         array (
