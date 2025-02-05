@@ -16,66 +16,10 @@ array (
     'width' => '10%',
     'default' => true,
   ),
-  'JD_ZONE' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_JD_ZONE',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'STATE' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_STATE',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'BRANCH_LOCATION' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_BRANCH_LOCATION',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'GENDER' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_GENDER',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'DEMOGRAPHY' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_DEMOGRAPHY',
-    'width' => '10%',
-    'default' => true,
-  ),
   'CUSTOMER_TYPE' => 
   array (
     'type' => 'enum',
     'label' => 'LBL_CUSTOMER_TYPE',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'BUSNIESS_TYPE' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_BUSNIESS_TYPE',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'ENGAGMENT_TYPE' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_ENGAGMENT_TYPE',
-    'width' => '10%',
-    'default' => true,
-  ),
-  'EDUCATION_LEVEL' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_EDUCATION_LEVEL',
     'width' => '10%',
     'default' => true,
   ),
@@ -102,10 +46,59 @@ array (
     'width' => '10%',
     'default' => false,
   ),
+  'GENDER' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_GENDER',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'BUSNIESS_TYPE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_BUSNIESS_TYPE',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'BRANCH_LOCATION' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_BRANCH_LOCATION',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'ENGAGMENT_TYPE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_ENGAGMENT_TYPE',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'DEMOGRAPHY' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_DEMOGRAPHY',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'EDUCATION_LEVEL' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_EDUCATION_LEVEL',
+    'width' => '10%',
+    'default' => false,
+  ),
   'BRANCH_EMAILS' => 
   array (
     'type' => 'enum',
     'label' => 'LBL_BRANCH_EMAILS',
+    'width' => '10%',
+    'default' => false,
+  ),
+  'STATE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_STATE',
     'width' => '10%',
     'default' => false,
   ),
@@ -114,6 +107,13 @@ array (
     'type' => 'text',
     'label' => 'LBL_DESCRIPTION_REQUEST_INQUIRY',
     'sortable' => false,
+    'width' => '10%',
+    'default' => false,
+  ),
+  'JD_ZONE' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_JD_ZONE',
     'width' => '10%',
     'default' => false,
   ),
