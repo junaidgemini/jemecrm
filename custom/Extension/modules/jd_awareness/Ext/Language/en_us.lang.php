@@ -53,5 +53,4 @@ $mod_strings = array (
   'LBL_JD_OTHER' => 'Specify Other',
   'LBL_OCCUPATION' => 'Occupation',
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
-  
 );
