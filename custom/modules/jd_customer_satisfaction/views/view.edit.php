@@ -116,7 +116,6 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
                     "Calabar": [
                         {"key": "", "value": ""},
                         {"key": "Cross River", "value": "Cross River"},
-                        {"key": "Calabar", "value": "Calabar"},
                         {"key": "Akwa-Ibom", "value": "Akwa-Ibom"}
                     ],
                     "Oyo": [
@@ -1550,46 +1549,46 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
                     ],
                     "MIDDLE BELT": [
                     {"key": "middle.belt@lapo-nigeria.org", "value": "middle.belt@lapo-nigeria.org"}
-                ],
-                "ANKPA": [
-                    {"key": "ankpa@lapo-nigeria.org", "value": "ankpa@lapo-nigeria.org"}
-                ],
-                "ANYIGBA": [
-                    {"key": "anyigba@lapo-nigeria.org", "value": "anyigba@lapo-nigeria.org"}
-                ],
-                "BARDE": [
-                    {"key": "barde@lapo-nigeria.org", "value": "barde@lapo-nigeria.org"}
-                ],
-                "EGBE": [
-                    {"key": "egbe@lapo-nigeria.org", "value": "egbe@lapo-nigeria.org"}
-                ],
-                "GBOKO 1": [
-                    {"key": "gboko1@lapo-nigeria.org", "value": "gboko1@lapo-nigeria.org"}
-                ],
-                "GBOKO 2": [
-                    {"key": "gboko2@lapo-nigeria.org", "value": "gboko2@lapo-nigeria.org"}
-                ],
-                "GEMBU": [
-                    {"key": "gembu@lapo-nigeria.org", "value": "gembu@lapo-nigeria.org"}
-                ],
-                "HAMMARUWA": [
-                    {"key": "hammaruwa@lapo-nigeria.org", "value": "hammaruwa@lapo-nigeria.org"}
-                ],
-                "IDAH": [
-                    {"key": "idah@lapo-nigeria.org", "value": "idah@lapo-nigeria.org"}
-                ],
-                "ISANLU": [
-                    {"key": "isanlu@lapo-nigeria.org", "value": "isanlu@lapo-nigeria.org"}
-                ],
-                "KABBA": [
-                    {"key": "kabba@lapo-nigeria.org", "value": "kabba@lapo-nigeria.org"}
-                ],
-                "KASTINA ALA": [
-                    {"key": "kastina.ala@lapo-nigeria.org", "value": "kastina.ala@lapo-nigeria.org"}
-                ],
-                "LOKOJA 1": [
-                    {"key": "lokoja1@lapo-nigeria.org", "value": "lokoja1@lapo-nigeria.org"}
-                ],
+                    ],
+                    "ANKPA": [
+                        {"key": "ankpa@lapo-nigeria.org", "value": "ankpa@lapo-nigeria.org"}
+                    ],
+                    "ANYIGBA": [
+                        {"key": "anyigba@lapo-nigeria.org", "value": "anyigba@lapo-nigeria.org"}
+                    ],
+                    "BARDE": [
+                        {"key": "barde@lapo-nigeria.org", "value": "barde@lapo-nigeria.org"}
+                    ],
+                    "EGBE": [
+                        {"key": "egbe@lapo-nigeria.org", "value": "egbe@lapo-nigeria.org"}
+                    ],
+                    "GBOKO 1": [
+                        {"key": "gboko1@lapo-nigeria.org", "value": "gboko1@lapo-nigeria.org"}
+                    ],
+                    "GBOKO 2": [
+                        {"key": "gboko2@lapo-nigeria.org", "value": "gboko2@lapo-nigeria.org"}
+                    ],
+                    "GEMBU": [
+                        {"key": "gembu@lapo-nigeria.org", "value": "gembu@lapo-nigeria.org"}
+                    ],
+                    "HAMMARUWA": [
+                        {"key": "hammaruwa@lapo-nigeria.org", "value": "hammaruwa@lapo-nigeria.org"}
+                    ],
+                    "IDAH": [
+                        {"key": "idah@lapo-nigeria.org", "value": "idah@lapo-nigeria.org"}
+                    ],
+                    "ISANLU": [
+                        {"key": "isanlu@lapo-nigeria.org", "value": "isanlu@lapo-nigeria.org"}
+                    ],
+                    "KABBA": [
+                        {"key": "kabba@lapo-nigeria.org", "value": "kabba@lapo-nigeria.org"}
+                    ],
+                    "KASTINA ALA": [
+                        {"key": "kastina.ala@lapo-nigeria.org", "value": "kastina.ala@lapo-nigeria.org"}
+                    ],
+                    "LOKOJA 1": [
+                        {"key": "lokoja1@lapo-nigeria.org", "value": "lokoja1@lapo-nigeria.org"}
+                    ],
                     "LOKOJA 2": [
                     {"key": "lokoja2@lapo-nigeria.org", "value": "lokoja2@lapo-nigeria.org"}
                     ],
@@ -2350,9 +2349,9 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
 
                 zoneField.addEventListener("change", function() {
                     const selectedZone = zoneField.value;
-                    debugger;
 
                     if (selectedZone) {
+                        
                         stateField.innerHTML = "";
                         branchField.innerHTML = "";
                         zoneOptions[selectedZone].forEach(state => {
@@ -2421,18 +2420,13 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
                 if (savedBranch) {
                     setTimeout(() => {
                         branchField.value = savedBranch;
+                        debugger;
                     }, 200);
                 }
 
                 if (savedBranchEmails) {
                     setTimeout(() => {
-                        branchField.value = savedBranchEmails;
-                    }, 200);
-                }
-
-                if (savedBranch) {
-                    setTimeout(() => {
-                        branchField.value = savedBranch;
+                        branchEmails.value = savedBranchEmails;
                     }, 200);
                 }
 

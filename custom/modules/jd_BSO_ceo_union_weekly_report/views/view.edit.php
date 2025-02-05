@@ -117,7 +117,6 @@ class jd_BSO_ceo_union_weekly_reportViewEdit extends ViewEdit
                     "Calabar": [
                         {"key": "", "value": ""},
                         {"key": "Cross River", "value": "Cross River"},
-                        {"key": "Calabar", "value": "Calabar"},
                         {"key": "Akwa-Ibom", "value": "Akwa-Ibom"}
                     ],
                     "Oyo": [

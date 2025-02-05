@@ -345,7 +345,6 @@ EOD
                     "Calabar": [
                         {"key": "", "value": ""},
                         {"key": "Cross River", "value": "Cross River"},
-                        {"key": "Calabar", "value": "Calabar"},
                         {"key": "Akwa-Ibom", "value": "Akwa-Ibom"}
                     ],
                     "Oyo": [
