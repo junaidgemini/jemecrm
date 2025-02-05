@@ -15,5 +15,6 @@ $dictionary['jd_consideration']['fields']['factors_decision_to_consider_lapo'] =
 	'unified_search' => false,
 	'merge_filter' => 'disabled',
 	'studio' => 'visible',
+	'required' => true,
 );
 ?>

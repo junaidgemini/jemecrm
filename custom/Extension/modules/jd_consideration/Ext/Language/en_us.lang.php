@@ -56,6 +56,7 @@ $mod_strings = array (
   'LBL_FACTORS_DECISION_TO_CONSIDER_LAPO_OTHER' => 'Specify Other Factors Influenced Your Decision To Consider LAPO MFB',
   'LBL_INFO_NEED_BEFORE_DECISION' => 'What Information Do You Wish You Had Before You Made Your Decision .?',
   'LBL_EMAIL' => 'Email',
+  'LBL_DESCRIPTION' => 'Comment',
   'LBL_AGREE_FOR_COMMUNICATIONS' => 'Agree To Receive Communications From LAPO MFB',
   'LBL_RECEIVE_SUPPORT_DURING_CONSIDERATION' => 'Did You Receive Sufficient Support During Your Consideration Phase ?',
 );

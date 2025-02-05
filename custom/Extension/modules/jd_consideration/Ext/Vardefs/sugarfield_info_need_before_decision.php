@@ -11,5 +11,6 @@ $dictionary['jd_consideration']['fields']['info_need_before_decision'] = array(
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
 	'reportable' => true,
+	'required' => true,
 );
 ?>

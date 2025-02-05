@@ -7,6 +7,7 @@ $dictionary['jd_consideration']['fields']['customer_full_name'] = array(
 	'comments' => '',
 	'help' => '',
 	'importable' => 'true',
+	'required' => true,
 	'duplicate_merge' => 'disabled',
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
