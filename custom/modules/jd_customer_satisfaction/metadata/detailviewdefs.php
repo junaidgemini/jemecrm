@@ -97,19 +97,6 @@ array (
         array (
           0 => 
           array (
-            'name' => 'age_group',
-            'label' => 'LBL_AGE_GROUP',
-          ),
-          1 => 
-          array (
-            'name' => 'busniess_type',
-            'label' => 'LBL_BUSNIESS_TYPE',
-          ),
-        ),
-        5 => 
-        array (
-          0 => 
-          array (
             'name' => 'demography',
             'label' => 'LBL_DEMOGRAPHY',
           ),
@@ -119,7 +106,42 @@ array (
             'label' => 'LBL_EDUCATION_LEVEL',
           ),
         ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'age_group',
+            'label' => 'LBL_AGE_GROUP',
+          ),
+          1 => '',
+        ),
         6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'busniess_type',
+            'label' => 'LBL_BUSNIESS_TYPE',
+          ),
+          1 => 
+          array (
+            'name' => 'specify_business_other',
+            'label' => 'LBL_SPECIFY_BUSINESS_OTHER',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'engagment_purpose',
+            'label' => 'LBL_ENGAGMENT_PURPOSE',
+          ),
+          1 => 
+          array (
+            'name' => 'specify_purpose_of_engagment_other',
+            'label' => 'LBL_SPECIFY_PURPOSE_OF_ENGAGMENT_OTHER',
+          ),
+        ),
+        8 => 
         array (
           0 => 
           array (
@@ -128,24 +150,20 @@ array (
           ),
           1 => 
           array (
-            'name' => 'engagment_purpose',
-            'label' => 'LBL_ENGAGMENT_PURPOSE',
+            'name' => 'specify_engagment_other',
+            'label' => 'LBL_SPECIFY_ENGAGMENT_OTHER',
           ),
         ),
-        7 => 
+        9 => 
         array (
           0 => 
           array (
             'name' => 'engagment_purpose_sub_options',
             'label' => 'LBL_ENGAGMENT_PURPOSE_SUB_OPTIONS',
           ),
-          1 => 
-          array (
-            'name' => 'specify_other',
-            'label' => 'LBL_SPECIFY_OTHER',
-          ),
+          1 => '',
         ),
-        8 => 
+        10 => 
         array (
           0 => 
           array (
@@ -158,7 +176,7 @@ array (
             'label' => 'LBL_PRIORITY',
           ),
         ),
-        9 => 
+        11 => 
         array (
           0 => 
           array (
@@ -171,7 +189,7 @@ array (
             'label' => 'LBL_GENDER',
           ),
         ),
-        10 => 
+        12 => 
         array (
           0 => 
           array (
@@ -184,7 +202,7 @@ array (
             'label' => 'LBL_SATISFACTION_RATING',
           ),
         ),
-        11 => 
+        13 => 
         array (
           0 => 
           array (
@@ -197,7 +215,7 @@ array (
             'label' => 'LBL_DESCRIPTION_REQUEST_INQUIRY',
           ),
         ),
-        12 => 
+        14 => 
         array (
           0 => 
           array (
@@ -205,7 +223,7 @@ array (
             'label' => 'LBL_ANY_ADDITIONAL_FEEDBACK',
           ),
         ),
-        13 => 
+        15 => 
         array (
           0 => 'assigned_user_name',
           1 => 

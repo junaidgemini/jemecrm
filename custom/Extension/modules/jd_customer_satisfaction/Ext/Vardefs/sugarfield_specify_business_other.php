@@ -1,7 +1,7 @@
 <?php
-$dictionary['jd_customer_satisfaction']['fields']['specify_other'] = array(
-	'name' => 'specify_other',
-	'vname' => 'LBL_SPECIFY_OTHER',
+$dictionary['jd_customer_satisfaction']['fields']['specify_business_other'] = array(
+	'name' => 'specify_business_other',
+	'vname' => 'LBL_SPECIFY_BUSINESS_OTHER',
 	'type' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
