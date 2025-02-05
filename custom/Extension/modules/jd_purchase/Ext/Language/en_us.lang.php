@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_JD_ZONE' => 'Zone',
-  'LBL_PRODUCTS' => 'Which product/services did you apply for?',
+  'LBL_PRODUCTS' => 'Which Product/Services Did You Apply For?',
   'LBL_EXPERIENCE' => 'What would You Rate Your Application Experience?',
   'LBL_ATTRACTION' => 'What attracts you to learn more.?',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
@@ -49,7 +49,7 @@ $mod_strings = array (
   'LBL_MOBILE' => 'Mobile Number',
   'LBL_SPECIFY_OTHER_OCCUPATION' => 'Specify Other Occupation',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_OTHER_PRODUCT_OR_ERVICES' => 'Other product/services did you apply for',
+  'LBL_OTHER_PRODUCT_OR_ERVICES' => 'Other Product/Services Did You Apply For',
   'LBL_OCCUPATION' => 'Occupation',
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
   'LBL_QUERY_RESPONSE' => 'Questions answered adequately during the process',
