@@ -40,7 +40,7 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_JD_ZONE' => 'Zone',
-  'LBL_LAPO_HEARING' => 'How Did You First Hear About LA',
+  'LBL_LAPO_HEARING' => 'How Did You First Hear About LAPO',
   'LBL_LAPO_ENGAGEMENT_INFO' => 'How Engaging Was The Information You Received?:',
   'LBL_ATTRACTION' => 'What attracts you to learn more.?',
   'LBL_GENDER' => 'Gender',
