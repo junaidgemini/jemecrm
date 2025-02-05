@@ -50,7 +50,7 @@ $mod_strings = array (
   'LBL_MOBILE' => 'Mobile Number',
   'LBL_SPECIFY_OTHER_OCCUPATION' => 'Specify Other Occupation',
   'LBL_COMMENTS' => 'Comments',
-  'LBL_SPECIFY_OTHER' => 'Specify Other',
+  'LBL_JD_OTHER' => 'Specify Other',
   'LBL_OCCUPATION' => 'Occupation',
   'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
   
