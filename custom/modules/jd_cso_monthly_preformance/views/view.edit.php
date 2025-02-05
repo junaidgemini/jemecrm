@@ -20,6 +20,9 @@ class jd_cso_monthly_preformanceViewEdit extends ViewEdit
         // Add custom JS for dropdown dependency
         echo '<script type="text/javascript">
             $(document).ready(function() {
+                // hide assignedto field
+                $(`div[data-field="assigned_user_name"]`).hide();
+
                 console.log("Custom JS for Tasks is loaded.");
 
                 const zoneField = document.getElementById("jd_cso_zone");

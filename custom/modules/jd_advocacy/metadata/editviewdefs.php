@@ -29,7 +29,7 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
-      'syncDetailEditViews' => true,
+      'syncDetailEditViews' => false,
     ),
     'panels' => 
     array (
@@ -140,13 +140,8 @@ array (
         ),
         10 => 
         array (
-          0 => 
-          array (
-            'name' => 'date_entered',
-            'comment' => 'Date record created',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
-          1 => 'assigned_user_name',
+          0 => 'assigned_user_name',
+          1 => '',
         ),
       ),
     ),

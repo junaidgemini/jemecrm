@@ -150,12 +150,6 @@ array (
         9 => 
         array (
           0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
         ),
       ),
     ),
