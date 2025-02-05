@@ -16,10 +16,38 @@ array (
     'width' => '10%',
     'default' => true,
   ),
+  'BRANCH_LOCATION' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_BRANCH_LOCATION',
+    'width' => '10%',
+    'default' => true,
+  ),
+  'PRIORITY' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_PRIORITY',
+    'width' => '10%',
+    'default' => true,
+  ),
+  'CUSTOMER_INTERACTION_STATUS' => 
+  array (
+    'type' => 'enum',
+    'label' => 'LBL_CUSTOMER_INTERACTION_STATUS',
+    'width' => '10%',
+    'default' => true,
+  ),
   'CUSTOMER_TYPE' => 
   array (
     'type' => 'enum',
     'label' => 'LBL_CUSTOMER_TYPE',
+    'width' => '10%',
+    'default' => true,
+  ),
+  'DATE_ENTERED' => 
+  array (
+    'type' => 'datetime',
+    'label' => 'LBL_DATE_ENTERED',
     'width' => '10%',
     'default' => true,
   ),
@@ -57,13 +85,6 @@ array (
   array (
     'type' => 'enum',
     'label' => 'LBL_BUSNIESS_TYPE',
-    'width' => '10%',
-    'default' => false,
-  ),
-  'BRANCH_LOCATION' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_BRANCH_LOCATION',
     'width' => '10%',
     'default' => false,
   ),
@@ -117,31 +138,10 @@ array (
     'width' => '10%',
     'default' => false,
   ),
-  'CUSTOMER_INTERACTION_STATUS' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_CUSTOMER_INTERACTION_STATUS',
-    'width' => '10%',
-    'default' => false,
-  ),
   'MOBILE' => 
   array (
     'type' => 'phone',
     'label' => 'LBL_MOBILE',
-    'width' => '10%',
-    'default' => false,
-  ),
-  'DATE_ENTERED' => 
-  array (
-    'type' => 'datetime',
-    'label' => 'LBL_DATE_ENTERED',
-    'width' => '10%',
-    'default' => false,
-  ),
-  'PRIORITY' => 
-  array (
-    'type' => 'enum',
-    'label' => 'LBL_PRIORITY',
     'width' => '10%',
     'default' => false,
   ),
