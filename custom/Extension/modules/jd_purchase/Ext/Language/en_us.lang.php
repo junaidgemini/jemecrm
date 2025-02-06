@@ -55,6 +55,6 @@ $mod_strings = array (
   'LBL_QUERY_RESPONSE' => 'Were Your Questions Answered Adequately During The Process.?',
   'LBL_EMAIL' => 'Email',
   'LBL_DESCRIPTION' => 'Comments',
-  'LBL_RECIEVE_COMMUNICATIONS' => 'Receive Communication',
+  'LBL_RECIEVE_COMMUNICATIONS' => 'Do You Agree To Receive Communications From LAPO MFB Regarding Products, Promotions, And Educational Opportunities?',
   // 'LBL_RECEIVE_SUPPORT_DURING_CONSIDERATION' => 'Receive Support During Your Consideration',
 );
