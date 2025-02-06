@@ -17,5 +17,5 @@ $mod_strings['LBL_SPECIFY_OTHER_ESCALATION_OFFICER'] = 'Escalation Officer Speci
 $mod_strings['LBL_UNION_ID'] = 'Union ID';
 $mod_strings['LBL_LEADER_PHONE_NUMBER'] = 'Leader Phone Number';
 $mod_strings['LBL_LEADER_PHONE_NAME'] = 'Leader Name';
-$mod_strings['LBL_NO_OF_MEMBER_IN_UNION'] = 'How Many Members Are In The Union?';
+$mod_strings['LBL_NO_OF_MEMBER_IN_UNION'] = 'Number Of Union Members?';
 $mod_strings['LBL_UNION_EXPERIANCE'] = 'Years Of The Union Existence?';
