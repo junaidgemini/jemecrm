@@ -3,6 +3,6 @@ $app_list_strings['experience_dom']=array (
     '' => '',
     'Excellent' => 'Excellent',
     'Good' => 'Good',
-    'Avegrage' => 'Avegrage',
+    'Average' => 'Average',
     'Poor' => 'Poor',
   );

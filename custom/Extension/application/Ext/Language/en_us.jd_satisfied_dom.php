@@ -1,7 +1,7 @@
 <?php
 $app_list_strings['jd_retention_satisfied_dom']=array ( 
     '' => '',
-    'Very Setisfied' => 'Very Setisfied',
+    'Very Satisfied' => 'Very Satisfied',
     'Satisfied' => 'Satisfied',
     'Neutral' => 'Neutral',
     'Satisfied' => 'Satisfied',
