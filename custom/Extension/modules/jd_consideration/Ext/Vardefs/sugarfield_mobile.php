@@ -12,6 +12,6 @@ $dictionary['jd_consideration']['fields']['mobile'] = array(
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
 	'reportable' => true,
-	'required' => true,
+	// 'required' => true,
 );
 ?>
