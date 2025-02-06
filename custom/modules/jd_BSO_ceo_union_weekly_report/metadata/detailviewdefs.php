@@ -63,6 +63,41 @@ array (
         array (
           0 => 
           array (
+            'name' => 'leader_phone_name',
+            'label' => 'LBL_LEADER_PHONE_NAME',
+          ),
+          1 => 
+          array (
+            'name' => 'leader_phone_number',
+            'label' => 'LBL_LEADER_PHONE_NUMBER',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'union_id',
+            'label' => 'LBL_UNION_ID',
+          ),
+          1 => 
+          array (
+            'name' => 'no_of_member_in_union',
+            'label' => 'LBL_NO_OF_MEMBER_IN_UNION',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'union_experiance',
+            'label' => 'LBL_UNION_EXPERIANCE',
+          ),
+          1 => '',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
             'name' => 'jd_zone',
             'label' => 'LBL_JD_ZONE',
           ),
@@ -72,7 +107,7 @@ array (
             'label' => 'LBL_JD_BRANCH_STATE',
           ),
         ),
-        2 => 
+        5 => 
         array (
           0 => 
           array (
@@ -85,7 +120,7 @@ array (
             'label' => 'LBL_BRANCH_EMAIL',
           ),
         ),
-        3 => 
+        6 => 
         array (
           0 => 
           array (
@@ -98,7 +133,7 @@ array (
             'label' => 'LBL_PURPOSE_OF_VISIT',
           ),
         ),
-        4 => 
+        7 => 
         array (
           0 => 
           array (
@@ -111,11 +146,11 @@ array (
             'label' => 'LBL_ANY_ADITIONAL_FEEDBACK',
           ),
         ),
-        5 => 
+        8 => 
         array (
           0 => 'description',
         ),
-        6 => 
+        9 => 
         array (
           0 => 'assigned_user_name',
           1 => '',
