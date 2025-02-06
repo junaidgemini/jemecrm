@@ -74,13 +74,22 @@ array (
             'name' => 'gender',
             'label' => 'LBL_GENDER',
           ),
-          1 => 
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
           array (
             'name' => 'occupation',
             'label' => 'LBL_OCCUPATION',
           ),
+          1 => 
+          array (
+            'name' => 'specify_other_occupation',
+            'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
+          ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -93,7 +102,16 @@ array (
             'label' => 'LBL_LOCATION',
           ),
         ),
-        4 => 
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'jd_branch',
+            'label' => 'LBL_JD_BRANCH',
+          ),
+          1 => '',
+        ),
+        6 => 
         array (
           0 => 
           array (
@@ -106,7 +124,7 @@ array (
             'label' => 'LBL_RECOMMEND_REASON',
           ),
         ),
-        5 => 
+        7 => 
         array (
           0 => 
           array (
@@ -114,7 +132,7 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        6 => 
+        8 => 
         array (
           0 => 
           array (
@@ -122,11 +140,11 @@ array (
             'label' => 'LBL_REFERRAL_PROGRAM',
           ),
         ),
-        7 => 
+        9 => 
         array (
           0 => 'description',
         ),
-        8 => 
+        10 => 
         array (
           0 => 'assigned_user_name',
           1 => 
