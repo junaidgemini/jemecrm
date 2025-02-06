@@ -10,6 +10,7 @@ $dictionary['jd_awareness']['fields']['customer_full_name'] = array(
 	'duplicate_merge' => 'disabled',
 	'duplicate_merge_dom_value' => '0',
 	'audited' => true,
+	'required' => true,
 	'reportable' => true,
 );
 ?>

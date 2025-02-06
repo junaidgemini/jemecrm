@@ -40,9 +40,9 @@
 $mod_strings = array (
   'LBL_GENDER' => 'Gender',
   'LBL_JD_ZONE' => 'Zone',
-  'LBL_LAPO_HEARING' => 'How Did You First Hear About LAPO MFB',
+  'LBL_LAPO_HEARING' => 'How Did You First Hear About LAPO MFB?',
   'LBL_LAPO_ENGAGEMENT_INFO' => 'How Engaging Was The Information You Received?:',
-  'LBL_ATTRACTION' => '⁠What Attracted You To Learn More About LAPO MFB',
+  'LBL_ATTRACTION' => '⁠What Attracted You To Learn More About LAPO MFB?',
   'LBL_GENDER' => 'Gender',
   'LBL_CUSTOMER_FULL_NAME' => 'Customer Full Name',
   'LBL_LOCATION' => 'State',
