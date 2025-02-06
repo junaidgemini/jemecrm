@@ -48,6 +48,7 @@ $mod_strings = array (
   'LBL_LOCATION' => 'State',
   'LBL_JD_BRANCH' => 'Branch',
   'LBL_MOBILE' => 'Mobile Number',
+  'LBL_EMAIL' => 'Email',
   'LBL_SPECIFY_OTHER_OCCUPATION' => 'Specify Other Occupation',
   'LBL_COMMENTS' => 'Comments',
   'LBL_JD_OTHER' => 'Specify Other',

@@ -48,6 +48,28 @@ array (
         array (
           0 => 
           array (
+            'name' => 'customer_full_name',
+            'label' => 'LBL_CUSTOMER_FULL_NAME',
+          ),
+          1 => '',
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'email',
+            'label' => 'LBL_EMAIL',
+          ),
+          1 => 
+          array (
+            'name' => 'mobile',
+            'label' => 'LBL_MOBILE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
             'name' => 'jd_zone',
             'label' => 'LBL_JD_ZONE',
           ),
@@ -57,7 +79,7 @@ array (
             'label' => 'LBL_LOCATION',
           ),
         ),
-        2 => 
+        4 => 
         array (
           0 => 
           array (
@@ -66,20 +88,7 @@ array (
           ),
           1 => '',
         ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'customer_full_name',
-            'label' => 'LBL_CUSTOMER_FULL_NAME',
-          ),
-          1 => 
-          array (
-            'name' => 'mobile',
-            'label' => 'LBL_MOBILE',
-          ),
-        ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -92,7 +101,7 @@ array (
             'label' => 'LBL_SPECIFY_OTHER_OCCUPATION',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -105,15 +114,16 @@ array (
             'label' => 'LBL_JD_OTHER',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
             'name' => 'attraction',
             'label' => 'LBL_ATTRACTION',
           ),
+          1 => '',
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -126,7 +136,7 @@ array (
             'label' => 'LBL_RECIEVE_PROMOTION',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'description',
           1 => 
@@ -135,7 +145,7 @@ array (
             'label' => 'LBL_COMMENTS',
           ),
         ),
-        9 => 
+        10 => 
         array (
           0 => 'assigned_user_name',
         ),
