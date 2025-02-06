@@ -94,18 +94,23 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
                     ],
                     "Lagos Central": [
                         {"key": "", "value": ""},
-                        {"key": "Lagos", "value": "Lagos"},
+                        {"key": "Lagos 1", "value": "Lagos 1"},
+                        {"key": "Lagos 2", "value": "Lagos 2"},
+                        {"key": "Lagos 5", "value": "Lagos 5"},
                         {"key": "Ogun", "value": "Ogun"}
                     ],
                     "Lagos West": [
                         {"key": "", "value": ""},
-                        {"key": "Lagos", "value": "Lagos"},
+                        {"key": "Lagos 4", "value": "Lagos 4"},
+                        {"key": "Lagos 5", "value": "Lagos 5"},
                         {"key": "Ogun", "value": "Ogun"}
                     ],
                     "Lagos Mainland": [
                         {"key": "", "value": ""},
-                        {"key": "Lagos", "value": "Lagos"}
+                        {"key": "Lagos 1", "value": "Lagos 1"},
+                        {"key": "Lagos 3", "value": "Lagos 3"},
                     ],
+
                     "Rivers": [
                         {"key": "", "value": ""},
                         {"key": "Rivers", "value": "Rivers"}
@@ -682,8 +687,112 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
                         {"key": "SME FCT 2", "value": "SME FCT 2"}
                     ],
                     "Lagos": [
-                    {"key": "", "value": ""},
-                    {"key": "APOMU", "value": "APOMU"}
+                        {"key": "", "value": ""},
+                        {"key": "APOMU", "value": "APOMU"}
+                    ],
+                    "Lagos 1":[
+                        {"key": "AJEGUNLE", "value": "AJEGUNLE"},
+                        {"key": "AMUKOKO", "value": "AMUKOKO"},
+                        {"key": "AMUWO", "value": "AMUWO"},
+                        {"key": "WILMER", "value": "WILMER"},
+                        {"key": "AGUDA", "value": "AGUDA"},
+                        {"key": "IKATE", "value": "IKATE"},
+                        {"key": "ITIRE", "value": "ITIRE"},
+                        {"key": "ORILE", "value": "ORILE"},
+                        {"key": "AJAH", "value": "AJAH"},
+                        {"key": "AWOYAYA", "value": "AWOYAYA"},
+                        {"key": "FORSYTHE", "value": "FORSYTHE"},
+                        {"key": "IDI-ORO", "value": "IDI-ORO"},
+                        {"key": "LAKOWE", "value": "LAKOWE"},
+                        {"key": "ODI-OLOWO", "value": "ODI-OLOWO"},
+                        {"key": "OYINGBO", "value": "OYINGBO"},
+                        {"key": "PAPA AJAO", "value": "PAPA AJAO"},
+                        {"key": "YABA", "value": "YABA"}
+                    ],
+                    "Lagos 2": [
+                        {"key": "BADAGRY", "value": "BADAGRY"},
+                        {"key": "OKO-AFOR", "value": "OKO-AFOR"},
+                        {"key": "OWODE-APA", "value": "OWODE-APA"},
+                        {"key": "IJANIKIN", "value": "IJANIKIN"},
+                        {"key": "IKOTUN", "value": "IKOTUN"},
+                        {"key": "EJIGBO", "value": "EJIGBO"},
+                        {"key": "JAKANDE", "value": "JAKANDE"},
+                        {"key": "IJEGUN", "value": "IJEGUN"},
+                        {"key": "AJANGBADI", "value": "AJANGBADI"},
+                        {"key": "ALABA", "value": "ALABA"},
+                        {"key": "ILAJE", "value": "ILAJE"},
+                        {"key": "IGBEDE", "value": "IGBEDE"},
+                        {"key": "BAYIEKU", "value": "BAYIEKU"},
+                        {"key": "ISOLO", "value": "ISOLO"},
+                        {"key": "AGBARA", "value": "AGBARA"},
+                        {"key": "IYANA SCHOOL", "value": "IYANA SCHOOL"},
+                        {"key": "OKOKO", "value": "OKOKO"},
+                        {"key": "LUSADA", "value": "LUSADA"}
+                    ],
+                    "Lagos 3": [
+                        {"key": "AGBEDE", "value": "AGBEDE"},
+                        {"key": "AGRIC", "value": "AGRIC"},
+                        {"key": "ALAPERE", "value": "ALAPERE"},
+                        {"key": "BARIGA", "value": "BARIGA"},
+                        {"key": "EBUTE", "value": "EBUTE"},
+                        {"key": "EPE", "value": "EPE"},
+                        {"key": "GBAGADA", "value": "GBAGADA"},
+                        {"key": "IKOSI", "value": "IKOSI"},
+                        {"key": "IMOTA", "value": "IMOTA"},
+                        {"key": "MAGBON", "value": "MAGBON"},
+                        {"key": "MILE 12 - 1", "value": "MILE 12 - 1"},
+                        {"key": "MILE 12 - 2", "value": "MILE 12 - 2"},
+                        {"key": "OBANIKORO", "value": "OBANIKORO"},
+                        {"key": "OJOTA", "value": "OJOTA"},
+                        {"key": "ONIPANU", "value": "ONIPANU"},
+                        {"key": "OPEBI", "value": "OPEBI"},
+                        {"key": "IGBOGBO", "value": "IGBOGBO"},
+                        {"key": "IJEDE", "value": "IJEDE"},
+                        {"key": "IKORODU 1", "value": "IKORODU 1"},
+                        {"key": "IKORODU 2", "value": "IKORODU 2"},
+                        {"key": "ODOGUNYAN", "value": "ODOGUNYAN"}
+                    ],
+                    "Lagos 4": [
+                        {"key": "AGEGE", "value": "AGEGE"},
+                        {"key": "DOPEMU", "value": "DOPEMU"},
+                        {"key": "IKEJA 1", "value": "IKEJA 1"},
+                        {"key": "IKEJA 2", "value": "IKEJA 2"},
+                        {"key": "ISHAGA", "value": "ISHAGA"},
+                        {"key": "MAFOLUKU", "value": "MAFOLUKU"},
+                        {"key": "OGBA", "value": "OGBA"},
+                        {"key": "OJODU", "value": "OJODU"},
+                        {"key": "OKO-OBA", "value": "OKO-OBA"},
+                        {"key": "OSHODI", "value": "OSHODI"},
+                        {"key": "AKUTE", "value": "AKUTE"},
+                        {"key": "IBAFO", "value": "IBAFO"},
+                        {"key": "MATOGUN", "value": "MATOGUN"},
+                        {"key": "MOWE", "value": "MOWE"},
+                        {"key": "OKE-ARO", "value": "OKE-ARO"},
+                        {"key": "OPE ILU", "value": "OPE ILU"},
+                        {"key": "IJOKO", "value": "IJOKO"}
+                    ],
+                    "Lagos 5": [
+                        {"key": "EBGEDA 1", "value": "EBGEDA 1"},
+                        {"key": "EBGEDA 2", "value": "EBGEDA 2"},
+                        {"key": "ITORI", "value": "ITORI"},
+                        {"key": "BARUWA", "value": "BARUWA"},
+                        {"key": "IPAJA", "value": "IPAJA"},
+                        {"key": "AYOBO", "value": "AYOBO"},
+                        {"key": "OKE ODO", "value": "OKE ODO"},
+                        {"key": "ALAGBADO", "value": "ALAGBADO"},
+                        {"key": "ABULEGBA", "value": "ABULEGBA"},
+                        {"key": "SHASHA", "value": "SHASHA"},
+                        {"key": "IGBOGILA", "value": "IGBOGILA"},
+                        {"key": "DALEMO", "value": "DALEMO"},
+                        {"key": "IFO", "value": "IFO"},
+                        {"key": "IYANA-ILOGBO", "value": "IYANA-ILOGBO"},
+                        {"key": "OJUORE", "value": "OJUORE"},
+                        {"key": "OWODE", "value": "OWODE"},
+                        {"key": "SANGO", "value": "SANGO"},
+                        {"key": "SANGO 2", "value": "SANGO 2"},
+                        {"key": "ILARO", "value": "ILARO"},
+                        {"key": "IDI-IROKO", "value": "IDI-IROKO"},
+                        {"key": "ATAN", "value": "ATAN"}
                     ]
                 };
                 
