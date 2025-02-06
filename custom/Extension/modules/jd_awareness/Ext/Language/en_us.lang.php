@@ -53,5 +53,5 @@ $mod_strings = array (
   'LBL_COMMENTS' => 'Comments',
   'LBL_JD_OTHER' => 'Specify Other',
   'LBL_OCCUPATION' => 'Occupation',
-  'LBL_RECIEVE_PROMOTION' => 'Recieve Promotion',
+  'LBL_RECIEVE_PROMOTION' => 'Do You Agree To Receive Communications From LAPO MFB Regarding Products, Promotions, And Educational Opportunities?',
 );
