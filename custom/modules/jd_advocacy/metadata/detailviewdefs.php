@@ -97,19 +97,6 @@ array (
         array (
           0 => 
           array (
-            'name' => 'jd_other',
-            'label' => 'LBL_JD_OTHER',
-          ),
-          1 => 
-          array (
-            'name' => 'comments',
-            'label' => 'LBL_COMMENTS',
-          ),
-        ),
-        5 => 
-        array (
-          0 => 
-          array (
             'name' => 'recommend_to_others',
             'label' => 'LBL_RECOMMEND_TO_OTHERS',
           ),
@@ -119,7 +106,7 @@ array (
             'label' => 'LBL_RECOMMEND_REASON',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -127,7 +114,7 @@ array (
             'label' => 'LBL_RECIEVE_COMMUNICATIONS',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -135,11 +122,11 @@ array (
             'label' => 'LBL_REFERRAL_PROGRAM',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 'description',
         ),
-        9 => 
+        8 => 
         array (
           0 => 'assigned_user_name',
           1 => 
