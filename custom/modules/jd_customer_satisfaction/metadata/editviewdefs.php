@@ -56,13 +56,22 @@ array (
             'name' => 'mobile',
             'label' => 'LBL_MOBILE',
           ),
-          1 => 
+          1 => '',
+        ),
+        2 => 
+        array (
+          0 => 
           array (
             'name' => 'customer_type',
             'label' => 'LBL_CUSTOMER_TYPE',
           ),
+          1 => 
+          array (
+            'name' => 'specify_customer_type_other',
+            'label' => 'LBL_SPECIFY_CUSTOMER_TYPE_OTHER',
+          ),
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -75,7 +84,7 @@ array (
             'label' => 'LBL_STATE',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -88,7 +97,7 @@ array (
             'label' => 'LBL_BRANCH_EMAILS',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -101,7 +110,7 @@ array (
             'label' => 'LBL_EDUCATION_LEVEL',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -110,7 +119,7 @@ array (
           ),
           1 => '',
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -123,7 +132,7 @@ array (
             'label' => 'LBL_SPECIFY_BUSINESS_OTHER',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -136,7 +145,7 @@ array (
             'label' => 'LBL_SPECIFY_PURPOSE_OF_ENGAGMENT_OTHER',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 
           array (
@@ -149,7 +158,7 @@ array (
             'label' => 'LBL_SPECIFY_ENGAGMENT_OTHER',
           ),
         ),
-        9 => 
+        10 => 
         array (
           0 => 
           array (
@@ -158,7 +167,7 @@ array (
           ),
           1 => '',
         ),
-        10 => 
+        11 => 
         array (
           0 => 
           array (
@@ -171,7 +180,7 @@ array (
             'label' => 'LBL_PRIORITY',
           ),
         ),
-        11 => 
+        12 => 
         array (
           0 => 
           array (
@@ -184,7 +193,7 @@ array (
             'label' => 'LBL_GENDER',
           ),
         ),
-        12 => 
+        13 => 
         array (
           0 => 
           array (
@@ -197,7 +206,7 @@ array (
             'label' => 'LBL_SATISFACTION_RATING',
           ),
         ),
-        13 => 
+        14 => 
         array (
           0 => 
           array (
@@ -210,7 +219,7 @@ array (
             'label' => 'LBL_DESCRIPTION_REQUEST_INQUIRY',
           ),
         ),
-        14 => 
+        15 => 
         array (
           0 => 
           array (
@@ -218,7 +227,7 @@ array (
             'label' => 'LBL_ANY_ADDITIONAL_FEEDBACK',
           ),
         ),
-        15 => 
+        16 => 
         array (
           0 => 'assigned_user_name',
         ),
