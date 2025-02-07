@@ -17688,7 +17688,7 @@ ul.clickMenu.selectmenu.SugarActionMenu.listViewLinkButton>li.desktopOnly>a.glyp
     font-size: 100%;
     margin: 0;
     vertical-align: baseline;
-    *vertical-align: middle;
+    vertical-align: middle;
     -webkit-appearance: none;
     border-radius: 0
 }
@@ -17940,7 +17940,7 @@ ul.clickMenu.selectmenu.SugarActionMenu.listViewLinkButton>li.desktopOnly>a.glyp
     font-size: 100%;
     margin: 0;
     vertical-align: baseline;
-    *vertical-align: middle;
+    vertical-align: middle;
     -webkit-appearance: none
 }
 
@@ -36024,4 +36024,12 @@ ul.dropdown-menu li a:hover {
 
 .p_login_bottom{
     display: none !important;
+}
+/* Remove login Zizard */
+#wizard, .wizard-container {
+    display: none !important;
+}
+.edit-view-field {
+    width: 66.6666667%;
+    margin-top: 20px !important;
 }
