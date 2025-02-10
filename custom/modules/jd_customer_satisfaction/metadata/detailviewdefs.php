@@ -66,7 +66,11 @@ array (
             'name' => 'mobile',
             'label' => 'LBL_MOBILE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'email',
+            'label' => 'LBL_EMAIL',
+          ),
         ),
         2 => 
         array (

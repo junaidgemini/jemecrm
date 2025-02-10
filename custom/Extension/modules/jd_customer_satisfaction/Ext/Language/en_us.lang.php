@@ -59,6 +59,7 @@ $mod_strings = array (
   'LBL_CUSTOMER_INTERACTION_STATUS' => 'Customer Interaction Status',
   'LBL_SATISFACTION_RATING' => 'How Satisfied Are You With Your Experience With The Bank?',
   'LBL_MOBILE' => 'Phone Number',
+  'LBL_EMAIL' => 'Email',
   'LBL_SUGARFIELD_SUMMARY_OF_INQUIRY_COMPLAIN_TREQUE' => 'Summary Of Inquiry/ Complaint/ Request Resolved',
   'LBL_DESCRIPTION_REQUEST_INQUIRY' => 'Description Request Inquiry',
   'LBL_ANY_ADDITIONAL_FEEDBACK' => 'Any Additional Feedback',
