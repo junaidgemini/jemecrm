@@ -251,10 +251,10 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         <form>
                             <!-- Basic Ticket &  Group ID-->
                             <div class="row mb-3">
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <label for="ticket_id"><strong>Ticket ID:</strong></label>
                                     <input type="text" id="filter_ticket_id" class="form-control">
-                                </div>
+                                </div> -->
                                 <div class="col-md-6">
                                     <label for="group_id"><strong>Group ID:</strong></label>
                                     <input type="text" id="filter_group_id" class="form-control">
