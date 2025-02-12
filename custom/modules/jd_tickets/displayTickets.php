@@ -143,7 +143,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
     <div class="container">
         <h1>Freshdesk Tickets</h1>
-        <input type="text" calss="" id="f_t_id" placeholder="Search Ticket">
+        <input type="text" calss="" id="f_t_id" placeholder="Ticket Id">
         <button id="f_t_id_btn"> Search </button>
         <!-- Row with column selection button and rows per page -->
         <div class="row-controls">
@@ -302,6 +302,9 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                                     <br>
                                     <input type="checkbox" class="radio" value="5" name="filter_status" />
                                     <label for="status">Closed </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="6" name="filter_status" />
+                                    <label for="status">Un Resolved </label>
                                     </div>
                                 <div class="col-md-6">
                                     <label for="priority"><strong>Priority:</strong></label>
