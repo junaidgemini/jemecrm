@@ -251,6 +251,8 @@ EOD
         // Add custom JS for dropdown dependency
         echo '<script type="text/javascript">
             $(document).ready(function() {
+                // hide emails options email_options_link_type
+                $("#email_options_link_type").hide();
                 console.log("Custom JS for Tasks is loaded.");
 
                 const zoneField = document.getElementById("jd_zone");
