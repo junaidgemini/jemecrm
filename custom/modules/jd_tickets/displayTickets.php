@@ -143,7 +143,8 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
     <div class="container">
         <h1>Freshdesk Tickets</h1>
-
+        <input type="text" calss="" id="f_t_id">
+        <button id="f_t_id_btn"> Search </button>
         <!-- Row with column selection button and rows per page -->
         <div class="row-controls">
             <!-- Button to toggle the column select dropdown -->
@@ -248,42 +249,20 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         <!-- all Filters Fields -->
                         <div class="container">
                         <form>
-                            <!-- Basic Ticket Info -->
-                            <!-- <div class="row mb-3">
+                            <!-- Basic Ticket &  Group ID-->
+                            <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="ticket_id"><strong>Ticket ID:</strong></label>
                                     <input type="text" id="filter_ticket_id" class="form-control">
                                 </div>
                                 <div class="col-md-6">
+                                    <label for="group_id"><strong>Group ID:</strong></label>
+                                    <input type="text" id="filter_group_id" class="form-control">
+                                </div>
+                                <!-- <div class="col-md-6">
                                     <label for="subject"><strong>Subject:</strong></label>
                                     <input type="text" id="filter_subject" class="form-control">
-                                </div>
-                            </div> -->
-
-                            <!-- Status and Priority -->
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="status"><strong>Status:</strong></label>
-                                    <!-- <input type="text" id="filter_status" class="form-control"> -->
-                                    <select name="filter_status" id="filter_status" multiple="multiple">
-                                        <option value="">-Select-</option>
-                                        <option value="2">open</option>
-                                        <option value="3">Pending</option>
-                                        <option value="4">Resolved</option>
-                                        <option value="5">Closed</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="priority"><strong>Priority:</strong></label>
-                                    <!-- <input type="text" id="filter_priority" class="form-control"> -->
-                                    <select name="filter_priority" id="filter_priority" multiple="multiple">
-                                        <option value="">-Select-</option>
-                                        <option value="1">Low</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">High</option>
-                                        <option value="4">Urgent</option>
-                                    </select>
-                                </div>
+                                </div> -->
                             </div>
 
                             <!-- Requester and Responder -->
@@ -297,25 +276,85 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                                     <input type="text" id="filter_requester_id" class="form-control">
                                 </div>
                             </div> -->
-                            <!-- Group ID and priority -->
+
+                            <!-- Status and Priority -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="status"><strong>Status:</strong></label>
+                                    <!-- <input type="text" id="filter_status" class="form-control"> -->
+                                    <!-- <select name="filter_status" id="filter_status" multiple="multiple"> -->
+                                    <!-- <select name="filter_status" id="filter_status">
+                                        <option value="">-Select-</option>
+                                        <option value="2">open</option>
+                                        <option value="3">Pending</option>
+                                        <option value="4">Resolved</option>
+                                        <option value="5">Closed</option>
+                                    </select> -->
+                                    <br>
+                                    <input type="checkbox" class="radio" value="2" name="filter_status" />
+                                    <label for="status">Open </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="3" name="filter_status" />
+                                    <label for="status">Pending </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="4" name="filter_status" />
+                                    <label for="status">Resolved </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="5" name="filter_status" />
+                                    <label for="status">Closed </label>
+                                    </div>
+                                <div class="col-md-6">
+                                    <label for="priority"><strong>Priority:</strong></label>
+                                    <!-- <input type="text" id="filter_priority" class="form-control"> -->
+                                    <!-- <select name="filter_priority" id="filter_priority">
+                                        <option value="">-Select-</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">High</option>
+                                        <option value="4">Urgent</option>
+                                    </select> -->
+                                    <br>
+                                    <input type="checkbox" class="radio" value="1" name="filter_priority" />
+                                    <label for="filter_priority">Low </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="2" name="filter_priority" />
+                                    <label for="filter_priority">Medium </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="3" name="filter_priority" />
+                                    <label for="filter_priority">High </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="4" name="filter_priority" />
+                                    <label for="filter_priority">Urgent </label>
+
+                                </div>
+                            </div>
+
+                            <!-- priority -->
 
                             <div class="row mb-3">
-                                
-                                <div class="col-md-6">
-                                    <label for="group_id"><strong>Group ID:</strong></label>
-                                    <input type="text" id="filter_group_id" class="form-control">
-                                </div>
 
                                 <div class="col-md-6">
                                     <label for="priority"><strong>Type:</strong></label>
-                                    <br/>
-                                    <select name="filter_type" id="filter_type">
+                                    <!-- <br/> -->
+                                    <!-- <select name="filter_type" id="filter_type">
                                         <option value="">-Select-</option>
                                         <option value="Enquiries">Enquiries</option>
                                         <option value="Requests">Requests</option>
-                                        <!-- <option value="Complaints/Issues">Complaints/Issues</option> -->
+                                        <option value="Complaints/Issues">Complaints/Issues</option>
                                         <option value="Others">Others</option>
-                                    </select>
+                                    </select> -->
+                                    <br>
+                                    <input type="checkbox" class="radio" value="Enquiries" name="filter_type" />
+                                    <label for="filter_type">Enquiries </label>
+                                    <br>
+                                    <input type="checkbox" class="radio" value="Requests" name="filter_type" />
+                                    <label for="filter_type">Requests </label>
+                                    <!-- <br>
+                                    <input type="checkbox" class="radio" value="Complaints/Issues" name="filter_type" />
+                                    <label for="filter_type">Complaints/Issues </label> -->
+                                    <br>
+                                    <input type="checkbox" class="radio" value="Others" name="filter_type" />
+                                    <label for="filter_type">Others </label>
                                 </div>
                             </div>
 
@@ -425,11 +464,23 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
         function ApplyFilterBtn(){
             debugger;
             $('#filterModal').modal('hide');
-            // var filter_ticket_id = $('#filter_ticket_id').val();
+            var filter_ticket_id = $('#filter_ticket_id').val();
             // var filter_subject = $('#filter_subject').val();
-            var filter_status = $('#filter_status').val();
-            var filter_priority = $('#filter_priority').val();
-            var filter_type = $('#filter_type').val();
+            let filter_status = [];
+            $("input[name='filter_status']:checked").each(function () {
+                filter_status.push($(this).val());
+            });
+            let filter_priority = [];
+            $("input[name='filter_priority']:checked").each(function () {
+                filter_priority.push($(this).val());
+            });
+            let filter_type = [];
+            $("input[name='filter_type']:checked").each(function () {
+                filter_type.push($(this).val());
+            });
+            // var filter_priority = document.getElementsByName('filter_priority').val();
+            // var filter_type = document.getElementsByName('#filter_type').val();
+            debugger;
             // var filter_responder_id = $('#filter_responder_id').val();
             // var filter_requester_id = $('#filter_requester_id').val();
             
@@ -462,7 +513,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             // var filter_support_email = $('#filter_support_email').val();
             // var filter_association_type = $('#filter_association_type').val();
             // var filter_product_id = $('#filter_product_id').val();
-            // f_id = filter_ticket_id;
+            gf_ticket_id = filter_ticket_id;
             // f_subject = filter_subject;
             gf_type  = filter_type;
             gf_priority  = filter_priority;
@@ -679,13 +730,14 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             });
         }
        
-        function jd_dataTable(filter_c,filter_status,filter_priority,group_id,filter_type,filter_created_at,filter_updated_at,filter_responder_id,filter_requester_id){
+        function jd_dataTable(filter_c,filter_status,filter_priority,group_id,filter_type,filter_created_at,filter_updated_at,filter_responder_id,filter_requester_id,filter_ticket_id){
             debugger;
             gfilter_c = filter_c;
             gf_status = filter_status;
             gf_priority = filter_priority;
             gf_group_id = group_id;
             gf_type = filter_type;
+            gf_ticket_id = filter_ticket_id;
             gf_created_at = filter_created_at;
             gf_updated_at = filter_updated_at;
             // gf_responder_id = filter_responder_id;
@@ -710,6 +762,7 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
                         data.type = gf_type;
                         data.created_at = gf_created_at;
                         data.updated_at = gf_updated_at;
+                        data.ticket_id = gf_ticket_id;
                         // data.responder_id = gf_responder_id;
                         // data.requester_id = gf_requester_id;
                         debugger;
@@ -979,6 +1032,10 @@ if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
             });
         }
         $(document).ready(function () {
+            $('#f_t_id_btn').on('click',function(){
+                var f_t_id = $('#f_t_id').val();
+                viewTicket(f_t_id);
+            });
             // on load run the function to load all data.
             jd_dataTable();
             // Initialize the multi-select dropdown

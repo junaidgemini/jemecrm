@@ -91,7 +91,17 @@ if ($_GET['filter_c'] == true) {
     if(!empty($_GET['type'])){
         $type = $_GET['type'];
         // $group_id = implode(' OR ', $group_id);
-        $queryParams[] = '(type:' . $type.')';
+        // $queryParams[] = '(type:' . $type.')';
+        $type_f = $_GET['type']; // Assuming this is an array like [2, 1]
+        // Add 'status:' prefix to each element in the array
+        $type_f = array_map(function ($type) {
+            return 'type:' . $type;
+        }, $type_f);
+        // Join the elements with " OR "
+        $type_f = '('. implode(' OR ', $type_f).')';
+        // Add to query parameters
+        $queryParams[] = $type_f;
+
     }
     // created_at
     if(!empty($_GET['created_at'])){
@@ -113,6 +123,11 @@ if ($_GET['filter_c'] == true) {
     // if(!empty($_GET['requester_id'])){
     //     $requester_id = $_GET['requester_id'];
     //     $queryParams[] = "(requester_id:'" . $requester_id."')";
+    // }
+    // ticket_id
+    // if(!empty($_GET['ticket_id'])){
+    //     $ticket_id = $_GET['ticket_id'];
+    //     $queryParams[] = "(ticket_id:'" . $ticket_id."')";
     // }
     // Build the query string dynamically
     if (!empty($queryParams)) {
