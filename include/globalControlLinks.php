@@ -73,10 +73,10 @@ if (
 'submenu' => ''
 );
 }
-$global_control_links['training'] = array(
-'linkinfo' => array($app_strings['LBL_TRAINING'] => 'https://community.suitecrm.com', 'target' => '_blank'),
-'submenu' => ''
- );
+// $global_control_links['training'] = array(
+// 'linkinfo' => array($app_strings['LBL_TRAINING'] => 'https://community.suitecrm.com', 'target' => '_blank'),
+// 'submenu' => ''
+//  );
 
 /* no longer goes in the menubar - now implemented in the bottom bar.
 $global_control_links['help'] = array(
