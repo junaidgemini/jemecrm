@@ -5,9 +5,12 @@ class SendEmailHook {
     public function sendNotificationEmail($bean, $event, $arguments){
         // Only send email on new record creation
         if (!empty($bean->fetched_row) && isset($bean->fetched_row['id'])) {
-            // return;
+            // if($bean->fetched_row['email']){
+                
+            // }
+            return;
         }
-
+        
         global $db, $sugar_config;
         require_once('include/SugarPHPMailer.php');
         require_once("modules/Administration/Administration.php");
