@@ -72,4 +72,5 @@ $mod_strings = array (
   'LBL_ESCALATION_OFFICER_EMAIL' => 'Escalation Officer Email',
   'LBL_ESCALATION_OFFICER' => 'Escalation Officer',
   'LBL_SPECIFY_OTHER_ESCALATION_OFFICER' => 'Escalation Officer Specify Other',
+  'LBL_LAST_EMAIL_SENT' => 'Last Email Sent',
 );
