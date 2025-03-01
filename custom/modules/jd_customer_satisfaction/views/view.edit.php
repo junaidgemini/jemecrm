@@ -10,7 +10,7 @@ class jd_customer_satisfactionViewEdit extends ViewEdit
         // Fetch the saved values
         $savedZone = isset($this->bean->jd_zone) ? $this->bean->jd_zone : '';
         $savedState = isset($this->bean->state) ? $this->bean->state : '';
-        $savedBranch = isset($this->bean->jd_branch) ? $this->bean->branch_location : '';
+        $savedBranch = isset($this->bean->branch_location) ? $this->bean->branch_location : '';
         $savedBranchEmails = isset($this->bean->branch_emails) ? $this->bean->branch_emails : '';
 
         // Pass these values to the frontend using Smarty

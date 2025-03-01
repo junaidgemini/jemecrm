@@ -2,7 +2,7 @@
 $dictionary['jd_customer_satisfaction']['fields']['email'] = array(
 	'name' => 'email',
 	'vname' => 'LBL_EMAIL',
-	'type' => 'phone',
+	'type' => 'email',
     'dbType' => 'varchar',
 	'massupdate' => 0,
 	'comments' => '',
