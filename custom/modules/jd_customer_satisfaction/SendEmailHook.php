@@ -33,6 +33,26 @@ class SendEmailHook {
             $reportToName = $reportToUser->first_name . ' ' . $reportToUser->last_name;
         }
 
+        // Send Email to Customers Record
+        if (!empty($bean->email)) {
+            // for new customers Satisfaction record.
+            $emailtemplate = new EmailTemplate();
+            $emailtemplate = $emailtemplate->retrieve("36c4501a-2184-ad45-18af-677a650d995d");
+            $emailtemplate->parsed_entities = null;
+            $temp = array();
+            $template_data = $emailtemplate->parse_email_template(
+            array(
+                "subject" => $emailtemplate->subject,
+                "body_html" => $emailtemplate->body_html,
+                "body" => $emailtemplate->body
+                ),
+                'jd_customer_satisfaction',
+                $bean,
+                $temp
+            );
+            $this->sendEmail($bean->email, $template_data);
+        }
+
         // Send Email to Assigned User
         if (!empty($assignedEmail)) {
             // for new customers Satisfaction record.
