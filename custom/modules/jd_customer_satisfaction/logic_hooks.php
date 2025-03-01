@@ -6,3 +6,4 @@ $hook_array = array();
 // position, file, function 
 $hook_array['before_save'] = array();
 $hook_array['before_save'][] = array(1, 'Contacts push feed', 'custom/modules/jd_customer_satisfaction/SendEmailHook.php', 'SendEmailHook', 'sendNotificationEmail');
+$hook_array['before_save'][] = array(2, 'Contacts push feed', 'custom/modules/jd_customer_satisfaction/setSendEmailTime.php', 'setSendEmailTimeClass', 'setSendEmailTimeMethod');
