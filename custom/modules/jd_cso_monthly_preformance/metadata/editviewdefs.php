@@ -38,39 +38,9 @@ array (
         0 => 
         array (
           0 => 'name',
-          1 => 
-          array (
-            'name' => 'jd_cso_name',
-            'label' => 'LBL_JD_CSO_NAME',
-          ),
+          1 => '',
         ),
         1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'jd_cso_zone',
-            'label' => 'LBL_JD_CSO_ZONE',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_cso_branch_state',
-            'label' => 'LBL_JD_CSO_BRANCH_STATE',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'jd_cso_branch',
-            'label' => 'LBL_JD_CSO_BRANCH',
-          ),
-          1 => 
-          array (
-            'name' => 'jd_cso_branch_size',
-            'label' => 'LBL_JD_CSO_BRANCH_SIZE',
-          ),
-        ),
-        3 => 
         array (
           0 => 
           array (
@@ -79,7 +49,7 @@ array (
           ),
           1 => 'assigned_user_name',
         ),
-        4 => 
+        2 => 
         array (
           0 => 
           array (
@@ -94,7 +64,7 @@ array (
             'label' => 'LBL_JD_CSO_DISBURSEMENT_ACTUAL',
           ),
         ),
-        5 => 
+        3 => 
         array (
           0 => 
           array (
@@ -109,7 +79,7 @@ array (
             'label' => 'LBL_JD_CSO_LOAN_PORTFOLIO_ACTUAL',
           ),
         ),
-        6 => 
+        4 => 
         array (
           0 => 
           array (
@@ -124,7 +94,7 @@ array (
             'label' => 'LBL_JD_CSO_NEW_CLIENTS_ACTUAL',
           ),
         ),
-        7 => 
+        5 => 
         array (
           0 => 
           array (
@@ -139,7 +109,7 @@ array (
             'label' => 'LBL_JD_CSO_DEPOSIT_MOBILISED_ACTUAL',
           ),
         ),
-        8 => 
+        6 => 
         array (
           0 => 
           array (
@@ -154,7 +124,7 @@ array (
             'label' => 'LBL_JD_CSO_DEPOSIT_BALANCE_ACTUAL',
           ),
         ),
-        9 => 
+        7 => 
         array (
           0 => 
           array (
@@ -169,7 +139,7 @@ array (
             'label' => 'LBL_JD_CSO_BALANCE_OF_DEFAULTER',
           ),
         ),
-        10 => 
+        8 => 
         array (
           0 => 
           array (
@@ -184,7 +154,7 @@ array (
             'label' => 'LBL_JD_CSO_CLIENTS_ACTUAL',
           ),
         ),
-        11 => 
+        9 => 
         array (
           0 => 
           array (
@@ -199,7 +169,7 @@ array (
             'label' => 'LBL_JD_CSO_TOTAL_BORROWERS',
           ),
         ),
-        12 => 
+        10 => 
         array (
           0 => 'description',
           1 => '',
