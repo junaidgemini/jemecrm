@@ -1,8 +1,8 @@
 <?php
 
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-// $emailSender = new SendFollowupEmails_jd_customer_satisfaction();
-// $emailSender->execute_jd_customer_satisfaction();
+$emailSender = new SendFollowupEmails_jd_customer_satisfaction();
+$emailSender->execute_jd_customer_satisfaction();
 
 class SendFollowupEmails_jd_customer_satisfaction {
     public function execute_jd_customer_satisfaction() {
@@ -17,6 +17,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         $TimeZone = $currentTime->modify('+1 hour'); // Add one hour for GMT+1 TimeZone
         $currentHour = (int)$TimeZone->format('G');
         $currentDay = (int)$TimeZone->format('N'); // 1=Monday, 7=Sunday
+        $GLOBALS['log']->fatal('currentDateTime' .$TimeZone );
         // Run only on weekdays (Monday to Friday) & during business hours (9 AM - 5 PM)
         // if ($currentDay > 5 || $currentHour < 8 || $currentHour >= 17) {
         //     echo 'out of business hours';
@@ -190,7 +191,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         if (empty($toEmail)) {
             return;
         }
-        $email_body = $template_data["body"];
+        $email_body = $template_data["body_html"];
         $email_subject = $template_data["subject"];
         $admin = new Administration();
         $admin->retrieveSettings();

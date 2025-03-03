@@ -156,7 +156,7 @@ class SendEmailHook {
         if (empty($toEmail)) {
             return;
         }
-        $email_body = $template_data["body"];
+        $email_body = $template_data["body_html"];
         $email_subject = $template_data["subject"];
         $admin = new Administration();
         $admin->retrieveSettings();
