@@ -46,7 +46,7 @@ class SendEmailHook {
                     "body_html" => $emailtemplate->body_html,
                     "body" => $emailtemplate->body
                     ),
-                    'jd_purchase',
+                    'jd_consideration',
                     $bean,
                     $temp
                 );
