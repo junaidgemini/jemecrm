@@ -1,11 +1,11 @@
 <?php
-
+// SendFollowupEmails_ceo_union_weekly_report
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-// $emailSender = new SendFollowupEmails_jd_customer_satisfaction();
-// $emailSender->execute_jd_customer_satisfaction();
+// $emailSender = new SendFollowupEmails_ceo_union_weekly_report();
+// $emailSender->execute_SendFollowupEmails_ceo_union_weekly_report();
 
-class SendFollowupEmails_jd_customer_satisfaction {
-    public function execute_jd_customer_satisfaction() {
+class SendFollowupEmails_ceo_union_weekly_report {
+    public function execute_SendFollowupEmails_ceo_union_weekly_report() {
         global $db, $sugar_config,$bean;
         require_once('include/SugarPHPMailer.php');
         // echo '<pre>';
@@ -28,7 +28,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         $currentTimeForQuery = date_format($TimeZone,'Y-m-d H');
         // Query to get records that need an email
         // $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email FROM jd_customer_satisfaction WHERE customer_interaction_status ='Pending' AND priority='High' AND(last_email_sent IS NULL OR TIMESTAMPDIFF(HOUR, last_email_sent, '$currentTime') >= 2)";
-        $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
+        $query = "SELECT id, last_email_sent, jd_status, assigned_user_id, escalation_officer_email, date_entered FROM jd_BSO_ceo_union_weekly_report WHERE jd_status ='UnResolved' AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
         // DATE_FORMAT(reminder_date_time, '%Y-%m-%d %H:%i') = '".$currentDateTime."'
         var_dump($query);
         $result = $db->query($query);
@@ -63,11 +63,12 @@ class SendFollowupEmails_jd_customer_satisfaction {
                         "body_html" => $emailtemplate->body_html,
                         "body" => $emailtemplate->body
                         ),
-                        'jd_customer_satisfaction',
+                        'jd_BSO_ceo_union_weekly_report',
                         $bean,
                         $temp
                     );
                     $this->sendEmail($assignedEmail, $template_data);
+                    $GLOBALS['log']->fatal('jd_BSO_ceo_union_weekly_report send Email to assigne'.$assignedEmail);
                 }
                 // Send Email to Report-To User if exists
                 if (!empty($reportToEmail)) {
@@ -82,14 +83,16 @@ class SendFollowupEmails_jd_customer_satisfaction {
                         "body_html" => $emailtemplate->body_html,
                         "body" => $emailtemplate->body
                         ),
-                        'jd_customer_satisfaction',
+                        'jd_BSO_ceo_union_weekly_report',
                         $bean,
                         $temp
                     );
                     $this->sendEmail($reportToEmail, $template_data);
+                    $GLOBALS['log']->fatal('jd_BSO_ceo_union_weekly_report send Email to reportToEmail'.$reportToEmail);
                 }
                 // escalation_officer_email if exists
                 if (!empty($row['escalation_officer_email'])) {
+                    $escalation_officer_email = $row['escalation_officer_email'];
                     $emailtemplate = new EmailTemplate();
                     $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
                     $emailtemplate->parsed_entities = null;
@@ -100,72 +103,26 @@ class SendFollowupEmails_jd_customer_satisfaction {
                         "body_html" => $emailtemplate->body_html,
                         "body" => $emailtemplate->body
                         ),
-                        'jd_customer_satisfaction',
+                        'jd_BSO_ceo_union_weekly_report',
                         $bean,
                         $temp
                     );
-                    $this->sendEmail($row['escalation_officer_email'], $template_data);
+                    $this->sendEmail($escalation_officer_email, $template_data);
+                    $GLOBALS['log']->fatal('jd_BSO_ceo_union_weekly_report send Email to reportToEmail'.$escalation_officer_email);
                 }
                 // Update the last email sent time
                 // $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$currentTime' WHERE id = '$recordId'";
                 // $db->query($updateQuery);
-                if($row['priority'] == 'High'){
-                    echo 'High';
-                    // // Update the last email sent time
-                    // $nextEmailTime ='';
-                    // $nextEmailTime = $TimeZone->modify('+2 hour'); // Add 2 hour first email sent
-                    // $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
-                    // $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
-                    // $db->query($updateQuery);
+                if($row['jd_status'] == 'UnResolved'){
                     // format timezone according to DB Format
                     $currentTime = date_format($TimeZone,'Y-m-d H:i:s');
-                    if ($this->getDaysDifference($date_entered, $currentTime) <= 7) {
                         // Update the last email sent time
                         $nextEmailTime ='';
                         $nextEmailTime = $TimeZone->modify('+24 hour'); // Add 2 hour first email sent
                         $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
-                        $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
+                        $updateQuery = "UPDATE jd_BSO_ceo_union_weekly_report SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
                         $db->query($updateQuery);
-                    } else{
-                        echo '7 din ho gay han is record ko bane.';
-                    }
-                    
-                } else if($row['priority'] == 'Medium'){
-                    // format timezone according to DB Format
-                    $currentTime = date_format($TimeZone,'Y-m-d H:i:s');
-                    if ($this->getDaysDifference($date_entered, $currentTime) <= 7) {
-                        // echo 'abi ha time';
-                        echo 'Medium';
-                        // Update the last email sent time
-                        $nextEmailTime ='';
-                        $nextEmailTime = $TimeZone->modify('+24 hour'); // Add 2 hour first email sent
-                        $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
-                        $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
-                        $db->query($updateQuery);
-                    } else{
-                        echo '7 din ho gay han is record ko bane.';
-                    }
-                } else if($row['priority'] == 'Low'){
-                    // echo 'Low';
-                    //  // Update the last email sent time
-                    //  $nextEmailTime ='';
-                    //  $nextEmailTime = $TimeZone->modify('+24 hour'); // Add 2 hour first email sent
-                    //  $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
-                    //  $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
-                    //  $db->query($updateQuery);
-                    // format timezone according to DB Format
-                    $currentTime = date_format($TimeZone,'Y-m-d H:i:s');
-                    if ($this->getDaysDifference($date_entered, $currentTime) <= 7) {
-                        echo 'Medium';
-                        // Update the last email sent time
-                        $nextEmailTime ='';
-                        $nextEmailTime = $TimeZone->modify('+24 hour'); // Add 2 hour first email sent
-                        $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
-                        $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
-                        $db->query($updateQuery);
-                    } else{
-                        echo '7 din ho gay han is record ko bane.';
-                    }
+                        $GLOBALS['log']->fatal('jd_BSO_ceo_union_weekly_report update record for next email time'.$updateQuery);
                 }
             }
             return;

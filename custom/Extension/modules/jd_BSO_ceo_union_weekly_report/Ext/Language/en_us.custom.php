@@ -19,3 +19,5 @@ $mod_strings['LBL_LEADER_PHONE_NUMBER'] = 'Leader Phone Number';
 $mod_strings['LBL_LEADER_PHONE_NAME'] = 'Leader Name';
 $mod_strings['LBL_NO_OF_MEMBER_IN_UNION'] = 'Number Of Union Members?';
 $mod_strings['LBL_UNION_EXPERIANCE'] = 'Years Of The Union Existence?';
+$mod_strings['LBL_JD_ATTACHMENT'] = 'Attachment';
+$mod_strings['LBL_LAST_EMAIL_SENT'] = 'Latest Email Sent';
