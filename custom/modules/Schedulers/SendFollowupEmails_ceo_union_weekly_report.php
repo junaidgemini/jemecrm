@@ -28,7 +28,7 @@ class SendFollowupEmails_ceo_union_weekly_report {
         $currentTimeForQuery = date_format($TimeZone,'Y-m-d H');
         // Query to get records that need an email
         // $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email FROM jd_customer_satisfaction WHERE customer_interaction_status ='Pending' AND priority='High' AND(last_email_sent IS NULL OR TIMESTAMPDIFF(HOUR, last_email_sent, '$currentTime') >= 2)";
-        $query = "SELECT id, last_email_sent, jd_status, assigned_user_id, escalation_officer_email, date_entered FROM jd_BSO_ceo_union_weekly_report WHERE jd_status ='UnResolved' AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
+        $query = "SELECT id, last_email_sent, jd_status, assigned_user_id, escalation_officer_email, branch_email, date_entered FROM jd_BSO_ceo_union_weekly_report WHERE jd_status ='UnResolved' AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
         // DATE_FORMAT(reminder_date_time, '%Y-%m-%d %H:%i') = '".$currentDateTime."'
         var_dump($query);
         $result = $db->query($query);
@@ -37,6 +37,8 @@ class SendFollowupEmails_ceo_union_weekly_report {
                 $recordId = $row['id'];
                 $assignedUserId = $row['assigned_user_id'];
                 $date_entered = $row['date_entered'];
+                $branch_email = $row['branch_email'];
+
                 // Get Assigned User Details
                 $assignedUser = BeanFactory::getBean('Users', $assignedUserId);
                 $assignedEmail = $assignedUser->email1;
@@ -50,11 +52,31 @@ class SendFollowupEmails_ceo_union_weekly_report {
                     $reportToEmail = $reportToUser->email1;
                     $reportToName = $reportToUser->first_name . ' ' . $reportToUser->last_name;
                 }
+                
+                // Send Email to Record
+                if (!empty($branch_email)){
+                    $branch_email = $branch_email;
+                    $emailtemplate = new EmailTemplate();
+                    $emailtemplate = $emailtemplate->retrieve("2be93027-75e2-c823-7010-67cc7ccd1eb5");
+                    $emailtemplate->parsed_entities = null;
+                    $temp = array();
+                    $template_data = $emailtemplate->parse_email_template(
+                    array(
+                        "subject" => $emailtemplate->subject,
+                        "body_html" => $emailtemplate->body_html,
+                        "body" => $emailtemplate->body
+                        ),
+                        'jd_BSO_ceo_union_weekly_report',
+                        $bean,
+                        $temp
+                    );
+                    $this->sendEmail($branch_email, $template_data);
+                }
+
                 // Send Email to Assigned User
                 if (!empty($assignedEmail)) {
-                    // for new customers Satisfaction record.
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                    $emailtemplate = $emailtemplate->retrieve("9db4f0af-46fb-0225-7cb0-67cb5a3897c6");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(
@@ -74,7 +96,7 @@ class SendFollowupEmails_ceo_union_weekly_report {
                 if (!empty($reportToEmail)) {
                     // $this->sendEmail($reportToEmail, $subject, $body);
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                    $emailtemplate = $emailtemplate->retrieve("37c37773-700e-2e0f-7b5f-67cc7df6d266");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(
@@ -94,7 +116,7 @@ class SendFollowupEmails_ceo_union_weekly_report {
                 if (!empty($row['escalation_officer_email'])) {
                     $escalation_officer_email = $row['escalation_officer_email'];
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
+                    $emailtemplate = $emailtemplate->retrieve("e4fcf5f6-351a-45d9-c58d-67cc7d99969e");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(
