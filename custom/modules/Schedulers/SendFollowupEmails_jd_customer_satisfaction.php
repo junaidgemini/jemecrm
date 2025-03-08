@@ -28,7 +28,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         $currentTimeForQuery = date_format($TimeZone,'Y-m-d H');
         // Query to get records that need an email
         // $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email FROM jd_customer_satisfaction WHERE customer_interaction_status ='Pending' AND priority='High' AND(last_email_sent IS NULL OR TIMESTAMPDIFF(HOUR, last_email_sent, '$currentTime') >= 2)";
-        $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
+        $query = "SELECT id, last_email_sent, email, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
         // DATE_FORMAT(reminder_date_time, '%Y-%m-%d %H:%i') = '".$currentDateTime."'
         var_dump($query);
         $result = $db->query($query);
@@ -37,6 +37,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
                 $recordId = $row['id'];
                 $assignedUserId = $row['assigned_user_id'];
                 $date_entered = $row['date_entered'];
+                $Customers_email = $row['email'];
                 // Get Assigned User Details
                 $assignedUser = BeanFactory::getBean('Users', $assignedUserId);
                 $assignedEmail = $assignedUser->email1;
@@ -50,11 +51,32 @@ class SendFollowupEmails_jd_customer_satisfaction {
                     $reportToEmail = $reportToUser->email1;
                     $reportToName = $reportToUser->first_name . ' ' . $reportToUser->last_name;
                 }
+
+                // Send Email to Customers Email
+                if (!empty($Customers_email)) {
+                    // for new customers Satisfaction record.
+                    $emailtemplate = new EmailTemplate();
+                    $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                    $emailtemplate->parsed_entities = null;
+                    $temp = array();
+                    $template_data = $emailtemplate->parse_email_template(
+                    array(
+                        "subject" => $emailtemplate->subject,
+                        "body_html" => $emailtemplate->body_html,
+                        "body" => $emailtemplate->body
+                        ),
+                        'jd_customer_satisfaction',
+                        $bean,
+                        $temp
+                    );
+                    $this->sendEmail($Customers_email, $template_data);
+                }
+
                 // Send Email to Assigned User
                 if (!empty($assignedEmail)) {
                     // for new customers Satisfaction record.
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                    $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(
@@ -73,7 +95,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
                 if (!empty($reportToEmail)) {
                     // $this->sendEmail($reportToEmail, $subject, $body);
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                    $emailtemplate = $emailtemplate->retrieve("f39165ce-0fc9-c6f0-2e0b-67cb62a040a4");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(
@@ -91,7 +113,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
                 // escalation_officer_email if exists
                 if (!empty($row['escalation_officer_email'])) {
                     $emailtemplate = new EmailTemplate();
-                    $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
+                    $emailtemplate = $emailtemplate->retrieve("203f1368-5568-886c-f070-67cb6370e8cd");
                     $emailtemplate->parsed_entities = null;
                     $temp = array();
                     $template_data = $emailtemplate->parse_email_template(

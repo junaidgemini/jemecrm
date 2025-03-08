@@ -10,7 +10,7 @@ class SendEmailHook {
         if (!empty($bean->fetched_row) && isset($bean->fetched_row['id'])) {
             // old status != New status
             if($bean->fetched_row['customer_interaction_status'] != $bean->customer_interaction_status){
-                // when ticket is resolved
+                // when ticket is resolved send email customrs email
                 if($bean->customer_interaction_status == 'Resolved'){
                     // send email to customer when ticket is resolved
                     if (!empty($bean->email)){
@@ -75,7 +75,8 @@ class SendEmailHook {
                 $customersEmail = $bean->email;
                 // for new customers Satisfaction record.
                 $emailtemplate = new EmailTemplate();
-                $emailtemplate = $emailtemplate->retrieve("36c4501a-2184-ad45-18af-677a650d995d");
+                // $emailtemplate = $emailtemplate->retrieve("36c4501a-2184-ad45-18af-677a650d995d");
+                $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
                 $emailtemplate->parsed_entities = null;
                 $temp = array();
                 $template_data = $emailtemplate->parse_email_template(
@@ -95,7 +96,8 @@ class SendEmailHook {
             if (!empty($assignedEmail)) {
                 // for new customers Satisfaction record.
                 $emailtemplate = new EmailTemplate();
-                $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                // $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
                 $emailtemplate->parsed_entities = null;
                 $temp = array();
                 $template_data = $emailtemplate->parse_email_template(
@@ -114,7 +116,8 @@ class SendEmailHook {
             if (!empty($reportToEmail)) {
                 // $this->sendEmail($reportToEmail, $subject, $body);
                 $emailtemplate = new EmailTemplate();
-                $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                // $emailtemplate = $emailtemplate->retrieve("ea8536ea-576e-3d0b-a245-67be89c5a12f");
+                $emailtemplate = $emailtemplate->retrieve("f39165ce-0fc9-c6f0-2e0b-67cb62a040a4");
                 $emailtemplate->parsed_entities = null;
                 $temp = array();
                 $template_data = $emailtemplate->parse_email_template(
@@ -134,7 +137,8 @@ class SendEmailHook {
                 // 
                 // for new customers Satisfaction record.
                 $emailtemplate = new EmailTemplate();
-                $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
+                // $emailtemplate = $emailtemplate->retrieve("80118939-f245-6a3f-10fd-67be87775cdc");
+                $emailtemplate = $emailtemplate->retrieve("203f1368-5568-886c-f070-67cb6370e8cd");
                 $emailtemplate->parsed_entities = null;
                 $temp = array();
                 $template_data = $emailtemplate->parse_email_template(
