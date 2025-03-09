@@ -31,6 +31,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         $query = "SELECT id, last_email_sent, email, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
         // DATE_FORMAT(reminder_date_time, '%Y-%m-%d %H:%i') = '".$currentDateTime."'
         var_dump($query);
+        $GLOBALS['log']->fatal("Email failed to send to: $query");
         $result = $db->query($query);
         if($result->num_rows > 0){
             while ($row = $db->fetchByAssoc($result)) {
@@ -144,7 +145,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
                     if ($this->getDaysDifference($date_entered, $currentTime) <= 7) {
                         // Update the last email sent time
                         $nextEmailTime ='';
-                        $nextEmailTime = $TimeZone->modify('+24 hour'); // Add 2 hour first email sent
+                        $nextEmailTime = $TimeZone->modify('+2 hour'); // Add 2 hour first email sent
                         $nextEmailTime = date_format($nextEmailTime,'Y-m-d H:i:s');
                         $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$nextEmailTime' WHERE id = '$recordId'";
                         $db->query($updateQuery);
