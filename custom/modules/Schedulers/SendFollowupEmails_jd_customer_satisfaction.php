@@ -28,7 +28,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
         $currentTimeForQuery = date_format($TimeZone,'Y-m-d H');
         // Query to get records that need an email
         // $query = "SELECT id, last_email_sent, priority, customer_interaction_status,assigned_user_id,escalation_officer_email FROM jd_customer_satisfaction WHERE customer_interaction_status ='Pending' AND priority='High' AND(last_email_sent IS NULL OR TIMESTAMPDIFF(HOUR, last_email_sent, '$currentTime') >= 2)";
-        $query = "SELECT id, last_email_sent, email, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
+        $query = "SELECT id, last_email_sent, email, mobile, priority, customer_interaction_status,assigned_user_id,escalation_officer_email, date_entered FROM jd_customer_satisfaction WHERE (customer_interaction_status ='Pending' OR customer_interaction_status ='InProgress') AND DATE_FORMAT(last_email_sent, '%Y-%m-%d %H') = '".$currentTimeForQuery."'  ORDER BY date_entered DESC";
         // DATE_FORMAT(reminder_date_time, '%Y-%m-%d %H:%i') = '".$currentDateTime."'
         var_dump($query);
         $GLOBALS['log']->fatal("Email failed to send to: $query");
@@ -39,6 +39,7 @@ class SendFollowupEmails_jd_customer_satisfaction {
                 $assignedUserId = $row['assigned_user_id'];
                 $date_entered = $row['date_entered'];
                 $Customers_email = $row['email'];
+                $Customers_mobile = $row['mobile'];
                 // Get Assigned User Details
                 $assignedUser = BeanFactory::getBean('Users', $assignedUserId);
                 $assignedEmail = $assignedUser->email1;
@@ -129,6 +130,29 @@ class SendFollowupEmails_jd_customer_satisfaction {
                     );
                     $this->sendEmail($row['escalation_officer_email'], $template_data);
                 }
+
+                // SEND SMS TO CUSTOMER.
+                if(!empty($Customers_mobile)){
+                    $SMStemplate = new EmailTemplate();
+                    $SMStemplate = $SMStemplate->retrieve("2b7e91b5-5c71-a6a6-f208-67d13d146dc9");
+                    $SMStemplate->parsed_entities = null;
+                    $temp = array();
+                    $SMStemplate_data = $SMStemplate->parse_email_template(
+                    array(
+                        "subject" => $SMStemplate->subject,
+                        "body_html" => $SMStemplate->body_html,
+                        "body" => $SMStemplate->body
+                        ),
+                        'jd_customer_satisfaction',
+                        $bean,
+                        $temp
+                    );
+                    
+                    $GLOBALS['log']->fatal('Send SMS when customers satisfaction scheduler runs');
+                    $SMSresponse = $this->sendSMS($Customers_mobile, $Customers_mobile, $SMStemplate_data["body"]);
+                    $GLOBALS['log']->fatal($SMSresponse);
+                }
+
                 // Update the last email sent time
                 // $updateQuery = "UPDATE jd_customer_satisfaction SET last_email_sent = '$currentTime' WHERE id = '$recordId'";
                 // $db->query($updateQuery);
@@ -255,6 +279,39 @@ class SendFollowupEmails_jd_customer_satisfaction {
         }
         // Compare with today's date
         return new DateTime() <= $date; // Returns true if still within 5 business days
+    }
+
+    private function sendSMS($account, $phoneNumber, $content) {
+        $url = 'http://10.0.0.163:5112/send_sms';
+    
+        $payload = json_encode([
+            'account' => $account,
+            'phoneNumber' => $phoneNumber,
+            'content' => $content
+        ]);
+    
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+            ],
+        ]);
+    
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        // echo $response;
+        return $response;
     }
     
 }

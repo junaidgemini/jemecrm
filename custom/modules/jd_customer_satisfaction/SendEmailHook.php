@@ -30,6 +30,48 @@ class SendEmailHook {
                         );
                         $this->sendEmail($bean->email, $template_data);
                     }
+                    // send sms to customer when ticket is resolved
+                    if(!empty($bean->mobile)){
+                        $SMStemplate = new EmailTemplate();
+                        $SMStemplate = $SMStemplate->retrieve("dac76a58-44bc-9bd8-6c30-67d0e3c2c858");
+                        $SMStemplate->parsed_entities = null;
+                        $temp = array();
+                        $SMStemplate_data = $SMStemplate->parse_email_template(
+                        array(
+                            "subject" => $SMStemplate->subject,
+                            "body_html" => $SMStemplate->body_html,
+                            "body" => $SMStemplate->body
+                            ),
+                            'jd_customer_satisfaction',
+                            $bean,
+                            $temp
+                        );
+                        
+                        $GLOBALS['log']->fatal('Send SMS when customers satisfaction ticket is resolved');
+                        $response = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
+                    }
+                } else{
+                    // send sms to customer when ticket status is changed
+                    if(!empty($bean->mobile)){
+                        $SMStemplate = new EmailTemplate();
+                        $SMStemplate = $SMStemplate->retrieve("c39e3bec-509e-a70c-a65b-67d142619f08");
+                        $SMStemplate->parsed_entities = null;
+                        $temp = array();
+                        $SMStemplate_data = $SMStemplate->parse_email_template(
+                        array(
+                            "subject" => $SMStemplate->subject,
+                            "body_html" => $SMStemplate->body_html,
+                            "body" => $SMStemplate->body
+                            ),
+                            'jd_customer_satisfaction',
+                            $bean,
+                            $temp
+                        );
+                        // Example usage:
+                        $GLOBALS['log']->fatal('Send SMS when customers satisfaction ticket status is changed');
+                        $SMSresponse = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
+                        $GLOBALS['log']->fatal($SMSresponse);
+                    }
                 }
                 //  else if($bean->customer_interaction_status == 'InProgress'){
                 //     // when status is changed to in progress set email reminder next day same time (24 h later)
@@ -90,6 +132,27 @@ class SendEmailHook {
                     $temp
                 );
                 $this->sendEmail($customersEmail, $template_data);
+            }
+            
+            // send sms to customer when ticket is resolved
+            if(!empty($bean->mobile)){
+                $SMStemplate = new EmailTemplate();
+                $SMStemplate = $SMStemplate->retrieve("c412c152-328d-e4b3-7ce3-67d1406f69fa");
+                $SMStemplate->parsed_entities = null;
+                $temp = array();
+                $SMStemplate_data = $SMStemplate->parse_email_template(
+                array(
+                    "subject" => $SMStemplate->subject,
+                    "body_html" => $SMStemplate->body_html,
+                    "body" => $SMStemplate->body
+                    ),
+                    'jd_customer_satisfaction',
+                    $bean,
+                    $temp
+                );
+                // Example usage:
+                $GLOBALS['log']->fatal('Send SMS when customers satisfaction ticket is created');
+                $response = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
             }
 
             // Send Email to Assigned User
@@ -156,7 +219,7 @@ class SendEmailHook {
             }
         }
     }
-        private function sendEmail($toEmail, $template_data) {
+    private function sendEmail($toEmail, $template_data) {
         if (empty($toEmail)) {
             return;
         }
@@ -185,4 +248,39 @@ class SendEmailHook {
             $GLOBALS['log']->info("Email sent successfully to: $toEmail");
         }
     }
+    private function sendSMS($account, $phoneNumber, $content) {
+        $url = 'http://10.0.0.163:5112/send_sms';
+    
+        $payload = json_encode([
+            'account' => $account,
+            'phoneNumber' => $phoneNumber,
+            'content' => $content
+        ]);
+    
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+            ],
+        ]);
+    
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        // echo $response;
+        return $response;
+    }
+    // // Example usage:
+    // $response = sendSMS('23481352221', '2348135222190', 'test');
+    // echo $response;    
 }
