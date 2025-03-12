@@ -53,6 +53,28 @@ class SendEmailHook {
                 $this->sendEmail($customersEmail, $template_data);
             }
 
+            // send sms when ticket is created
+            if(!empty($bean->mobile)){
+                $SMStemplate = new EmailTemplate();
+                $SMStemplate = $SMStemplate->retrieve("153f23f3-801c-c4d5-9346-67d1fbf5b134");
+                $SMStemplate->parsed_entities = null;
+                $temp = array();
+                $SMStemplate_data = $SMStemplate->parse_email_template(
+                array(
+                    "subject" => $SMStemplate->subject,
+                    "body_html" => $SMStemplate->body_html,
+                    "body" => $SMStemplate->body
+                    ),
+                    'jd_consideration',
+                    $bean,
+                    $temp
+                );
+                // Example usage:
+                $GLOBALS['log']->fatal('Send SMS when jd_consideration ticket is created');
+                $SMSresponse = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
+                $GLOBALS['log']->fatal($SMSresponse);   
+            }
+
             // // Send Email to Assigned User
             // if (!empty($assignedEmail)) {
             //     // for new customers Satisfaction record.
@@ -121,5 +143,37 @@ class SendEmailHook {
         } else {
             $GLOBALS['log']->info("Email sent successfully to: $toEmail");
         }
+    }
+    private function sendSMS($account, $phoneNumber, $content) {
+        $url = 'http://10.0.0.163:5112/send_sms';
+    
+        $payload = json_encode([
+            'account' => $account,
+            'phoneNumber' => $phoneNumber,
+            'content' => $content
+        ]);
+    
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+            ],
+        ]);
+    
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        // echo $response;
+        return $response;
     }
 }

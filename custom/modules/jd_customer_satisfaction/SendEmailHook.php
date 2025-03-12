@@ -48,7 +48,8 @@ class SendEmailHook {
                         );
                         
                         $GLOBALS['log']->fatal('Send SMS when customers satisfaction ticket is resolved');
-                        $response = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
+                        $SMSresponse = $this->sendSMS($bean->mobile, $bean->mobile, $SMStemplate_data["body"]);
+                        $GLOBALS['log']->fatal($SMSresponse);
                     }
                 } else{
                     // send sms to customer when ticket status is changed
